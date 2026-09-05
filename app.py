@@ -133,7 +133,7 @@ elif page == "Overview":
     if evaluation.exists():
         st.subheader("Retrieval quality and latency")
         report = json.loads(evaluation.read_text(encoding="utf-8"))
-        st.dataframe(pd.DataFrame(report["summary"]), hide_index=True, use_container_width=True)
+        st.dataframe(pd.DataFrame(report["summary"]), hide_index=True, width="stretch")
         st.caption(report["protocol"])
         with st.expander("Full retrieval evaluation"):
             st.json(report)
@@ -142,7 +142,7 @@ elif page == "Overview":
         st.subheader("Workflow outcomes")
         st.bar_chart(pd.DataFrame(outcomes).groupby(["kind", "status"]).size().unstack(fill_value=0))
     with st.expander("Request and workflow log"):
-        st.dataframe(pd.DataFrame(events), use_container_width=True)
+        st.dataframe(pd.DataFrame(events), width="stretch")
 
 elif page == "Chat":
     title("Conversational core", "Streaming assistant", "Recent context: 10 messages. Every request records usage, cost and latency.")
