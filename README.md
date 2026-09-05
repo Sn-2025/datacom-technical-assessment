@@ -121,7 +121,7 @@ Generated code requires the isolated Docker runner. This workstation has no Dock
 
 ## Containers and handoff
 
-Docker files are delivered locally. No cloud deployment is performed. With Docker available:
+Docker files are delivered locally. With Docker available:
 
 ```powershell
 if (!(Test-Path .env)) { Copy-Item .env.example .env }
