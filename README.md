@@ -9,6 +9,8 @@ Python 3.12 is recommended. From this directory:
 ```powershell
 if (!(Test-Path .env)) { Copy-Item .env.example .env }
 # Edit .env with your provider settings before starting services.
+git lfs install
+git lfs pull
 uv sync --frozen --extra dev
 uv run assessment ingest data/corpus/documents.jsonl
 # Then open separate terminals:
@@ -17,7 +19,7 @@ uv run uvicorn assessment.api:create_app --factory --host 127.0.0.1 --port 8000
 uv run streamlit run app.py
 ```
 
-Open http://127.0.0.1:8501 and API documentation at http://127.0.0.1:8000/docs. The repository now includes the canonical prepared corpus and the fixed QA dataset, but not a prebuilt runtime index. After cloning, copy `.env.example` to `.env`, set the supplied `OPENAI_API_KEY` plus a separate official `EMBEDDING_API_KEY`, and run `uv run assessment ingest data/corpus/documents.jsonl` once to build the local index. Do not overwrite a working `.env` unless intentionally resetting settings.
+Open http://127.0.0.1:8501 and API documentation at http://127.0.0.1:8000/docs. The repository now includes the canonical prepared corpus and the fixed QA dataset, but the corpus file is stored through Git LFS and `data/runtime/` is still intentionally excluded. After cloning, copy `.env.example` to `.env`, run `git lfs install && git lfs pull`, set the supplied `OPENAI_API_KEY` plus a separate official `EMBEDDING_API_KEY`, and run `uv run assessment ingest data/corpus/documents.jsonl` once to build the local index. Do not overwrite a working `.env` unless intentionally resetting settings.
 
 ### Vector database: installation and startup
 
@@ -25,7 +27,7 @@ The vector database is **ChromaDB** (`chromadb`, pinned to 1.5.9 in the lockfile
 
 - **Current local setup:** `CHROMA_HOST` is unset. The application uses `chromadb.PersistentClient`, an embedded database opened inside the Python process when the knowledge base is first accessed. No Chroma server, Docker container or separate database startup command is needed. Closing the application does not erase the persisted index.
 - **Storage:** vectors and the HNSW index live under `data/runtime/<index_id>/chroma/`. Document metadata, text and the BM25 index live alongside them in `knowledge.sqlite`. The prepared index ID is `ac33852da0d355e0`, containing 57,720 chunks. Keep the whole index directory together when backing it up.
-- **Fresh clone:** the canonical prepared corpus in `data/corpus/` is committed to the repository, but `data/runtime/` is intentionally not. Build the local index once with `uv run assessment ingest data/corpus/documents.jsonl`. Rebuild it whenever you intentionally change chunking, embedding, or vector-store configuration.
+- **Fresh clone:** the canonical prepared corpus in `data/corpus/` is committed to the repository, but the large `documents.jsonl` payload is fetched through Git LFS and `data/runtime/` is intentionally not committed. Run `git lfs install && git lfs pull`, then build the local index once with `uv run assessment ingest data/corpus/documents.jsonl`. Rebuild it whenever you intentionally change chunking, embedding, or vector-store configuration.
 - **Docker Compose setup:** Compose instead starts a separate `chroma` service using `chromadb/chroma:1.5.9`; the API and UI connect using `CHROMA_HOST=chroma`, `CHROMA_PORT=8000`. `docker compose up` pulls the database image automatically and its data persists in the `chroma-data` volume. This is a separate vector store from the local embedded directory. When switching backends, use a fresh matching metadata/index directory and re-ingest; copying only `knowledge.sqlite` does not populate a new Chroma service.
 
 SQLite is supplied by Python's standard library; no separate SQLite server installation is required. OpenAI embeddings generate vectors, while Chroma stores and searches them—using the OpenAI API does not mean the vector database is hosted by OpenAI.
@@ -52,6 +54,8 @@ After cloning, copy `.env.example` to `.env`, fill in the assessment `OPENAI_API
 
 ```powershell
 if (!(Test-Path .env)) { Copy-Item .env.example .env }
+git lfs install
+git lfs pull
 uv sync --frozen --extra dev
 uv run assessment ingest data/corpus/documents.jsonl
 
