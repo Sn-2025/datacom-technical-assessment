@@ -1,0 +1,71 @@
+services:
+  chroma:
+    image: chromadb/chroma:1.5.9
+    volumes:
+      - chroma-data:/data
+    environment:
+      ANONYMIZED_TELEMETRY: "False"
+    networks: [backend]
+
+  api:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]
+    env_file: .env
+    environment: &app-environment
+      RUNTIME_DIR: /app/data/runtime
+      MODEL_CACHE_DIR: /app/data/model_cache
+      CHROMA_HOST: chroma
+      CHROMA_PORT: "8000"
+      TOOLS_BASE_URL: http://tools:8001
+      SANDBOX_RUNNER_URL: http://runner:8002
+    volumes: &app-volumes
+      - ./data/runtime:/app/data/runtime
+      - ./data/model_cache:/app/data/model_cache
+      - ./data/corpus:/app/data/corpus:ro
+      - ./artifacts:/app/artifacts
+    depends_on: [chroma, tools, runner]
+    networks: [backend]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  ui:
+    build: .
+    command: ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    ports: ["127.0.0.1:8501:8501"]
+    env_file: .env
+    environment: *app-environment
+    volumes: *app-volumes
+    depends_on: [api]
+    networks: [backend]
+
+  tools:
+    build: .
+    command: ["uvicorn", "assessment.travel_tools:app", "--host", "0.0.0.0", "--port", "8001"]
+    networks: [backend]
+
+  runner:
+    build: .
+    command: ["uvicorn", "assessment.runner_service:app", "--host", "0.0.0.0", "--port", "8002"]
+    environment:
+      SANDBOX_IMAGE: assessment-sandbox:local
+      SANDBOX_TIMEOUT_S: "20"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks: [backend]
+
+  sandbox-image:
+    build:
+      context: .
+      dockerfile: docker/Sandbox.Dockerfile
+    image: assessment-sandbox:local
+    entrypoint: ["python", "-c", "print('Sandbox image ready')"]
+    network_mode: none
+
+volumes:
+  chroma-data:
+
+networks:
+  backend:

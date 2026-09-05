@@ -1,0 +1,31 @@
+name: Tests and isolated execution
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install uv==0.9.30
+      - run: uv sync --frozen --extra dev
+      - run: uv run --frozen --extra dev ruff check .
+      - run: docker build -f docker/Sandbox.Dockerfile -t assessment-sandbox:local .
+      - run: uv run --frozen --extra dev pytest -q --junitxml=artifacts/ci-tests.xml
+        env:
+          RUN_DOCKER_TESTS: '1'
+          ANONYMIZED_TELEMETRY: 'False'
+      - run: cp .env.example .env && docker compose config --quiet
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: artifacts/ci-tests.xml
