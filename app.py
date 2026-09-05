@@ -11,6 +11,7 @@ import pandas as pd
 import streamlit as st
 from pydantic import SecretStr
 
+from assessment.catalog import document_preview, inventory
 from assessment.code_assistant import QUICKSORT_TESTS, make_runner, repair_code
 from assessment.config import ROOT, Connection
 from assessment.llm import LLM, ChatSession, format_stats
@@ -172,6 +173,9 @@ elif page == "Chat":
 
 elif page == "Knowledge base":
     title("Retrieval-grounded QA", "Answers with evidence", "Inspect sources, compare retrieval modes and add technical documents.")
+    st.info("Answers here retrieve evidence from this knowledge base and include citations. "
+            "Each question is independent. Chat uses conversation history without knowledge-base retrieval.")
+    overview = st.container()
     with st.expander("Add documents"):
         uploads = st.file_uploader("TXT, Markdown, HTML, PDF or DOCX", type=["txt", "md", "html", "pdf", "docx"],
                                    accept_multiple_files=True)
@@ -188,6 +192,51 @@ elif page == "Knowledge base":
                         st.success(f"{upload.name}: {result['status']}")
                     except Exception as exc:
                         st.error(f"{upload.name}: {type(exc).__name__}: {exc}")
+    with overview:
+        try:
+            catalog = inventory(runtime.settings)
+            documents = catalog["documents"]
+            columns = st.columns(4)
+            columns[0].metric("Documents", f"{len(documents):,}")
+            columns[1].metric("Text chunks", f"{catalog['chunks']:,}")
+            columns[2].metric("Indexed text", f"{catalog['text_bytes']/1_000_000:.2f} MB")
+            columns[3].metric("Index status", "Indexed" if catalog["chunks"] else "Empty")
+            st.caption("Current index metadata · text size excludes chunk overlap · refreshed on page interaction.")
+            if "Microsoft SQL documentation" in catalog["sources"]:
+                st.write("**Content scope:** English Microsoft SQL documentation covering SQL Server, Azure SQL, "
+                         "T-SQL and data integration.")
+            if documents:
+                st.caption("Sources: " + "; ".join(f"{name} ({count:,})" for name, count in catalog["sources"].items())
+                           + " · Formats: " + ", ".join(f"{name.upper()} ({count:,})" for name, count in catalog["formats"].items()))
+                with st.expander("Browse indexed documents"):
+                    term = st.text_input("Search document titles or sources", key="document_filter")
+                    matches = [d for d in documents if term.casefold() in (d["title"] + " " + d["source_uri"]).casefold()]
+                    st.caption(f"{len(matches):,} matching documents · 50 per page")
+                    if matches:
+                        page_number = st.selectbox("Document page", range(1, (len(matches)+49)//50+1))
+                        visible = matches[(page_number-1)*50:page_number*50]
+                        st.dataframe(pd.DataFrame([{"Title": d["title"], "Format": d["format"].upper(),
+                            "Source": d["source_uri"], "Version": d["version"], "Text KB": round(d["text_bytes"]/1000, 1)}
+                            for d in visible]), hide_index=True, width="stretch")
+                        labels = {d["source_id"]: d["title"] for d in visible}
+                        selected = st.selectbox("Preview a document on this page", list(labels), index=None,
+                                                format_func=labels.get)
+                        if selected:
+                            preview = document_preview(runtime.settings, selected)
+                            if preview:
+                                content = "\n\n".join(e["text"] for e in preview["elements"])
+                                st.caption(f"Version: {preview['version']} · License: {preview['license']}")
+                                if preview["source_uri"].startswith("https://"):
+                                    st.link_button("Open source document", preview["source_uri"])
+                                st.text_area("Parsed text preview · first 12,000 characters", content[:12000], height=260,
+                                             disabled=True)
+                                st.download_button("Download full parsed text", content, "document.txt", "text/plain")
+            else:
+                st.warning("This index has no documents yet. Ingest documents below before asking a question.")
+            if st.button("Refresh knowledge inventory"):
+                st.rerun()
+        except Exception as exc:
+            st.error(f"Knowledge inventory unavailable: {type(exc).__name__}. Check the configured index directory.")
     question = st.text_input("Question", placeholder="How does SQL Server READ COMMITTED isolation prevent dirty reads?")
     mode = st.selectbox("Retrieval mode", ["hybrid", "dense", "lexical", "rerank"])
     if st.button("Ask the knowledge base", type="primary", disabled=not question):

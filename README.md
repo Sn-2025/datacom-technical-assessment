@@ -8,7 +8,7 @@ Python 3.12 is recommended. From this directory:
 
 ```powershell
 uv sync --frozen --extra dev
-Copy-Item .env.example .env
+if (!(Test-Path .env)) { Copy-Item .env.example .env }
 # Edit .env with your provider settings, then open separate terminals:
 uv run uvicorn assessment.travel_tools:app --host 127.0.0.1 --port 8001
 uv run uvicorn assessment.api:create_app --factory --host 127.0.0.1 --port 8000
@@ -16,6 +16,17 @@ uv run streamlit run app.py
 ```
 
 Open http://127.0.0.1:8501 and API documentation at http://127.0.0.1:8000/docs. On the prepared workstation, dependencies and the corpus already exist. The local `.env` selects official `text-embedding-3-small` embeddings; `.env.example` defaults to optional offline BGE embeddings. Do not overwrite the prepared `.env` unless intentionally resetting settings.
+
+### Vector database: installation and startup
+
+The vector database is **ChromaDB** (`chromadb`, pinned to 1.5.9 in the lockfile). `uv sync --frozen --extra dev` installs it into the project's `.venv` along with the other Python dependencies. There is no separate database installer for the default local setup.
+
+- **Current local setup:** `CHROMA_HOST` is unset. The application uses `chromadb.PersistentClient`, an embedded database opened inside the Python process when the knowledge base is first accessed. No Chroma server, Docker container or separate database startup command is needed. Closing the application does not erase the persisted index.
+- **Storage:** vectors and the HNSW index live under `data/runtime/<index_id>/chroma/`. Document metadata, text and the BM25 index live alongside them in `knowledge.sqlite`. The prepared index ID is `ac33852da0d355e0`, containing 57,720 chunks. Keep the whole index directory together when backing it up.
+- **Fresh clone:** installing the package does not restore the corpus or vectors, which are excluded from Git. Run the corpus preparation and `assessment ingest` commands below once. On the prepared workstation, this has already been done.
+- **Docker Compose setup:** Compose instead starts a separate `chroma` service using `chromadb/chroma:1.5.9`; the API and UI connect using `CHROMA_HOST=chroma`, `CHROMA_PORT=8000`. `docker compose up` pulls the database image automatically and its data persists in the `chroma-data` volume. This is a separate vector store from the local embedded directory. When switching backends, use a fresh matching metadata/index directory and re-ingest; copying only `knowledge.sqlite` does not populate a new Chroma service.
+
+SQLite is supplied by Python's standard library; no separate SQLite server installation is required. OpenAI embeddings generate vectors, while Chroma stores and searches them—using the OpenAI API does not mean the vector database is hosted by OpenAI.
 
 `OPENAI_API_KEY` or `OPENAI_API_KEY_FILE` configures the backend credential. For local development only, the existing `OPENAI API KEY.txt` is read automatically **only for the official OpenAI URL**. The Connections page accepts a masked session override and an editable base URL/model ID. A key stays bound to its endpoint; applying another URL cannot reuse it. Clear removes the session override; a separately configured backend credential remains available. Never commit keys or the confidential assessment PDF.
 
@@ -50,6 +61,8 @@ uv run python -m scripts.audit_qa_scores --judge-model gpt-5.4
 `fetch_embedding.py` installs a checksum-verified BGE model and tokenizer. Local embeddings use the weights; official embeddings reuse the tokenizer for conservative, structure-aware chunking. Set `EMBEDDING_BACKEND=openai`, `EMBEDDING_MODEL=text-embedding-3-small`, and `EMBEDDING_DIMENSIONS=384` for the tested API path. A separate `EMBEDDING_API_KEY` is required when generation uses another provider. Changing embedding/chunk configuration creates a different index. Model assets are fingerprinted to prevent silently mixing incompatible vectors.
 
 Loaders support TXT, Markdown, HTML, PDF and DOCX. Scanned PDFs return an explicit OCR requirement; enable OCR and install Tesseract locally, or use the supplied image. Re-import is resumable; changed sources replace old chunks. Single-document ingestion is available through the UI, `assessment ingest file.pdf`, and `POST /knowledge/ingest`.
+
+The Knowledge base page reads a live, read-only inventory from the current index: document/chunk counts, deduplicated text size, source and format distribution, and an empty/indexed state. Browse documents by title or source, page through results, preview parsed text, or open the original source. Inventory browsing does not initialize embeddings or call a model. The page explicitly distinguishes retrieval-grounded independent questions from Chat's conversation history.
 
 Retrieval compares dense HNSW, SQLite FTS5/BM25, and reciprocal-rank fusion. Optional cross-encoder reranking downloads its own model on first use and is **not included in the default benchmark**. Answers contain atomic claims with citation IDs and expandable evidence; missing or invalid citations produce abstention. Citation ID validation cannot prove semantic entailment: the separate QA evaluation checks that with an explicitly labeled model judge.
 
