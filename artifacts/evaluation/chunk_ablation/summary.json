@@ -1,0 +1,63 @@
+{
+  "question_set": "evals/questions.jsonl answerable subset; hybrid held-out row shown here. Full per-mode rows are in each per-variant artifact.",
+  "baseline_label": "baseline",
+  "variants": [
+    {
+      "label": "baseline",
+      "chunk_tokens": 320,
+      "chunk_overlap": 40,
+      "index_id": "ac33852da0d355e0",
+      "chunks": 57720,
+      "documents": 8183,
+      "source_hit_at_5": 0.975,
+      "evidence_hit_at_5": 0.875,
+      "first_median_ms": 631.9316000008257,
+      "first_p95_ms": 797.5807749986416,
+      "repeat_median_ms": 94.87135000017588,
+      "repeat_p95_ms": 138.83583499591623,
+      "artifact": "artifacts\\evaluation\\chunk_ablation\\baseline.json",
+      "delta_source_hit_at_5": 0.0,
+      "delta_evidence_hit_at_5": 0.0,
+      "delta_first_median_ms": 0.0,
+      "delta_repeat_median_ms": 0.0
+    },
+    {
+      "label": "smaller_chunks",
+      "chunk_tokens": 240,
+      "chunk_overlap": 40,
+      "index_id": "56d7f8f3290f77d6",
+      "chunks": 78290,
+      "documents": 8183,
+      "source_hit_at_5": 0.975,
+      "evidence_hit_at_5": 0.925,
+      "first_median_ms": 266.8898000010813,
+      "first_p95_ms": 315.3361499953462,
+      "repeat_median_ms": 108.1557499965129,
+      "repeat_p95_ms": 154.1981049958849,
+      "artifact": "artifacts\\evaluation\\chunk_ablation\\smaller_chunks.json",
+      "delta_source_hit_at_5": 0.0,
+      "delta_evidence_hit_at_5": 0.050000000000000044,
+      "delta_first_median_ms": -365.0417999997444,
+      "delta_repeat_median_ms": 13.284399996337015
+    },
+    {
+      "label": "lower_overlap",
+      "chunk_tokens": 320,
+      "chunk_overlap": 20,
+      "index_id": "47ad9bd411508d72",
+      "chunks": 56638,
+      "documents": 8183,
+      "source_hit_at_5": 1,
+      "evidence_hit_at_5": 0.9,
+      "first_median_ms": 242.07585000112886,
+      "first_p95_ms": 291.56875999797194,
+      "repeat_median_ms": 91.76940000179457,
+      "repeat_p95_ms": 136.46810000391267,
+      "artifact": "artifacts\\evaluation\\chunk_ablation\\lower_overlap.json",
+      "delta_source_hit_at_5": 0.025000000000000022,
+      "delta_evidence_hit_at_5": 0.025000000000000022,
+      "delta_first_median_ms": -389.85574999969685,
+      "delta_repeat_median_ms": -3.101949998381315
+    }
+  ]
+}

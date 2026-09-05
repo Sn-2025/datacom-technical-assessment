@@ -1,0 +1,3891 @@
+{
+  "corpus": {
+    "documents": 8183,
+    "unique_documents": 8183,
+    "unique_document_text_bytes": 53486002,
+    "chunks": 56638,
+    "index_id": "47ad9bd411508d72"
+  },
+  "config": {
+    "embedding_model": "text-embedding-3-small",
+    "embedding_backend": "openai",
+    "embedding_dimensions": 384,
+    "chunk_tokens": 320,
+    "chunk_overlap": 20,
+    "parser_version": "1",
+    "chunker_version": "1"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "protocol": "One warm-up, shuffled fixed questions. First: query embedding cache cleared, DB warm. Repeat: immediate exact repeat with bounded embedding cache. All measured totals include query embedding, vector/lexical retrieval, fusion and metadata; generation excluded. No answer/result cache.",
+  "gold": "AI-authored, exact source evidence verified; source hit and strict evidence-span hit are distinct.",
+  "summary": [
+    {
+      "mode": "lexical",
+      "split": "dev",
+      "questions": 10,
+      "source_hit_at_5": 0.9,
+      "evidence_hit_at_5": 0.9,
+      "first_median_ms": 94.12329999759095,
+      "first_p95_ms": 128.08466499591302,
+      "repeat_median_ms": 97.54104999956326,
+      "repeat_p95_ms": 136.78249500117084
+    },
+    {
+      "mode": "lexical",
+      "split": "heldout",
+      "questions": 40,
+      "source_hit_at_5": 0.95,
+      "evidence_hit_at_5": 0.825,
+      "first_median_ms": 90.48684999652323,
+      "first_p95_ms": 136.6527900001529,
+      "repeat_median_ms": 90.57634999771835,
+      "repeat_p95_ms": 138.19157500365688
+    },
+    {
+      "mode": "dense",
+      "split": "dev",
+      "questions": 10,
+      "source_hit_at_5": 0.8,
+      "evidence_hit_at_5": 0.8,
+      "first_median_ms": 152.7594000035606,
+      "first_p95_ms": 201.0830749994056,
+      "repeat_median_ms": 9.4445499998983,
+      "repeat_p95_ms": 14.00289000230259
+    },
+    {
+      "mode": "dense",
+      "split": "heldout",
+      "questions": 40,
+      "source_hit_at_5": 0.975,
+      "evidence_hit_at_5": 0.825,
+      "first_median_ms": 153.07170000232873,
+      "first_p95_ms": 192.72819500038156,
+      "repeat_median_ms": 9.377800004585879,
+      "repeat_p95_ms": 17.924280001898293
+    },
+    {
+      "mode": "hybrid",
+      "split": "dev",
+      "questions": 10,
+      "source_hit_at_5": 1,
+      "evidence_hit_at_5": 0.9,
+      "first_median_ms": 238.31129999962286,
+      "first_p95_ms": 294.84376499967766,
+      "repeat_median_ms": 98.45784999924945,
+      "repeat_p95_ms": 136.61429000276257
+    },
+    {
+      "mode": "hybrid",
+      "split": "heldout",
+      "questions": 40,
+      "source_hit_at_5": 1,
+      "evidence_hit_at_5": 0.9,
+      "first_median_ms": 242.07585000112886,
+      "first_p95_ms": 291.56875999797194,
+      "repeat_median_ms": 91.76940000179457,
+      "repeat_p95_ms": 136.46810000391267
+    }
+  ],
+  "rows": [
+    {
+      "id": "sql-016",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 131.9638000059058,
+      "repeat_query_ms": 126.35060000320664,
+      "first_timings": {
+        "lexical_search_ms": 123.64700000034645
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 116.96549999760464
+      },
+      "top5_ids": [
+        "67899c2cbb207d0a1a4378a85ffc47bc4efa3d1ae2b36edc577dbeb97d7b1e49",
+        "df60829ee47bff9f221fed9411296dea5d266fb403fe063e939d95e347e6cb00",
+        "6680c24c53a71ad250d252fb05c76a189866e7f280c117f62ccfac06e50bfcc6",
+        "baa5fa1fc84c52e6cf19201d842b45a1b7cf8007b7e7509a14a76526c51799c8",
+        "e4c69b162ef27d69686b7fcfbe0ff4b88b4d83572db58bb0621925dfa3a1cff5"
+      ]
+    },
+    {
+      "id": "sql-005",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 118.17019999580225,
+      "repeat_query_ms": 111.82849999750033,
+      "first_timings": {
+        "lexical_search_ms": 107.6284000009764
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 102.96220000600442
+      },
+      "top5_ids": [
+        "5964abdd6fc1a6cc10de8112cd157e1098322689b9a59b1feeff1564603ba07b",
+        "eb456f7e6c4ca44f5e75fdd6382aee5476f35b821245a63cf96bc91218adb047",
+        "bfc4467ccc784043be6f72e8084d583e4149ddaa92912a9a57ed7379bb0d926c",
+        "bd988e10aa0d4530ac84949e1cbc60796e74681c405442b1c9a42932bf9ad97e",
+        "f44277caaf01a86df897b63cc6ae31adc0baf600f80686de134bbd8ff8fb7d62"
+      ]
+    },
+    {
+      "id": "sql-034",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 81.26729999639792,
+      "repeat_query_ms": 76.59550000244053,
+      "first_timings": {
+        "lexical_search_ms": 71.31090000621043
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 68.36209999892162
+      },
+      "top5_ids": [
+        "a7397277d72ccb1bd630ac63df7f60f95049ba775a4136c6cab973a1d4acc167",
+        "ada28f04b62c7f84533d35c09eacd5142c247eb6a438488fcfee4a4bdd4b0f85",
+        "4e29eb7826004c99a5251d2ba84ebe8ed631b6d68a85253a3c8e776e26e27262",
+        "7b1957c9b4375bc166f9d64b229b21b8aceefb1128755ab02cdde9a0a3f9c3a2",
+        "21cb4ba380555ab2f73d0c7384ae0726121abd806016329121e1121c84924f48"
+      ]
+    },
+    {
+      "id": "sql-049",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 100.43760000553448,
+      "repeat_query_ms": 124.07629999506753,
+      "first_timings": {
+        "lexical_search_ms": 91.61909999966156
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 114.51359999773558
+      },
+      "top5_ids": [
+        "dd0a65147a1ce21bf025d502eefa15b0a323deb44a52469c4c11feeb75a0903b",
+        "510a44220a8ca6fe70f6b909ac92416d7f141ccd99e8495c417a6f6e3227441f",
+        "930c9b045df9db34ba0f7ec5504164646491d4f697f72bea2d12c8fef117e8af",
+        "549b33ba664357d6c5cb033d3054f9e25265721d24249e6a9193ef23baa60c08",
+        "177bc6e9fb39d676a8c5c78a8541ed14703df27a3da896c61f883aeffbed38d0"
+      ]
+    },
+    {
+      "id": "sql-008",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 72.0491999963997,
+      "repeat_query_ms": 65.82760000310373,
+      "first_timings": {
+        "lexical_search_ms": 62.86869999894407
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 57.63440000009723
+      },
+      "top5_ids": [
+        "8e2f48958b8f3c6f79d9216dd96164f1c0941695d0b81c2b8589d96e384eb177",
+        "e559908c775b18454c667280046935c0f60c6ad9d08749249f2fb1f1d30ed478",
+        "61e00244a2e1b571d304642ed06a22f520e62ad5427f32a3f43ba0fdd9dfec40",
+        "91603e488825b9d4f0265b30e6d419f6cc9cd1ba7aea71a4a84d0a3f20e54367",
+        "b2e130492b2fb15e9bcbbd4f6d219a4e5a99ad55b1e4d77f9c577647231918c9"
+      ]
+    },
+    {
+      "id": "sql-028",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 115.20279999967897,
+      "repeat_query_ms": 95.34120000171242,
+      "first_timings": {
+        "lexical_search_ms": 93.18050000001676
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 88.14189999975497
+      },
+      "top5_ids": [
+        "3845d412a99fef199685bd1beac0777e1a9af726812c9ba6b718c922e4cbbc14",
+        "be17ff97f4394760f95ed2773585cb5a1508bc15445055195e060ceed0c2797c",
+        "42e7fa67154500f52898af2d10e87cef3ffb7b9c55a9cee54dc31df33e442730",
+        "14371a50f20f010e42a61912624b88d7789f3145951566f33718da2449d47549",
+        "15cbbd2e4f7521089a8ecf0c3b1857fd3060f9219c59a72c913b4e9ea989c3a4"
+      ]
+    },
+    {
+      "id": "sql-012",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": false,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 83.19510000001173,
+      "repeat_query_ms": 89.63909999874886,
+      "first_timings": {
+        "lexical_search_ms": 74.53750000422588
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 81.06279999628896
+      },
+      "top5_ids": [
+        "cbf3f8b1040f7130c059f09fbcaaa23a337f11be322cc7fc8d8182a89f7f570a",
+        "570cd5856737e07185589f1eda7d1f9b62c51869bacbbb500e294ac743f750be",
+        "9519c4629003c68500ef9e11640509087ea2f63b9319bad6158ef54a9ef055c4",
+        "aee9faa23126328414dffbefb0b7a667dcde3b1825e4318513a6bffb7857c559",
+        "f5129238a9629657b7583ddb62ea0ee0747268e11ae76852a04a24089dc2d04d"
+      ]
+    },
+    {
+      "id": "sql-035",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 51.31460000120569,
+      "repeat_query_ms": 62.30949999735458,
+      "first_timings": {
+        "lexical_search_ms": 44.449699998949654
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 53.61360000097193
+      },
+      "top5_ids": [
+        "4a677a94ee3908a3f06f708c3f14f096f12c4a1637a41ea6ab6756a18b006d73",
+        "0f5b0a13a850e3e140718c841206e48562841ecf526bcf1b8ff465d8965fe8f9",
+        "aaabb3089b2d851b1cfe354d7bde2351b507ddc4815423ce033808cfc1c1a935",
+        "bde5a265998452196a52e3957a14c532a8010b15efa1dc33144a2e7e41c61794",
+        "b571dd0011c0f367d9c74d14cdffc4c79e467f29e8d39380b50db1feb5e07855"
+      ]
+    },
+    {
+      "id": "sql-037",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 103.52219999913359,
+      "repeat_query_ms": 98.75340000144206,
+      "first_timings": {
+        "lexical_search_ms": 95.4418000037549
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 90.85429999686312
+      },
+      "top5_ids": [
+        "c66176edf63a9a34e4ceae29598fcc307de44fd6fb98810ad235a4f7fbb34f93",
+        "52d4a6956e53ce392bfcef8df64a6ed380d47902c86828719552cee8ef85141d",
+        "f53eb3a2d999fe3a805f60b5c89416fd879717d48010f575e4286afc19543b08",
+        "73dbd0da12fe9c0a73ea3a43593dc44bd9c8d56a03bfb52e5a378377001d053f",
+        "661e1d32a94792256ef3da2620ee19e94e91d66a00967e7ab054f189199e2b2e"
+      ]
+    },
+    {
+      "id": "sql-024",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 87.95390000159387,
+      "repeat_query_ms": 91.96630000224104,
+      "first_timings": {
+        "lexical_search_ms": 80.50150000053691
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 83.03950000117766
+      },
+      "top5_ids": [
+        "f641f308907b9ed8b99b67670fb434be6e3297263bf187ab723bee5b52d3d82a",
+        "aee1e5a54e477d8efc11b813e6f6b675286c5b4f2738381c591d39b513a6e297",
+        "b797ad219873193c40cb75bb682c987426cb550941f23fbd64b9555dddb09c92",
+        "da56425debacf4b7d7acd635aae9aeae3c8b2e36aecf7bb1f2b401bf4ebfc745",
+        "c95f0d46834d43eb8bd828d1ffda35ca631644efc49b3aa5f4239de92d77ade4"
+      ]
+    },
+    {
+      "id": "sql-023",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 96.18010000122013,
+      "repeat_query_ms": 104.21109999879263,
+      "first_timings": {
+        "lexical_search_ms": 88.22919999511214
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 95.4487999988487
+      },
+      "top5_ids": [
+        "e850a11f19675ec5a68dd3bcc46863685030ff9bb4b3a0d65cb9e4d48dcb65e8",
+        "746a4943f6a9d1fe7f25930b2b6a6623d2e0afa4082deb83db6c6871a3b71e7b",
+        "1bca18658f2ca81fbe593df62e86ae7f95b97d10fc9fb3c858d41d409622530e",
+        "e01de01060c4867bbd043b350cf87eeedc2ac7f2edb0691aae5b5315d8c69e1d",
+        "156b04444bd9113337d76991ae235beb6b9e575000d513326dc2878a18374eac"
+      ]
+    },
+    {
+      "id": "sql-032",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 64.161399997829,
+      "repeat_query_ms": 63.834599997790065,
+      "first_timings": {
+        "lexical_search_ms": 56.21180000161985
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 55.320299994491506
+      },
+      "top5_ids": [
+        "9f39c396df7a1d4915e7848dc5588ae72b3d90409dd0f8e333e61fdb92ad92ca",
+        "38eef824675d3ad9fffb4a075bf40487f13be2d60061198d238842d2122e2a65",
+        "aee7b4283da1f2b9ef7284d0dc41f6fa3df0b655603636c6c9ed3cd7ca4489f3",
+        "a0e323f06f2132ad805abd3c5a127d8551c6ea13eb94e94ac62b4960ab9d37fa",
+        "6b743517ed8037079fd6040f70c3e43d0292065b695a63548d2d905d302f1c2d"
+      ]
+    },
+    {
+      "id": "sql-045",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 98.48970000166446,
+      "repeat_query_ms": 108.51359999651322,
+      "first_timings": {
+        "lexical_search_ms": 87.28169999812962
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 100.35280000010971
+      },
+      "top5_ids": [
+        "96a4e7ca6aad759876d588532c0e68fc34bb74467eaf39649f83b7eafe6b64fa",
+        "f73bf73feac602cd6b2f3c7571ec272b7dd296cbba24344e2f8b6880812bdeca",
+        "5f6094d2b6ea874cb12ac2e610f6b4d1f4ecd2517e3d92ebaa65a1f8b3768e78",
+        "f0836ad1065d0792bd163c415e0c0a13d19fd8dc70fcf0692796e8406fd08c6f",
+        "658d3b4e46638a08ca79cc4f9f78b618402881567d2d8b34e3ec8b948a2c5a99"
+      ]
+    },
+    {
+      "id": "sql-017",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 135.35889999911888,
+      "repeat_query_ms": 137.91560000390746,
+      "first_timings": {
+        "lexical_search_ms": 127.17369999882067
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 126.19819999963511
+      },
+      "top5_ids": [
+        "085c02ba2fa5ffdaace9d754aab01103973c7ca6983446b4c2155950a28bb862",
+        "0d1f3143f48edb2da4b4bb89a712f2f3bfe980e18ea963f9eba5df57bb97334e",
+        "4845475561abb1005a196ab07cb2c552d468a23a8f01b77c35cd2b45bed5724a",
+        "690830b7fb1a61814a8976fd24607ba82838404682a9f931da03beb7c3444245",
+        "6cad2c2825ea870def046eb850f3ed78fd76a0fbccd8177870426e052eaa6dbd"
+      ]
+    },
+    {
+      "id": "sql-027",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 76.53579999896465,
+      "repeat_query_ms": 80.95940000202972,
+      "first_timings": {
+        "lexical_search_ms": 66.15999999485211
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 73.73889999871608
+      },
+      "top5_ids": [
+        "0c4becabca9aa43ec25ee553eebdc749219ecbbfcaad17fee4e7664ebf8022f8",
+        "9a49128c11572698cddf9665b3d1ad56218588d6613ed0417bda762c9d20a3f7",
+        "a1e40601d4c1ae3de7837b95752a410d0975a4e1abec1c39c648c7f975fc12c2",
+        "ced5a07f24cc94fa51772e62a2f3b888bfecd5a675fe454156e645e5c9611182",
+        "a70e871a1fcdbacb5de8ff6d9294c64e9b47624bc1e2c2db16e8772c34262d3f"
+      ]
+    },
+    {
+      "id": "sql-039",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 99.57280000526225,
+      "repeat_query_ms": 100.78490000159945,
+      "first_timings": {
+        "lexical_search_ms": 91.79579999909038
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 92.71930000249995
+      },
+      "top5_ids": [
+        "ba3941baaaa468c82c395b5f20337f45a319e765f76f7c1a9e2fca22fe4f302b",
+        "990086109b912ec0ccaa17301482708264794c34a38e8c48e6575875d60bd735",
+        "19468430fdfd7bc7e187a653d363f89bf3df4aebb1d99b1b04f2e4ab3f1a5d8d",
+        "ab07d085197b81a01879bd53545748800991aa855469ad9cb7be1da0499439ec",
+        "d6edaf8b0a03159b620db5c7286d3da883b0446154b3c3240cf500f8b69f4845"
+      ]
+    },
+    {
+      "id": "sql-010",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": false,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 84.06660000036936,
+      "repeat_query_ms": 91.41790000285255,
+      "first_timings": {
+        "lexical_search_ms": 75.99470000423025
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 76.49029999447521
+      },
+      "top5_ids": [
+        "7bc7674a51b2426e8f1459b599ddbf0e9c1155661384b16245c99f141a627e7f",
+        "a11241f5efdcb7e4e843c375454edde951570d628a843c051e7e65b4ffe44e45",
+        "b19b765a1daf6253ce1e575c05bd59cb06b8243d97871f2e7cc427888d44f6a8",
+        "b21ac64970eeece70498ba356784a3c32786f6e81030f0aca4a2c9e4d8b72a68",
+        "7982cccbedf0bafb4d988b0e4699a490313da899c5e0d28dc375abd533b48a25"
+      ]
+    },
+    {
+      "id": "sql-025",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 64.39890000183368,
+      "repeat_query_ms": 74.33540000056382,
+      "first_timings": {
+        "lexical_search_ms": 56.64270000124816
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 66.06109999847831
+      },
+      "top5_ids": [
+        "48b783ee8ff48a97a0b21ee6e7746e3c75ce5406830842a6b34f96c9f4ab3e00",
+        "f2a8006204991ccfc36035d334cc5629bdd4f9cb862fdb13eb2976d662788a17",
+        "20f5ba87cf8eb08ae8d30704930bb4db45ff558f23e01490e942f81ffcc74251",
+        "5cfa0c632e3c4976bb0cf154c09db699ef1c4222a0847c0485b3aad366bf031f",
+        "fe0cb51d3e0305e8bfb38d4e4cd142e6031839cdd3416dd46c560e8f496987bc"
+      ]
+    },
+    {
+      "id": "sql-013",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 54.650199999741744,
+      "repeat_query_ms": 55.60910000349395,
+      "first_timings": {
+        "lexical_search_ms": 47.38809999980731
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 48.39480000373442
+      },
+      "top5_ids": [
+        "eca64a092fead6f58cdd88f7c0aec7a05ba3a556811d8078906ea6cfb92f0d95",
+        "40cbddc9a4a01ebb0fbb40dad478f0df15baa622ec2557dc5f442d8442bf43ea",
+        "38744d5459cadf29c6bd7b95cfb0f3a08e745ea358d465d1c5eb6aedff36dd44",
+        "10cd31af9d551d5cc7e9c241d4f24eb180813bc68b93461b44bcbf1791491fce",
+        "bd503f59cb3069621a14d0bfe019b22a199c01cd8cf7e1f3110c09f22bf391f0"
+      ]
+    },
+    {
+      "id": "sql-036",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 78.83279999805382,
+      "repeat_query_ms": 74.72169999527978,
+      "first_timings": {
+        "lexical_search_ms": 70.96040000033099
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 67.22170000284677
+      },
+      "top5_ids": [
+        "d6edaf8b0a03159b620db5c7286d3da883b0446154b3c3240cf500f8b69f4845",
+        "9b7254b17f309be4947dada95d08421d65af19360aebc78fbd94fe983fb0c70a",
+        "0e2c0e28a432f37b592161cfb04c4f71264023c97612f2c24463c5ffc365d040",
+        "bfbdbef922ece10403f9be27cf1d34a30f27ade551a00efd68f6a8b5479995cf",
+        "ae451b2a64c71fbb337e1187004d1407889fc4f918063ab1eeba027afc59fc27"
+      ]
+    },
+    {
+      "id": "sql-002",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 100.72189999482362,
+      "repeat_query_ms": 101.46460000396473,
+      "first_timings": {
+        "lexical_search_ms": 89.9931000021752
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 94.13109999877634
+      },
+      "top5_ids": [
+        "4a6236b42cd5c4996c2ec13fe9d2fe4fd6989adad9a37ac0f5453d798bd89c13",
+        "7eb05f6ee50d366c207c18531a8945eafe8fbd8a8961f72e0664e8824aafc461",
+        "c55ba713f238c65325f8d0f84c064501fe61d3391a6f74548a02a5401091e9b4",
+        "98f31afbc11c9e3126879a01649c77d4f5e655c6779753ece407dca15d877805",
+        "27de5bf29a20760f01656999cf5eef04d376a86b26d10ab7825aad8b54f82803"
+      ]
+    },
+    {
+      "id": "sql-029",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 119.19099999795435,
+      "repeat_query_ms": 71.49779999599559,
+      "first_timings": {
+        "lexical_search_ms": 108.49610000150278
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 64.07809999655001
+      },
+      "top5_ids": [
+        "d8351be5478d97796af5cb0da94f60a72850fb58b73555e1cb423303619c7e9c",
+        "400c8fc70024b6ed7cde8f4ec65394d18be901b3c0f981a3787f7599dd4ad24e",
+        "bb11da51bdf0b5c29e562810745ea0cde942a5a6232aaf046ce04ece6887f8e7",
+        "0740b7f31fd378e6bd8a42c24247a625204e6915a6a1130c9a9f980ce84a43ff",
+        "e2d463d22c3e516005fb28ea4fc95aef4031b82bdec3f05a077a499175fb3c1c"
+      ]
+    },
+    {
+      "id": "sql-030",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 90.97659999679308,
+      "repeat_query_ms": 102.62700000021141,
+      "first_timings": {
+        "lexical_search_ms": 82.31209999939892
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 94.67600000061793
+      },
+      "top5_ids": [
+        "0edb9bbae3f485c37dd0223cab97fe25bc26537916de63e9b78703e87d4c1e76",
+        "ca23c5fd626f959bd274371d0ace33e7669a360c88aa3c106e44bf4153c3d4f5",
+        "1199e5447157579ac0f2c4dbd34072c8b066b8aa51768007b2185bc2bb66632c",
+        "18ba3c28200c8e9cb4a54bbe44b25069664529eb4c033286b2bcd27b59347050",
+        "6f8ea17fd6aaf5134a053713f8c2175926c16da94f41e035dcda49a81fa7f0c7"
+      ]
+    },
+    {
+      "id": "sql-011",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 77.81199999590172,
+      "repeat_query_ms": 79.87280000088504,
+      "first_timings": {
+        "lexical_search_ms": 70.05660000140779
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 70.98299999779556
+      },
+      "top5_ids": [
+        "4d744f75e0d6c0c41aca4e8334d183a80b19763ac6029c8c85f7ca109d6618be",
+        "e7416205f17467112f15b1a5b6792e066757ff4650546a7b775a2eae8827b9e3",
+        "1bc765b13974a8ef3a8490503484e5b55cca86f04204976d78f42e799e97ded2",
+        "0ecea57fe5511ad03695344f47f395b01dea4ebf0216bbfe310ed39d90d39034",
+        "31aeb41c6fc29be5cf2e8a826f23e18a9828f4c99a1c4cdc3fc6785ac61f827d"
+      ]
+    },
+    {
+      "id": "sql-044",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 137.74130000092555,
+      "repeat_query_ms": 144.82249999855412,
+      "first_timings": {
+        "lexical_search_ms": 128.16799999563955
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 132.50889999471838
+      },
+      "top5_ids": [
+        "df1dff1e1202b4a9c43d1781796ca98b023537b44a9cabd9d50b951a8aa67772",
+        "ec73c2e83a9ca52db31e85266bfe77098cd271cbaedbde40f1a09c485b4f7b14",
+        "f45c180bd214726948e1fadd57701629f4ce79ec2b3c67a4dd0991083011788a",
+        "5081da75eb1a767eff4ea94d978e900008f81d38903bb9fc24fc662ae5d76c18",
+        "1f4ffe0cda4094915123dd30dbd50ad1cd6565de7509e82e973c8eca5e685e10"
+      ]
+    },
+    {
+      "id": "sql-042",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 103.05849999713246,
+      "repeat_query_ms": 103.39160000148695,
+      "first_timings": {
+        "lexical_search_ms": 90.63810000225203
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 94.73950000392506
+      },
+      "top5_ids": [
+        "7ac749c2c0290a178b8c78446f1601ea730d92809f02c242702d7db3c6b6bce8",
+        "5775acb6be982b8902ffba28eb1917ae10f5b372dc5a4ebf6129d01354926b87",
+        "47150f0ceef3b5f8db2877d5a2d37aadaff6ae0ab2ac5e6b78c3f616853de65c",
+        "139bc082b0f66abef7b252fef9e6b664a0c4a0108159842019d625a488ff447a",
+        "e7ee11246879b8cded6700d3b981adb1b765cbd053e856f635a7df2bf0cf4c50"
+      ]
+    },
+    {
+      "id": "sql-026",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 103.75969999586232,
+      "repeat_query_ms": 119.17060000268975,
+      "first_timings": {
+        "lexical_search_ms": 95.94089999882272
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 111.37409999355441
+      },
+      "top5_ids": [
+        "34a5993a53cd3b9992c1ba889989875141fd48c5791d029ab25b3ac00205a74e",
+        "96a91a735f144d7df9ee3964c7651a451b6872df0d41e6e190edb32e1f5c96c8",
+        "4dee21d5e3885845e58e10895d09f54f09c407835a8a491a49226b757bc63f84",
+        "e3548e89d6924f16d2ddd6dbf51cb2bfbae88a44fc2bb2776bdaad3dfd7fc84f",
+        "7f2e31061c35dec75ed00cba2384b5fa8fe64d56a9091f94c68bac8a9b02817b"
+      ]
+    },
+    {
+      "id": "sql-048",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": false,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 100.25350000069011,
+      "repeat_query_ms": 77.42809999763267,
+      "first_timings": {
+        "lexical_search_ms": 87.43690000119386
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 70.2471999975387
+      },
+      "top5_ids": [
+        "0b0e5baf516e74607943524bde6e17cb9c62d59b27378828f528d7ddb897ab3d",
+        "e15adbf383c3b39d33c3f73f6d1215e5fa24f84ff48f6fce2b88356f53f164b1",
+        "d3de056815774a74f2541a8db413ee1b7c653524049fbb02fb610dce9016c8d0",
+        "8c8891de8b1358156d8d75bb1770724c9cce4f0e0cd7d867d357f01a7702ddc6",
+        "180971d7783f5d718a652690fa06055aaf912cb95f85f6b6e114684e983d381d"
+      ]
+    },
+    {
+      "id": "sql-043",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 114.2007000016747,
+      "repeat_query_ms": 105.0115000034566,
+      "first_timings": {
+        "lexical_search_ms": 104.10219999903347
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 98.02979999949457
+      },
+      "top5_ids": [
+        "fb6c0796d0f5c4a9891bfaf0616573da3cbc5cb7ff906d2a6fd81527d8d9965a",
+        "b2002394e20d081cfcc35a7c911e8e16a632e65c7b443eb6f2ff0bfdf3c44e7f",
+        "fbb706aceb5d8d907e4ccfbc8a616ba555bac4db7a6c8a98b9cdfce1547a485e",
+        "cdd5f83854ff6144885c36c10b035a56c1d5997712a1bb62aa8ecac05ebf2931",
+        "ac0a3c125a74d90d133f0babc0ffd0c2239a43357236484cac523bdd2b689ec8"
+      ]
+    },
+    {
+      "id": "sql-022",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 76.18860000366112,
+      "repeat_query_ms": 75.68990000436315,
+      "first_timings": {
+        "lexical_search_ms": 68.89210000372259
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 67.99930000124732
+      },
+      "top5_ids": [
+        "8447cede985255b42a38a23cea9514db1335abb9d3d276dd5bd34cd22a95a4a6",
+        "a999f9d4076a934d3fd9508cf50a67d65372484c0173ca5ea1e5712094ca906a",
+        "f606bc1f398477da21b4634d7bdb810bdd8a88413df439037acbd53a6f3f36b3",
+        "c69a8b15f3d07c3c2cb31fbae2ec36dd435bd9a6fa345bb42626859dc3dea04a",
+        "156b04444bd9113337d76991ae235beb6b9e575000d513326dc2878a18374eac"
+      ]
+    },
+    {
+      "id": "sql-019",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 128.22320000123,
+      "repeat_query_ms": 128.2068000000436,
+      "first_timings": {
+        "lexical_search_ms": 120.61450000328477
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 120.33630000223638
+      },
+      "top5_ids": [
+        "bd491da3a81f0cc78fedbbbaac31bcdb54613309005fbe1172c190eb15aec198",
+        "6d4698f695b9c75c41c1fe3d7f50e592f2d0794ac15cdc83a88f5ea9931edd7a",
+        "18d684607d2f199510d2d414d5f326249d7b0af99fee83c370b4299dd230a83a",
+        "6680c24c53a71ad250d252fb05c76a189866e7f280c117f62ccfac06e50bfcc6",
+        "2e88a26c5e701e06d0157e113b6e21ade1898546435dd7054f72afbc6220752f"
+      ]
+    },
+    {
+      "id": "sql-047",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 84.64539999840781,
+      "repeat_query_ms": 88.03169999737293,
+      "first_timings": {
+        "lexical_search_ms": 75.7958999965922
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 78.42579999851296
+      },
+      "top5_ids": [
+        "ca4d112324d0c2a93a6dbc25a60cd0604f972f09a40bc16e1bc1aaaaf88d2e04",
+        "eee255fcd7cbb0137a18d03af3b6f58064e911267de0028b563b8d6a1578656a",
+        "d53094af0516bf867193d49f9f3892d3a40a53a09154e92f2c2c95b25276cfca",
+        "627a230e21f6cb3a855b70a6dbb9e292508648cddaca269f43675235e75115b4",
+        "1200381e5baebdc04301f28b74f9143ae9ec6d67074223c13d9371ddee8cd3d8"
+      ]
+    },
+    {
+      "id": "sql-001",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 76.15690000238828,
+      "repeat_query_ms": 79.36760000302456,
+      "first_timings": {
+        "lexical_search_ms": 68.06240000150865
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 69.78630000230623
+      },
+      "top5_ids": [
+        "816c75c8621c10fc3c7e75fa963e3874dd8da05ad8058dea84530d7796731d67",
+        "dbb1e45509854a7eb655f448b9706bfe0d1b57140ebb6c8e35d3f11ee4645ae5",
+        "4c7be2cc85ef1f8d25e1c42ccdb2f5c00d3ec92694e06af04c4a108ef2ab788c",
+        "614436216dfd36198a83be167f6b8ca02be62ee3ae7ab2441ffefeb55823d50a",
+        "5e9dde47f946d016be48cd4306e127887c28d7116fb07e19a85d551bec1a87b6"
+      ]
+    },
+    {
+      "id": "sql-040",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 136.1964999960037,
+      "repeat_query_ms": 157.1994000041741,
+      "first_timings": {
+        "lexical_search_ms": 129.28669999382691
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 147.5237000049674
+      },
+      "top5_ids": [
+        "53262ff4987efd344b7329af5af3e87400ed18f78c4439eaf96f407aa872a3f8",
+        "5775acb6be982b8902ffba28eb1917ae10f5b372dc5a4ebf6129d01354926b87",
+        "923f99660a256d2fd18e56dc096ba9b83144e5ce1c22b0cb38364e94ce8cfc50",
+        "dd5bea19c9ec882f1b3f1567031028a39798a0b2f936fac48db9c0c3ebe63c55",
+        "58fb8806743b0b39936004b850b9960a25e9b23c879b586f4ffb7f556193dcfa"
+      ]
+    },
+    {
+      "id": "sql-041",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 59.53430000226945,
+      "repeat_query_ms": 59.86090000078548,
+      "first_timings": {
+        "lexical_search_ms": 52.00600000534905
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 51.38240000087535
+      },
+      "top5_ids": [
+        "7fbbad1e4ecaa8ba739d8a24b6a88b488178e51340d11b830fb15ec14aa88d98",
+        "c03a5ba0d3d0b6875ca12694dd186c5a01684d406bdef6dade221a88aa068776",
+        "06d86ea5ea1ad2ddb3210eb2303f55b5d6826c7f678a04eb16af7ce4393405cd",
+        "fbb706aceb5d8d907e4ccfbc8a616ba555bac4db7a6c8a98b9cdfce1547a485e",
+        "8659e42b30f5d682274ea6965fc52f77908754550da8f0e6df9c2e78998fef54"
+      ]
+    },
+    {
+      "id": "sql-004",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 91.77849999832688,
+      "repeat_query_ms": 90.3377999929944,
+      "first_timings": {
+        "lexical_search_ms": 83.22269999916898
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 81.78860000043642
+      },
+      "top5_ids": [
+        "83ba88a1db10fcd8a201aec42904b0ece4a7f044888301ed6208d1889f34fdac",
+        "9317ca9c515cc65f0e6ea8ba2011de42ef2cccb351d491faeb2499ce06a1d24a",
+        "d254f8d77ad253355abea4d58cf640355c00e2b3c6c4b3d16883c0ae20511841",
+        "265630da3095ca8013c7c91a99ad10861a07df8c4a5fe866ae18663a38740dcf",
+        "bae64e4819419e7748dd62f0b5f424321ef1db51dd7ecf4e5b09ab49ad8375a0"
+      ]
+    },
+    {
+      "id": "sql-009",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 118.4581999987131,
+      "repeat_query_ms": 115.89269999967655,
+      "first_timings": {
+        "lexical_search_ms": 110.50740000064252
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 108.28870000113966
+      },
+      "top5_ids": [
+        "414aef610523f15f42974bb72175062a773b5d6cdc37fa308a9d865302039094",
+        "f1984802e769cf94b621daebeb1d2d7c3bb7d308b57d1b570cf44bd95b9dfa17",
+        "ff88c3c0687a438ecfe632769650a5c4e49a79a15397b1f7651bea4ff7abbfdc",
+        "5ca4ff2408902a8300eee7c2b7dc58688bc1c7a4368f413b8406ccb9d2cf779d",
+        "76a0b3570e1887ca483f87b34243868f0bc67933d1292ea8d6774b312e7d5162"
+      ]
+    },
+    {
+      "id": "sql-014",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 76.15540000551846,
+      "repeat_query_ms": 72.22019999608165,
+      "first_timings": {
+        "lexical_search_ms": 68.32319999375613
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 63.46329999360023
+      },
+      "top5_ids": [
+        "6ef032a771e8f5f0459815f1e0f6920cebd2aa9639c11cce639f840abfb4e892",
+        "ef9a69db0f0e0311e6334fb85aec0dff9c26e083e5da97d5000db14646cd7c45",
+        "9b818e86b90f0822f20f20fc5984f66ec5455907b33f4b764e7e035667c54e14",
+        "6680c24c53a71ad250d252fb05c76a189866e7f280c117f62ccfac06e50bfcc6",
+        "4fe5e9aac20e60082cc12c5843b0746e55e68511ce5a8d2375bd2c50d62a8b23"
+      ]
+    },
+    {
+      "id": "sql-020",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 90.80930000345688,
+      "repeat_query_ms": 94.1607999993721,
+      "first_timings": {
+        "lexical_search_ms": 83.22670000052312
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 77.51529999950435
+      },
+      "top5_ids": [
+        "a9bfa12785f9199da8e26ba952e75e3f2efad411706a6fc96d5443b33b21673d",
+        "632c8e74e79d40d75caa9a2a4b8c44ade3c90fadf1cdd7e4c2066408e13031b8",
+        "18315c8c260faa1f24b23a0aefcfa367a2c62e952dc4df8685484f9a37aa0328",
+        "7fb4054c00c28e3dee181d450c648fbe5e83d791945b591469a92aaa16c57a67",
+        "16f4979a872dba121e241ead4f8435a683c7f6717f372d61415d1093239a36ed"
+      ]
+    },
+    {
+      "id": "sql-003",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 118.41909999930067,
+      "repeat_query_ms": 115.62200000480516,
+      "first_timings": {
+        "lexical_search_ms": 110.68369999702554
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 108.46840000158409
+      },
+      "top5_ids": [
+        "f1f0af0f22d278a0974111da0bd6efc351a3a764a04a0049c105b1089f6b444c",
+        "2d8d7b5eb2feb5717741f89e3d2ef83234bed359c69f0f7157c54e4abaaefe43",
+        "db99bf010334300b37d33dc4018a3442de2918c79475b8bc9d176ad239b65dce",
+        "b3ee2f9172346731ae0a5ea7a307d18b21891735770dd2c71628fb46014d10e6",
+        "9317ca9c515cc65f0e6ea8ba2011de42ef2cccb351d491faeb2499ce06a1d24a"
+      ]
+    },
+    {
+      "id": "sql-015",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 100.48519999691052,
+      "repeat_query_ms": 100.92129999975441,
+      "first_timings": {
+        "lexical_search_ms": 93.40679999877466
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 93.0471999963629
+      },
+      "top5_ids": [
+        "e4c69b162ef27d69686b7fcfbe0ff4b88b4d83572db58bb0621925dfa3a1cff5",
+        "67899c2cbb207d0a1a4378a85ffc47bc4efa3d1ae2b36edc577dbeb97d7b1e49",
+        "30f9208e67462f066860cc9af21ef00e4f75244267c2171d9c79b473558632bd",
+        "df60829ee47bff9f221fed9411296dea5d266fb403fe063e939d95e347e6cb00",
+        "f0f6ede9a9325741506811307b8cb21dbf5e33b5260cf9c3b1c5cbaea293c748"
+      ]
+    },
+    {
+      "id": "sql-007",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 144.768699996348,
+      "repeat_query_ms": 143.43509999889648,
+      "first_timings": {
+        "lexical_search_ms": 137.94210000196472
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 136.37930000550114
+      },
+      "top5_ids": [
+        "7aa291ddc893a59393c42478dd7010cdbdb7e4c9cf8e21cc156c0bccc62bdbb2",
+        "5737fb1149f1f3f2403a7ba214e687c985930968d159665c431089b5b1ddd1e3",
+        "ddf0fe0d9b7ee526f8b83d1bf1b0cfa782dc456e54533fe5b374d219f7c2cf29",
+        "12e55921d14c707a75b049795e653b490f38e8250f4ce060d8021d59c253e5b6",
+        "57d6a6c6ff29b1dd8d71c27fc5c8487c9ae4cd29a03b1e43be4be472fac54674"
+      ]
+    },
+    {
+      "id": "sql-031",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 88.28609999909531,
+      "repeat_query_ms": 109.24530000193045,
+      "first_timings": {
+        "lexical_search_ms": 79.18079999944894
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 98.16359999967972
+      },
+      "top5_ids": [
+        "1fdaab1d3e8da118ecda8b262bd7bc66cb82afbc31fbaf20dad488e3ec9a153e",
+        "e2faf423899ac5b0cbb99033b0f9d94e3d9b730b999a84402c6915557f3f5a09",
+        "ca23c5fd626f959bd274371d0ace33e7669a360c88aa3c106e44bf4153c3d4f5",
+        "1199e5447157579ac0f2c4dbd34072c8b066b8aa51768007b2185bc2bb66632c",
+        "18ba3c28200c8e9cb4a54bbe44b25069664529eb4c033286b2bcd27b59347050"
+      ]
+    },
+    {
+      "id": "sql-021",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 70.82000000082189,
+      "repeat_query_ms": 71.30110000434797,
+      "first_timings": {
+        "lexical_search_ms": 63.62079999962589
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 63.81939999846509
+      },
+      "top5_ids": [
+        "630a3df38791d7078689c70d2b3ad8105b9d2ecf04008e2561548b8051724c84",
+        "ef3af3b7dbb413cdcb81507c302da6d650003dbdfaae6c903a73354fea816abc",
+        "4a6eb3b5fd5fc4da9f945665084170f009784156388299d74e6d81b32f2b4ab0",
+        "18315c8c260faa1f24b23a0aefcfa367a2c62e952dc4df8685484f9a37aa0328",
+        "8025408a1305e7bbdf8b1ea5aa4b024d201300a45cd25ac09a62f5aff0c1049e"
+      ]
+    },
+    {
+      "id": "sql-033",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 58.806799999729265,
+      "repeat_query_ms": 55.02439999690978,
+      "first_timings": {
+        "lexical_search_ms": 51.688799998373725
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 46.71450000023469
+      },
+      "top5_ids": [
+        "23415558994992cdc6c56dc1ede473182c039c2e27595e865e08cd23a5a360d9",
+        "0f922794e28dc7107dbeacdfbcbee48baa776942053e1bb0c047831b9fdf5f0c",
+        "4ae8447a2bcca57a70cd47f5510b11a68c098e331cbaa01de058b6d532880273",
+        "f2d751653c5b7529031d48e03837d08d423c4823db86eb245e389b07c76b2554",
+        "109357b72c23e8dfc33b234564e084a2a7c19c6880e1ff54c796614c74f070bb"
+      ]
+    },
+    {
+      "id": "sql-050",
+      "split": "dev",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 97.26999999838881,
+      "repeat_query_ms": 93.85959999781335,
+      "first_timings": {
+        "lexical_search_ms": 89.44689999771072
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 84.69209999748273
+      },
+      "top5_ids": [
+        "95b593b83a8041263660cd02588325525d128efa4477f4f2ad48301bace7d78c",
+        "b833ae28505888b1a34e37176f23a291dd59a28f96b97f219db7c5dcd405caa5",
+        "8540275b6c13516b935525bae8f5c83f7c4ea7b456bd8a9424f6e9f2257a4cad",
+        "1be7bdf3222213b3e71ca856b3ab274001caee212cabe7c915110ade4d123412",
+        "31e663a9453c797aa463f1d0910879fc8fe8d093e19835f3c4923aad12eddaec"
+      ]
+    },
+    {
+      "id": "sql-046",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 136.59550000011222,
+      "repeat_query_ms": 129.44350000179838,
+      "first_timings": {
+        "lexical_search_ms": 129.0891000026022
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 120.78869999822928
+      },
+      "top5_ids": [
+        "b9ebd880b5730cd7045040c71e2317eea6ee586e032ddb394d3245d8a85b670b",
+        "079a9e06b2adaec26a00283bf2620670e26567ddaee4609373d8d9b6ef3809fc",
+        "0d8c30e4a9895a90a17b69fbaa1c7fe8dd1a4a7c18dff8a65ad9839945cc282e",
+        "67052bf0a19ac3a7393aa0f90d3bd55e4a20e34d053f8cb20f5c9eb647d939b5",
+        "2d539985a819760cd588f5ac2d882a27f506d6baafa6fff71821c435dd707ba7"
+      ]
+    },
+    {
+      "id": "sql-006",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 85.49130000028526,
+      "repeat_query_ms": 81.5740000034566,
+      "first_timings": {
+        "lexical_search_ms": 77.76500000181841
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 73.57870000123512
+      },
+      "top5_ids": [
+        "6ffce0b14664db756e1d8cbeec1088b05cbe897190271674962bac3710efe28f",
+        "c5204f40338dadc6160b31a4ebbe93ea828edaae5e57af157e8905a47195ff82",
+        "e8ee2452c53b1019bd8e6d0e432dd7d468e5271199541708db3cd0c7aee81eef",
+        "416218e8290e708639136e6762d3517c8ec16f3116d85b69eec12f98a6189136",
+        "7bc86331f9a4e2afa558f39e3e28451deecb16d3db77292942c36617501a1cc4"
+      ]
+    },
+    {
+      "id": "sql-018",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 89.19519999471959,
+      "repeat_query_ms": 90.8149000024423,
+      "first_timings": {
+        "lexical_search_ms": 81.58679999905871
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 81.04129999992438
+      },
+      "top5_ids": [
+        "c43e810bf62bc65c50b171037e2d658cb9024d307c91e83a6f15d34ea3d282ad",
+        "18d684607d2f199510d2d414d5f326249d7b0af99fee83c370b4299dd230a83a",
+        "84b77d7c84646225f3077a91c9f279c6af08f9e6424906c22eb8a932b0085b0a",
+        "4f6b92c43808cf6144490237d603fd3039267c16a0ae32a52df229de08c7690e",
+        "52a8d5d4a73be1fad0bc1987bf4a87849e26c6cad4f56577304994339b2c4a83"
+      ]
+    },
+    {
+      "id": "sql-038",
+      "split": "heldout",
+      "mode": "lexical",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 60.64899999910267,
+      "repeat_query_ms": 56.878699993831106,
+      "first_timings": {
+        "lexical_search_ms": 52.81809999723919
+      },
+      "repeat_timings": {
+        "lexical_search_ms": 48.231200002192054
+      },
+      "top5_ids": [
+        "ac382e48ec40240019cce2c239925c23ac9d00316a8326af05d426e272dbd7fe",
+        "139aaabdf939683958e4427a1e3d3278f600ea2429988380acc70bb1b4c8c207",
+        "10536338cbc06f8096a864d3e7a35a5eeb992013770238e0ea6f7aa2ac35fa7d",
+        "8079af39611f069b76f1e86866f8c949833c48fd94f0788fa4887e2270be6cd5",
+        "9b7254b17f309be4947dada95d08421d65af19360aebc78fbd94fe983fb0c70a"
+      ]
+    },
+    {
+      "id": "sql-016",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 233.1800000029034,
+      "repeat_query_ms": 8.939800005464349,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 222.8774999966845,
+        "vector_search_ms": 1.3149000005796552
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.458200000342913
+      },
+      "top5_ids": [
+        "67899c2cbb207d0a1a4378a85ffc47bc4efa3d1ae2b36edc577dbeb97d7b1e49",
+        "30f9208e67462f066860cc9af21ef00e4f75244267c2171d9c79b473558632bd",
+        "df60829ee47bff9f221fed9411296dea5d266fb403fe063e939d95e347e6cb00",
+        "6680c24c53a71ad250d252fb05c76a189866e7f280c117f62ccfac06e50bfcc6",
+        "e4c69b162ef27d69686b7fcfbe0ff4b88b4d83572db58bb0621925dfa3a1cff5"
+      ]
+    },
+    {
+      "id": "sql-005",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 153.85999999853084,
+      "repeat_query_ms": 8.763899997575209,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 142.26309999503428,
+        "vector_search_ms": 1.6785999978310429
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007099995855242014,
+        "vector_search_ms": 1.537099997221958
+      },
+      "top5_ids": [
+        "5964abdd6fc1a6cc10de8112cd157e1098322689b9a59b1feeff1564603ba07b",
+        "eb456f7e6c4ca44f5e75fdd6382aee5476f35b821245a63cf96bc91218adb047",
+        "217683254a97b5bd7f325b936383ad5b19ffb742a002f220ca9a743b8b6e7c6e",
+        "f44277caaf01a86df897b63cc6ae31adc0baf600f80686de134bbd8ff8fb7d62",
+        "9b9c132d382a0dc284b4c803a4e2ec2d0046bf92d936bf733c3d5cfbfb3601f0"
+      ]
+    },
+    {
+      "id": "sql-034",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 144.5469000027515,
+      "repeat_query_ms": 9.099399998376612,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 134.76380000065546,
+        "vector_search_ms": 1.6780000005383044
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006099995516706258,
+        "vector_search_ms": 1.3753999955952168
+      },
+      "top5_ids": [
+        "889edd88653351bbfd0e58fd285a88771237ec2089fbac599698b9c02f47406d",
+        "7b1957c9b4375bc166f9d64b229b21b8aceefb1128755ab02cdde9a0a3f9c3a2",
+        "f1ce410fafed343863226c28ad7c6e9963521aeca93290bd162529f6e4c29368",
+        "ada28f04b62c7f84533d35c09eacd5142c247eb6a438488fcfee4a4bdd4b0f85",
+        "a7397277d72ccb1bd630ac63df7f60f95049ba775a4136c6cab973a1d4acc167"
+      ]
+    },
+    {
+      "id": "sql-049",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 136.40409999788972,
+      "repeat_query_ms": 10.86050000594696,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 125.94150000222726,
+        "vector_search_ms": 1.6722000000299886
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.010299998393747956,
+        "vector_search_ms": 1.8148000017390586
+      },
+      "top5_ids": [
+        "930c9b045df9db34ba0f7ec5504164646491d4f697f72bea2d12c8fef117e8af",
+        "177bc6e9fb39d676a8c5c78a8541ed14703df27a3da896c61f883aeffbed38d0",
+        "5810cdd8d4aaf252e6e7316c81a63967f9af4221a8ce5ca3c8c72ddab2e9fe96",
+        "5e424c2ddc57f90dc907523313a0af0eaa0a44963c9cd6c183112fde87e1c160",
+        "3e6a8ec628d80fca850991c1d01ac681d9a5ee931d7b2331b7b4fb44f95eb5b9"
+      ]
+    },
+    {
+      "id": "sql-008",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 145.03100000001723,
+      "repeat_query_ms": 8.824900003673974,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 134.59850000072038,
+        "vector_search_ms": 1.3640000033774413
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006900001608300954,
+        "vector_search_ms": 1.5285999979823828
+      },
+      "top5_ids": [
+        "8e2f48958b8f3c6f79d9216dd96164f1c0941695d0b81c2b8589d96e384eb177",
+        "0d91ddbd247b1d06fe21048997feeaac7de546c97d2e1fe048f7f327a9e12c9d",
+        "91603e488825b9d4f0265b30e6d419f6cc9cd1ba7aea71a4a84d0a3f20e54367",
+        "b2e130492b2fb15e9bcbbd4f6d219a4e5a99ad55b1e4d77f9c577647231918c9",
+        "145ab7a08fe9f54306a1002916b69904048f70e71c45d39a79c95f56a694ad23"
+      ]
+    },
+    {
+      "id": "sql-028",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 163.3771999986493,
+      "repeat_query_ms": 10.223999997833744,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 154.2055000027176,
+        "vector_search_ms": 1.2850999992224388
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006300004315562546,
+        "vector_search_ms": 1.247000000148546
+      },
+      "top5_ids": [
+        "be17ff97f4394760f95ed2773585cb5a1508bc15445055195e060ceed0c2797c",
+        "3845d412a99fef199685bd1beac0777e1a9af726812c9ba6b718c922e4cbbc14",
+        "2fff8f06e232f69683ca6edc016c96e216d57321cd4ce0a23890f4f1169cf401",
+        "14371a50f20f010e42a61912624b88d7789f3145951566f33718da2449d47549",
+        "d59fe35c3047b6941adceee712753be5e1100860c0c3833bd4ee9553742b9015"
+      ]
+    },
+    {
+      "id": "sql-012",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 165.24670000217156,
+      "repeat_query_ms": 8.850999998685438,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 156.67670000402723,
+        "vector_search_ms": 1.3470999983837828
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.4497000011033379
+      },
+      "top5_ids": [
+        "6203f795b1cbe3bd72403af332382437689257a73157fdf636b5a1d7b86d14f3",
+        "1ebab00fba46fc86a84a625ae9e1d82162ef65370c4ba2be2a5d5233049b75c2",
+        "d150c147fe45f481bd0573d541d5f9fb2f802d117d314167c379af784b30c84c",
+        "ef649c500fefd613dc81d07314c4d9b565ff13d92a902704aa7af277af02d061",
+        "e7416205f17467112f15b1a5b6792e066757ff4650546a7b775a2eae8827b9e3"
+      ]
+    },
+    {
+      "id": "sql-035",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 156.0645999998087,
+      "repeat_query_ms": 8.815900000627153,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 146.1596000008285,
+        "vector_search_ms": 1.9935999953304417
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006999995093792677,
+        "vector_search_ms": 1.4690000025439076
+      },
+      "top5_ids": [
+        "aaabb3089b2d851b1cfe354d7bde2351b507ddc4815423ce033808cfc1c1a935",
+        "0f5b0a13a850e3e140718c841206e48562841ecf526bcf1b8ff465d8965fe8f9",
+        "bde5a265998452196a52e3957a14c532a8010b15efa1dc33144a2e7e41c61794",
+        "4a677a94ee3908a3f06f708c3f14f096f12c4a1637a41ea6ab6756a18b006d73",
+        "d2c150600b26ff3f521a363dbfbe1cc5e078cc2198237705889f57677cfbe105"
+      ]
+    },
+    {
+      "id": "sql-037",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 152.1941999963019,
+      "repeat_query_ms": 9.819600003538653,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 142.55989999946905,
+        "vector_search_ms": 1.3594999982160516
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.6609000012977049
+      },
+      "top5_ids": [
+        "6496df02741a96d6653ae1e15315d30fd63b323f0778b6dde6fdf528545fa902",
+        "0e2c0e28a432f37b592161cfb04c4f71264023c97612f2c24463c5ffc365d040",
+        "dc3872e2c6fc96c316de63920600b753f39137ad076b14b869384aae8379f6db",
+        "f9b8eab1d67672006989d1bb385ffc186d2645814e01df8fed7dd057906a3619",
+        "25bbb7918c67800bfc7734acb0f50717e0ae45b1021899eed3da64aefecd356a"
+      ]
+    },
+    {
+      "id": "sql-024",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 145.53950000117766,
+      "repeat_query_ms": 11.821800006146077,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 136.61680000222987,
+        "vector_search_ms": 1.9114000024273992
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.008400005754083395,
+        "vector_search_ms": 1.4674999983981252
+      },
+      "top5_ids": [
+        "aee1e5a54e477d8efc11b813e6f6b675286c5b4f2738381c591d39b513a6e297",
+        "b797ad219873193c40cb75bb682c987426cb550941f23fbd64b9555dddb09c92",
+        "da56425debacf4b7d7acd635aae9aeae3c8b2e36aecf7bb1f2b401bf4ebfc745",
+        "58071623e6dc3fb0bc4595fea4083e99fc29f60499eb8d51948899f8dfb4d797",
+        "018c5c039b7f69dbba3e14972ada1c4caa67bd9fcdcca0568b6220d8ed779641"
+      ]
+    },
+    {
+      "id": "sql-023",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 147.66560000134632,
+      "repeat_query_ms": 11.968200000410434,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 135.05829999485286,
+        "vector_search_ms": 1.3227000017650425
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.012999997125007212,
+        "vector_search_ms": 1.5985999998520128
+      },
+      "top5_ids": [
+        "156b04444bd9113337d76991ae235beb6b9e575000d513326dc2878a18374eac",
+        "e850a11f19675ec5a68dd3bcc46863685030ff9bb4b3a0d65cb9e4d48dcb65e8",
+        "a999f9d4076a934d3fd9508cf50a67d65372484c0173ca5ea1e5712094ca906a",
+        "808732b45f4005f66cd8a666bda57e07d08dd17aca4bcd80f65413a4b8072f80",
+        "1bca18658f2ca81fbe593df62e86ae7f95b97d10fc9fb3c858d41d409622530e"
+      ]
+    },
+    {
+      "id": "sql-032",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 176.88020000059623,
+      "repeat_query_ms": 8.685999993758742,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 166.8396000022767,
+        "vector_search_ms": 2.2159000000101514
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007200003892648965,
+        "vector_search_ms": 1.4780999990762211
+      },
+      "top5_ids": [
+        "9f39c396df7a1d4915e7848dc5588ae72b3d90409dd0f8e333e61fdb92ad92ca",
+        "1bcf72a8878dae2017dbbcf23278985ff29a91f7abffb4c07f9023270084b76f",
+        "b2ba6da561a124fe6a1627e80a17f1c7c52efc01f5a652d5c1185655c41288ac",
+        "a7c08a0a1b594cfbc5ebaa8666dc9e25da21de25d03923d63e6a9992a3ca75e8",
+        "7b1957c9b4375bc166f9d64b229b21b8aceefb1128755ab02cdde9a0a3f9c3a2"
+      ]
+    },
+    {
+      "id": "sql-045",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 153.68940000189468,
+      "repeat_query_ms": 9.722900002088863,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 144.5830999946338,
+        "vector_search_ms": 1.3281999999890104
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.7258999941986986
+      },
+      "top5_ids": [
+        "658d3b4e46638a08ca79cc4f9f78b618402881567d2d8b34e3ec8b948a2c5a99",
+        "5f6094d2b6ea874cb12ac2e610f6b4d1f4ecd2517e3d92ebaa65a1f8b3768e78",
+        "1aaa4941f9077d00fdae1fb3ebae34b1dbdf4bed76158ed07f199845b8cd9d9f",
+        "f73bf73feac602cd6b2f3c7571ec272b7dd296cbba24344e2f8b6880812bdeca",
+        "96a4e7ca6aad759876d588532c0e68fc34bb74467eaf39649f83b7eafe6b64fa"
+      ]
+    },
+    {
+      "id": "sql-017",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 163.4293000024627,
+      "repeat_query_ms": 8.880900000804104,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 154.79899999627378,
+        "vector_search_ms": 1.5911000009509735
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006900001608300954,
+        "vector_search_ms": 1.4411000011023134
+      },
+      "top5_ids": [
+        "0d1f3143f48edb2da4b4bb89a712f2f3bfe980e18ea963f9eba5df57bb97334e",
+        "085c02ba2fa5ffdaace9d754aab01103973c7ca6983446b4c2155950a28bb862",
+        "4845475561abb1005a196ab07cb2c552d468a23a8f01b77c35cd2b45bed5724a",
+        "63049edcda208db900cde0d5ac8220306e67476aa691d80d2a255aeee9cb66f4",
+        "6cad2c2825ea870def046eb850f3ed78fd76a0fbccd8177870426e052eaa6dbd"
+      ]
+    },
+    {
+      "id": "sql-027",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 164.9080999995931,
+      "repeat_query_ms": 10.185799997998402,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 155.4028999962611,
+        "vector_search_ms": 1.2751999965985306
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.010700001439545304,
+        "vector_search_ms": 1.5974999987520278
+      },
+      "top5_ids": [
+        "0c4becabca9aa43ec25ee553eebdc749219ecbbfcaad17fee4e7664ebf8022f8",
+        "37cd0c0f8ba73af8d974210c3a49c1f61d000de5f47cdac9c26cb5ad70ee9979",
+        "a20d4161d7657f51caa2385ade47c66adca669203ace52f5ef193795e8ab2c3f",
+        "4bfbaa9d03eb6a006eb3c298a3e562ba2f97658b82a7b6fd80c1f452e26ae18e",
+        "9699e7c1d2e210fd66f4d0327f654eaaeff3c25996a6b45e55aa4497e90e0ca9"
+      ]
+    },
+    {
+      "id": "sql-039",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 146.5740999992704,
+      "repeat_query_ms": 9.567999994033016,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 136.65640000544954,
+        "vector_search_ms": 2.0817999975406565
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.008700000762473792,
+        "vector_search_ms": 1.4540999982273206
+      },
+      "top5_ids": [
+        "ba3941baaaa468c82c395b5f20337f45a319e765f76f7c1a9e2fca22fe4f302b",
+        "69cc9bac51851d44b3c332741eadbb2a5f6b4030482b6082c87e03e7c65d8431",
+        "52d4a6956e53ce392bfcef8df64a6ed380d47902c86828719552cee8ef85141d",
+        "ab07d085197b81a01879bd53545748800991aa855469ad9cb7be1da0499439ec",
+        "990086109b912ec0ccaa17301482708264794c34a38e8c48e6575875d60bd735"
+      ]
+    },
+    {
+      "id": "sql-010",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": false,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 150.3316999951494,
+      "repeat_query_ms": 14.666100003523752,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 139.87510000151815,
+        "vector_search_ms": 1.3209999960963614
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.013999997463542968,
+        "vector_search_ms": 2.4724000031710602
+      },
+      "top5_ids": [
+        "a11241f5efdcb7e4e843c375454edde951570d628a843c051e7e65b4ffe44e45",
+        "afd2f4959372d4f728d4d89fc52f7b3bd713ee42225a7629c744d72c91f4a142",
+        "dcce1d208d348a1133033fa0b0d0176eeeeaf8059399deb6c56161143b27d24a",
+        "2e1387a03d57344c6727067f38796ba25c517b5a535a8be3cc69f3a4a1cddd32",
+        "8a1b38a046ed3d3f1e9d72a4f751e41868937002642456aaf5a8467ded3a95b8"
+      ]
+    },
+    {
+      "id": "sql-025",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": false,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 144.7818999949959,
+      "repeat_query_ms": 9.175400002277456,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 134.2482999971253,
+        "vector_search_ms": 1.2969000017619692
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006099995516706258,
+        "vector_search_ms": 1.3524999958463013
+      },
+      "top5_ids": [
+        "48b783ee8ff48a97a0b21ee6e7746e3c75ce5406830842a6b34f96c9f4ab3e00",
+        "6c937ad50988810a9742877400275abff6c7ef18547d78435ff6ca383c2ee608",
+        "db143405780fbba3b9722a0bc48f26aa820e96beacad4b41af7a4dec77d88187",
+        "3ec40c9c6223b8ccf4e8a5311dc5af7eecb72bc55119955d3e75b866e4dc568a",
+        "9a2cd81f306ce4f18eb34582c0d20ab37637c0849ab63723f1e57a86a5c82bf0"
+      ]
+    },
+    {
+      "id": "sql-013",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 229.86360000504646,
+      "repeat_query_ms": 9.176300001854543,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 219.86820000165608,
+        "vector_search_ms": 1.3670999978785403
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.010000003385357559,
+        "vector_search_ms": 1.7326999950455502
+      },
+      "top5_ids": [
+        "eca64a092fead6f58cdd88f7c0aec7a05ba3a556811d8078906ea6cfb92f0d95",
+        "94268c00c31a11b08607e2ccb6274761174bbd1b5445ca07ec6d0ed70517f112",
+        "e7416205f17467112f15b1a5b6792e066757ff4650546a7b775a2eae8827b9e3",
+        "d150c147fe45f481bd0573d541d5f9fb2f802d117d314167c379af784b30c84c",
+        "d6c7867cc8983d801162ed47d39c680db40b4e0d16ece9bba57641b42855f885"
+      ]
+    },
+    {
+      "id": "sql-036",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 165.41999999753898,
+      "repeat_query_ms": 8.696499993675388,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 156.10790000209818,
+        "vector_search_ms": 1.9650000031106174
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007099995855242014,
+        "vector_search_ms": 1.509900001110509
+      },
+      "top5_ids": [
+        "0e2c0e28a432f37b592161cfb04c4f71264023c97612f2c24463c5ffc365d040",
+        "90472be1bd960551e3bbc2e23347944ee84be9523d14530ed093f84c1be33d29",
+        "9b7254b17f309be4947dada95d08421d65af19360aebc78fbd94fe983fb0c70a",
+        "d6edaf8b0a03159b620db5c7286d3da883b0446154b3c3240cf500f8b69f4845",
+        "f9b8eab1d67672006989d1bb385ffc186d2645814e01df8fed7dd057906a3619"
+      ]
+    },
+    {
+      "id": "sql-002",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 149.4548000046052,
+      "repeat_query_ms": 9.555899996485095,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 140.11710000340827,
+        "vector_search_ms": 1.428800002031494
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007099995855242014,
+        "vector_search_ms": 1.3442999988910742
+      },
+      "top5_ids": [
+        "c8ff24917ea2bfcadcb772f9f093a8ec152d0441e1de8a32c20fbcd07e0d8b1e",
+        "c0df76cc70ef8ab6b03776fc7a1f6daeb7576cd6d642a888d90e17ffe01a4797",
+        "95a8080d663ea149ef2cc3f335f497f3bc3aa126201ef851932ab5c87dcae703",
+        "9061fcc161d66bdb23dc606f2920c1ec4d8fe29803c65aad876b6beeacea28b1",
+        "e911550673a1aafeeaf7a3adc029cada97d01e8ac6e4fd339f8e1d43b8e20414"
+      ]
+    },
+    {
+      "id": "sql-029",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 150.25669999886304,
+      "repeat_query_ms": 8.687000001373235,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 141.22919999499572,
+        "vector_search_ms": 1.5456000037374906
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006800000846851617,
+        "vector_search_ms": 1.3528999988920987
+      },
+      "top5_ids": [
+        "d8351be5478d97796af5cb0da94f60a72850fb58b73555e1cb423303619c7e9c",
+        "0740b7f31fd378e6bd8a42c24247a625204e6915a6a1130c9a9f980ce84a43ff",
+        "85e31d463002f54c0efb105205f63598bdc1523fe4f68e73c185e34ef1831bdb",
+        "d66595eb37fda0f54d12a45b77b204feaa8a2c580774458afc51c9a68207ebfa",
+        "e984a3dc72c2bdcbc58ae0d61e860b0ff763be0dfffe51b844918c1668639401"
+      ]
+    },
+    {
+      "id": "sql-030",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 146.47619999595918,
+      "repeat_query_ms": 9.01470000098925,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 136.8187999978545,
+        "vector_search_ms": 1.5093999973032624
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006000002031214535,
+        "vector_search_ms": 1.7829999997047707
+      },
+      "top5_ids": [
+        "0edb9bbae3f485c37dd0223cab97fe25bc26537916de63e9b78703e87d4c1e76",
+        "ca23c5fd626f959bd274371d0ace33e7669a360c88aa3c106e44bf4153c3d4f5",
+        "e2faf423899ac5b0cbb99033b0f9d94e3d9b730b999a84402c6915557f3f5a09",
+        "1fdaab1d3e8da118ecda8b262bd7bc66cb82afbc31fbaf20dad488e3ec9a153e",
+        "0f73db5c9ba9af07bc7bd2a8214ddf21ceee30396655b35921d944cc44d196a9"
+      ]
+    },
+    {
+      "id": "sql-011",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 137.90760000119917,
+      "repeat_query_ms": 8.410800001001917,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 129.4841999988421,
+        "vector_search_ms": 1.351899998553563
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.005900001269765198,
+        "vector_search_ms": 1.2485000042943284
+      },
+      "top5_ids": [
+        "4d744f75e0d6c0c41aca4e8334d183a80b19763ac6029c8c85f7ca109d6618be",
+        "e7416205f17467112f15b1a5b6792e066757ff4650546a7b775a2eae8827b9e3",
+        "1bc765b13974a8ef3a8490503484e5b55cca86f04204976d78f42e799e97ded2",
+        "af90161c6ca64b31281b24c06ecbcc488b096f29eb837815e88d42cc8bd35329",
+        "6203f795b1cbe3bd72403af332382437689257a73157fdf636b5a1d7b86d14f3"
+      ]
+    },
+    {
+      "id": "sql-044",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 150.61969999806024,
+      "repeat_query_ms": 9.592199996404815,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 141.38110000203596,
+        "vector_search_ms": 1.3402999975369312
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007100003131199628,
+        "vector_search_ms": 1.332100000581704
+      },
+      "top5_ids": [
+        "4b07c1d11c91ca84eda59213ddcf81b7e00195e4c338df4dec7fe30f2b569b85",
+        "df1dff1e1202b4a9c43d1781796ca98b023537b44a9cabd9d50b951a8aa67772",
+        "a037df03a03d580f75b3af0344e86879ea977f37fda2112e26e4510d197274f6",
+        "cfaa339c2bf704bc5fe801c0a92b90440fb6c27297b270cb2d938f9b9e369624",
+        "8c9337754b80f9445e8ae4416847b326cfbe6a3a52c7ffa44d799a6ea6eb303f"
+      ]
+    },
+    {
+      "id": "sql-042",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 153.75209999911021,
+      "repeat_query_ms": 10.117099998751655,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 144.99310000246624,
+        "vector_search_ms": 1.367600001685787
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007200003892648965,
+        "vector_search_ms": 1.5416999958688393
+      },
+      "top5_ids": [
+        "47150f0ceef3b5f8db2877d5a2d37aadaff6ae0ab2ac5e6b78c3f616853de65c",
+        "0bc077adede670e669c173ea80e29c3b2714855ab2b0ad59ac1dce2077a3f149",
+        "7ac749c2c0290a178b8c78446f1601ea730d92809f02c242702d7db3c6b6bce8",
+        "46d50e2bea37fe9f4489acb908b5502db9fd7336432c735573eff9e33024a596",
+        "c68e59bf2f60855bd19736a968ed9979d4d241f84815c3edf351baeb82d31136"
+      ]
+    },
+    {
+      "id": "sql-026",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 183.67679999937536,
+      "repeat_query_ms": 17.87460000196006,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 174.97970000113128,
+        "vector_search_ms": 1.293900000746362
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006800000846851617,
+        "vector_search_ms": 1.3124999968567863
+      },
+      "top5_ids": [
+        "96a91a735f144d7df9ee3964c7651a451b6872df0d41e6e190edb32e1f5c96c8",
+        "4cb7757f06d6981a4fdf9dd7a030464c6c0556b92547449fe93ff4b5075469b0",
+        "34a5993a53cd3b9992c1ba889989875141fd48c5791d029ab25b3ac00205a74e",
+        "85413d7f790a7cf5a46b24d091d81025b10abe1c34d3bbe7602257303e7fb5ea",
+        "15cbbd2e4f7521089a8ecf0c3b1857fd3060f9219c59a72c913b4e9ea989c3a4"
+      ]
+    },
+    {
+      "id": "sql-048",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 137.72290000633802,
+      "repeat_query_ms": 10.0285000007716,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 129.13199999456992,
+        "vector_search_ms": 1.5330000023823231
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.008000002708286047,
+        "vector_search_ms": 1.668600001721643
+      },
+      "top5_ids": [
+        "8c8891de8b1358156d8d75bb1770724c9cce4f0e0cd7d867d357f01a7702ddc6",
+        "180971d7783f5d718a652690fa06055aaf912cb95f85f6b6e114684e983d381d",
+        "2293f4d92394d298191e322b6fe337440569510901d29fac2ab33229b96ca5f8",
+        "f693426eaaaf591f08229c786b30d831f096272142e6f663236259e5afcfe8cc",
+        "ac1acc318d22e67673771337cc174592a6c555769c3e6e8f966774bcf67caa1c"
+      ]
+    },
+    {
+      "id": "sql-043",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 149.47090000350727,
+      "repeat_query_ms": 8.653000004414935,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 140.48639999964507,
+        "vector_search_ms": 1.6601999959675595
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006300004315562546,
+        "vector_search_ms": 1.3278999977046624
+      },
+      "top5_ids": [
+        "b2002394e20d081cfcc35a7c911e8e16a632e65c7b443eb6f2ff0bfdf3c44e7f",
+        "fb6c0796d0f5c4a9891bfaf0616573da3cbc5cb7ff906d2a6fd81527d8d9965a",
+        "8d9a7d17bf0c3c66125341e8164abd7b58fe0b619bc1f2ed79cf0c3d7d3c4005",
+        "cdd5f83854ff6144885c36c10b035a56c1d5997712a1bb62aa8ecac05ebf2931",
+        "96a4e7ca6aad759876d588532c0e68fc34bb74467eaf39649f83b7eafe6b64fa"
+      ]
+    },
+    {
+      "id": "sql-022",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 157.12239999993471,
+      "repeat_query_ms": 8.532400002877694,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 147.2273999970639,
+        "vector_search_ms": 1.5268999995896593
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.2564999997266568
+      },
+      "top5_ids": [
+        "a999f9d4076a934d3fd9508cf50a67d65372484c0173ca5ea1e5712094ca906a",
+        "bce68c687730745e13a485995610ddea2c9749b88575647145e535e2cc608cd1",
+        "c69a8b15f3d07c3c2cb31fbae2ec36dd435bd9a6fa345bb42626859dc3dea04a",
+        "7fe28ef424a739584beb9968e3ad6e705b401507873ac3f3358ca51672cdb824",
+        "f082734725217d13cbeca24db61d41bd7e92f487601c7b84ccc61fb9160ca03d"
+      ]
+    },
+    {
+      "id": "sql-019",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 175.00980000477284,
+      "repeat_query_ms": 16.28519999940181,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 130.1997999980813,
+        "vector_search_ms": 36.276400001952425
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.008299997716676444,
+        "vector_search_ms": 4.699199998867698
+      },
+      "top5_ids": [
+        "6d4698f695b9c75c41c1fe3d7f50e592f2d0794ac15cdc83a88f5ea9931edd7a",
+        "705b4ce53c283ed7f5d86e1619e6690184e7411cf808c60c15ad820a6bd5541b",
+        "f05afcb78db1114ecd016be5877e21de47ffa6d0c1f442d62bcbbc60e1fa7d46",
+        "df1d3eeacaaaa883db38c78138d41a4efbbfcc3cb058010b894abc4ca39a38c6",
+        "622a4111610cda8fed9baa23448daf61f9a29859f46445f5a398229bea626506"
+      ]
+    },
+    {
+      "id": "sql-047",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 190.77370000013616,
+      "repeat_query_ms": 15.812700003152713,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 171.40790000121342,
+        "vector_search_ms": 1.84350000199629
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.013299999409355223,
+        "vector_search_ms": 2.4260999998659827
+      },
+      "top5_ids": [
+        "d53094af0516bf867193d49f9f3892d3a40a53a09154e92f2c2c95b25276cfca",
+        "1200381e5baebdc04301f28b74f9143ae9ec6d67074223c13d9371ddee8cd3d8",
+        "eee255fcd7cbb0137a18d03af3b6f58064e911267de0028b563b8d6a1578656a",
+        "ca4d112324d0c2a93a6dbc25a60cd0604f972f09a40bc16e1bc1aaaaf88d2e04",
+        "627a230e21f6cb3a855b70a6dbb9e292508648cddaca269f43675235e75115b4"
+      ]
+    },
+    {
+      "id": "sql-001",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 161.5319999982603,
+      "repeat_query_ms": 21.416000003227964,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 145.20700000139186,
+        "vector_search_ms": 5.196999998588581
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.008499999239575118,
+        "vector_search_ms": 2.2955000022193417
+      },
+      "top5_ids": [
+        "816c75c8621c10fc3c7e75fa963e3874dd8da05ad8058dea84530d7796731d67",
+        "5e9dde47f946d016be48cd4306e127887c28d7116fb07e19a85d551bec1a87b6",
+        "028652b3c03fce703ebf6b7ca5b2b03f0ef089a544adf8bc7e817d3e55f450f7",
+        "0f49e5c01cd5b4fbfc6035476c35d89bce898d4992a37040ccc8be2c7ef434e5",
+        "9806ffa09f3e3d31d8e89fd745f6372684f7c5bd859b7bb2c56b7a9e68e4ee56"
+      ]
+    },
+    {
+      "id": "sql-040",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 221.28109999903245,
+      "repeat_query_ms": 12.29099999909522,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 203.9065000062692,
+        "vector_search_ms": 2.4235000018961728
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007799993909429759,
+        "vector_search_ms": 1.5043000021250919
+      },
+      "top5_ids": [
+        "53262ff4987efd344b7329af5af3e87400ed18f78c4439eaf96f407aa872a3f8",
+        "deb4d4dd3be9972f2858d06e930b7e560e91f1ba51530d03f3b80b40ed389b67",
+        "6490f301103a5557a687cd6d494e41fd814acf93f7c63420a7df13fdfffde7f3",
+        "b383b4b000bdda928d4e9cbb4b74e4ce4b4ba9c8a13680d0717d4091bfc7e3b5",
+        "2adf6386dca83daee81f9b10c8137894db19ac5ed25fe601282df37c7e79c9e5"
+      ]
+    },
+    {
+      "id": "sql-041",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 162.15090000332566,
+      "repeat_query_ms": 18.868200000724755,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 150.4096999997273,
+        "vector_search_ms": 3.063000003749039
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.009899995347950608,
+        "vector_search_ms": 2.6148999968427233
+      },
+      "top5_ids": [
+        "7fbbad1e4ecaa8ba739d8a24b6a88b488178e51340d11b830fb15ec14aa88d98",
+        "27a762e49fb14499b38ea86fa8aff975def3cdc3b76e5eb357e9763f17bdebbf",
+        "fbb706aceb5d8d907e4ccfbc8a616ba555bac4db7a6c8a98b9cdfce1547a485e",
+        "c03a5ba0d3d0b6875ca12694dd186c5a01684d406bdef6dade221a88aa068776",
+        "39417266c13022d141f0690194bc9f6b4bee272b7f825ee8d2316eb0e3059c20"
+      ]
+    },
+    {
+      "id": "sql-004",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 151.9170999963535,
+      "repeat_query_ms": 9.599799996067304,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 138.7860000031651,
+        "vector_search_ms": 1.3117000053171068
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007499998901039362,
+        "vector_search_ms": 1.3512999939848669
+      },
+      "top5_ids": [
+        "573ce085c4dbdf93d28f14f55d0bc3c6de4e87cfb6d301bae14881e6d104593c",
+        "9317ca9c515cc65f0e6ea8ba2011de42ef2cccb351d491faeb2499ce06a1d24a",
+        "265630da3095ca8013c7c91a99ad10861a07df8c4a5fe866ae18663a38740dcf",
+        "7cd4f434bde4024e8e8d17909fdf16550c2816b986b7909ba46c5507ea07e4b4",
+        "bae64e4819419e7748dd62f0b5f424321ef1db51dd7ecf4e5b09ab49ad8375a0"
+      ]
+    },
+    {
+      "id": "sql-009",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 150.07289999630302,
+      "repeat_query_ms": 8.563000003050547,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 140.80389999435283,
+        "vector_search_ms": 1.8946999989566393
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006399997801054269,
+        "vector_search_ms": 1.3688000035472214
+      },
+      "top5_ids": [
+        "414aef610523f15f42974bb72175062a773b5d6cdc37fa308a9d865302039094",
+        "f1984802e769cf94b621daebeb1d2d7c3bb7d308b57d1b570cf44bd95b9dfa17",
+        "f8e8e21618cb3ce23639e7619155f3bef942e8a5dbfa38df430c629a6c3ed897",
+        "9415ad7f8546dee66be65c1da7137e1a246117fce06221f4e9bde9842d25e6e3",
+        "a997ec02aaecabf254fcf78389f7d3a3f4a0e7b8df791db79f76a6c0b5003bfa"
+      ]
+    },
+    {
+      "id": "sql-014",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 173.56650000147056,
+      "repeat_query_ms": 9.03180000022985,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 163.01820000080625,
+        "vector_search_ms": 2.081500002532266
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.009499999578110874,
+        "vector_search_ms": 1.442499997210689
+      },
+      "top5_ids": [
+        "9b818e86b90f0822f20f20fc5984f66ec5455907b33f4b764e7e035667c54e14",
+        "30f9208e67462f066860cc9af21ef00e4f75244267c2171d9c79b473558632bd",
+        "ef9a69db0f0e0311e6334fb85aec0dff9c26e083e5da97d5000db14646cd7c45",
+        "6680c24c53a71ad250d252fb05c76a189866e7f280c117f62ccfac06e50bfcc6",
+        "6ef032a771e8f5f0459815f1e0f6920cebd2aa9639c11cce639f840abfb4e892"
+      ]
+    },
+    {
+      "id": "sql-020",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 146.59799999935785,
+      "repeat_query_ms": 13.192300000810064,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 136.0218999980134,
+        "vector_search_ms": 2.2155000042403117
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007299997378140688,
+        "vector_search_ms": 1.6150000010384247
+      },
+      "top5_ids": [
+        "18315c8c260faa1f24b23a0aefcfa367a2c62e952dc4df8685484f9a37aa0328",
+        "31aeb41c6fc29be5cf2e8a826f23e18a9828f4c99a1c4cdc3fc6785ac61f827d",
+        "8025408a1305e7bbdf8b1ea5aa4b024d201300a45cd25ac09a62f5aff0c1049e",
+        "a9bfa12785f9199da8e26ba952e75e3f2efad411706a6fc96d5443b33b21673d",
+        "debe8514ee8e9b6b697ff4225e0bf4b039929cb166cf761575c375d56c72410e"
+      ]
+    },
+    {
+      "id": "sql-003",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 160.73840000171913,
+      "repeat_query_ms": 9.554000003845431,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 148.11919999920065,
+        "vector_search_ms": 1.58269999519689
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.5758999943500385
+      },
+      "top5_ids": [
+        "db99bf010334300b37d33dc4018a3442de2918c79475b8bc9d176ad239b65dce",
+        "bae64e4819419e7748dd62f0b5f424321ef1db51dd7ecf4e5b09ab49ad8375a0",
+        "3a4b8e871ced8f8f1363378a3201a7145fde2a18918cbfe0012248c475d91991",
+        "573ce085c4dbdf93d28f14f55d0bc3c6de4e87cfb6d301bae14881e6d104593c",
+        "5e95f4e55c8b1355e795a594c58d71e0a2207e2dc5ec9f4607197ecb346c15c7"
+      ]
+    },
+    {
+      "id": "sql-015",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 176.3965999998618,
+      "repeat_query_ms": 8.637899998575449,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 166.71779999887804,
+        "vector_search_ms": 2.008600000408478
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007099995855242014,
+        "vector_search_ms": 1.4866999990772456
+      },
+      "top5_ids": [
+        "e4c69b162ef27d69686b7fcfbe0ff4b88b4d83572db58bb0621925dfa3a1cff5",
+        "df60829ee47bff9f221fed9411296dea5d266fb403fe063e939d95e347e6cb00",
+        "30f9208e67462f066860cc9af21ef00e4f75244267c2171d9c79b473558632bd",
+        "67899c2cbb207d0a1a4378a85ffc47bc4efa3d1ae2b36edc577dbeb97d7b1e49",
+        "25293821c2cdf65ef6f8f0c690acd73e94a69baa4537b8d089cdf8a9725c2cdb"
+      ]
+    },
+    {
+      "id": "sql-007",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 159.1746999984025,
+      "repeat_query_ms": 8.558200002880767,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 150.64179999899352,
+        "vector_search_ms": 1.4448000001721084
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007499998901039362,
+        "vector_search_ms": 1.368200006254483
+      },
+      "top5_ids": [
+        "6f2146d3aec60423af450be0ec16dfee1eb96849843815ae7bce1a704db15e0f",
+        "ddf0fe0d9b7ee526f8b83d1bf1b0cfa782dc456e54533fe5b374d219f7c2cf29",
+        "98f31afbc11c9e3126879a01649c77d4f5e655c6779753ece407dca15d877805",
+        "3cb17e449ef7ab702734d01a9f289a8268e9de9540237459dcb7e3623b03a338",
+        "e107251a9cc43233983be1a2ae20dc7d6a079f03d1ce7a96bc185c6dbbe5921f"
+      ]
+    },
+    {
+      "id": "sql-031",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 133.65640000120038,
+      "repeat_query_ms": 9.156299995083828,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 124.46700000145938,
+        "vector_search_ms": 1.5152000050875358
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007000002369750291,
+        "vector_search_ms": 1.4595000029657967
+      },
+      "top5_ids": [
+        "e2faf423899ac5b0cbb99033b0f9d94e3d9b730b999a84402c6915557f3f5a09",
+        "0edb9bbae3f485c37dd0223cab97fe25bc26537916de63e9b78703e87d4c1e76",
+        "1fdaab1d3e8da118ecda8b262bd7bc66cb82afbc31fbaf20dad488e3ec9a153e",
+        "ca23c5fd626f959bd274371d0ace33e7669a360c88aa3c106e44bf4153c3d4f5",
+        "7e33bead9d6f0b443da4914c21bd26679258db33e20712cafc6904edde754548"
+      ]
+    },
+    {
+      "id": "sql-021",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 154.05529999407008,
+      "repeat_query_ms": 8.961100000306033,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 145.28160000190837,
+        "vector_search_ms": 1.4852999956929125
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.2677999984589405
+      },
+      "top5_ids": [
+        "630a3df38791d7078689c70d2b3ad8105b9d2ecf04008e2561548b8051724c84",
+        "ef3af3b7dbb413cdcb81507c302da6d650003dbdfaae6c903a73354fea816abc",
+        "8a4dd9c6a037785f1e692ae39732556f85c861b78d6089f08fd83ac614425d84",
+        "899e9f03f0fc64df6787e37e1e8e9bc72e059df9881cd0f6d823d5711e561ce3",
+        "1c9488fa957132691da781fe78a5113051f1a986197352af4eb9fd743948bfc3"
+      ]
+    },
+    {
+      "id": "sql-033",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 166.69389999879058,
+      "repeat_query_ms": 8.841299997584429,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 157.01170000102138,
+        "vector_search_ms": 1.5350000030593947
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.4875000051688403
+      },
+      "top5_ids": [
+        "23415558994992cdc6c56dc1ede473182c039c2e27595e865e08cd23a5a360d9",
+        "f2d751653c5b7529031d48e03837d08d423c4823db86eb245e389b07c76b2554",
+        "0f922794e28dc7107dbeacdfbcbee48baa776942053e1bb0c047831b9fdf5f0c",
+        "ca002d8a6b2e39a570249513bf7ef5044ea0544479ea8d07bcc8eba2ff2f0a0c",
+        "5734508d7eedddfd1b3b08435b63d3c7dd4c33145ab48683adcdcc84978dad0a"
+      ]
+    },
+    {
+      "id": "sql-050",
+      "split": "dev",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 151.8294000052265,
+      "repeat_query_ms": 9.713699997519143,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 141.6070999985095,
+        "vector_search_ms": 1.5907999986666255
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.532200003566686
+      },
+      "top5_ids": [
+        "b833ae28505888b1a34e37176f23a291dd59a28f96b97f219db7c5dcd405caa5",
+        "8db15fed02277cddbb05d0548384e22a99f9ab7214d6d1c50b533604b5a4e05e",
+        "76b904d4f12ad373e5ffbd6eda5eeed058130250b056cee85b28dee4478a84ce",
+        "95b593b83a8041263660cd02588325525d128efa4477f4f2ad48301bace7d78c",
+        "1262a5923d96cb1a6883475e54519fd6ffadea7498ce273b1a71628950515d6a"
+      ]
+    },
+    {
+      "id": "sql-046",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 150.39619999879505,
+      "repeat_query_ms": 8.759700001974124,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 141.72490000055404,
+        "vector_search_ms": 1.3433999993139878
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.3611000031232834
+      },
+      "top5_ids": [
+        "079a9e06b2adaec26a00283bf2620670e26567ddaee4609373d8d9b6ef3809fc",
+        "b9ebd880b5730cd7045040c71e2317eea6ee586e032ddb394d3245d8a85b670b",
+        "e0c17003330ead0bd308b3f7fcb8b6c83ea92113e2d0c5348f939f23e6575cb2",
+        "590ceca16c39436897edde3ef17d841f4b8612447d7bddf763a8ae0f01788b32",
+        "488f558e93291ca5b64b7d2626509487552ea75056a7db3f19528659e49725e6"
+      ]
+    },
+    {
+      "id": "sql-006",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": false,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 152.0070000042324,
+      "repeat_query_ms": 9.968500002287328,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 142.86410000204341,
+        "vector_search_ms": 1.3655000002472661
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007499998901039362,
+        "vector_search_ms": 1.516500000434462
+      },
+      "top5_ids": [
+        "6467dd77a766e8632e43988c7df9bf9841c86fa3cd3abcef755acbeb3ae95526",
+        "6a42b352ea6690e34437aef41409fe2f50192f35113472f871ca7b0f528a5f91",
+        "5c1625bf77a2629ecc09811db02c2c24cc9d210c3786132af7c942cc4be43ed6",
+        "ebe0d24e7ee0a74cf72b6cf270950490bea3efb441abdbbd04edfad3e5cc7df1",
+        "e9bad95efc526cf83fa98de6785505b3bf1e97be4760e65290ade26e48461092"
+      ]
+    },
+    {
+      "id": "sql-018",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 142.8513000064413,
+      "repeat_query_ms": 9.201600005326327,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 133.36599999456666,
+        "vector_search_ms": 2.4044999954639934
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.00790000194683671,
+        "vector_search_ms": 1.4162000006763265
+      },
+      "top5_ids": [
+        "4f6b92c43808cf6144490237d603fd3039267c16a0ae32a52df229de08c7690e",
+        "c43e810bf62bc65c50b171037e2d658cb9024d307c91e83a6f15d34ea3d282ad",
+        "622a4111610cda8fed9baa23448daf61f9a29859f46445f5a398229bea626506",
+        "52a8d5d4a73be1fad0bc1987bf4a87849e26c6cad4f56577304994339b2c4a83",
+        "df1d3eeacaaaa883db38c78138d41a4efbbfcc3cb058010b894abc4ca39a38c6"
+      ]
+    },
+    {
+      "id": "sql-038",
+      "split": "heldout",
+      "mode": "dense",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 152.39130000554724,
+      "repeat_query_ms": 9.865199994237628,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 142.84919999772683,
+        "vector_search_ms": 1.25790000311099
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.00839999847812578,
+        "vector_search_ms": 1.5016000033938326
+      },
+      "top5_ids": [
+        "8079af39611f069b76f1e86866f8c949833c48fd94f0788fa4887e2270be6cd5",
+        "5025c45bc11ceca7dea57d2d3bb66adfc93a5dc8c26a6d2246235950f1cd6e4e",
+        "ac382e48ec40240019cce2c239925c23ac9d00316a8326af05d426e272dbd7fe",
+        "79dbd78891e70d8a12217442754c02b8e082c8cb626e451fcdf0daab92820ede",
+        "78d04beb6ef0b65224b90433d21be5311c429506df024088499c9150045a27f1"
+      ]
+    },
+    {
+      "id": "sql-016",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 286.0380000056466,
+      "repeat_query_ms": 124.82959999761079,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 159.45800000190502,
+        "vector_search_ms": 1.4463999978033826,
+        "lexical_search_ms": 117.25370000203839
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.010299998393747956,
+        "vector_search_ms": 2.102599995851051,
+        "lexical_search_ms": 114.33929999475367
+      },
+      "top5_ids": [
+        "67899c2cbb207d0a1a4378a85ffc47bc4efa3d1ae2b36edc577dbeb97d7b1e49",
+        "df60829ee47bff9f221fed9411296dea5d266fb403fe063e939d95e347e6cb00",
+        "6680c24c53a71ad250d252fb05c76a189866e7f280c117f62ccfac06e50bfcc6",
+        "e4c69b162ef27d69686b7fcfbe0ff4b88b4d83572db58bb0621925dfa3a1cff5",
+        "baa5fa1fc84c52e6cf19201d842b45a1b7cf8007b7e7509a14a76526c51799c8"
+      ]
+    },
+    {
+      "id": "sql-005",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 301.0205999962636,
+      "repeat_query_ms": 112.6905999990413,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 192.21599999582395,
+        "vector_search_ms": 1.7117000024882145,
+        "lexical_search_ms": 98.45720000157598
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006299997039604932,
+        "vector_search_ms": 1.3161999959265813,
+        "lexical_search_ms": 102.9495000038878
+      },
+      "top5_ids": [
+        "5964abdd6fc1a6cc10de8112cd157e1098322689b9a59b1feeff1564603ba07b",
+        "eb456f7e6c4ca44f5e75fdd6382aee5476f35b821245a63cf96bc91218adb047",
+        "217683254a97b5bd7f325b936383ad5b19ffb742a002f220ca9a743b8b6e7c6e",
+        "f44277caaf01a86df897b63cc6ae31adc0baf600f80686de134bbd8ff8fb7d62",
+        "bd988e10aa0d4530ac84949e1cbc60796e74681c405442b1c9a42932bf9ad97e"
+      ]
+    },
+    {
+      "id": "sql-034",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 264.63470000453526,
+      "repeat_query_ms": 85.72499999718275,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 171.5351000020746,
+        "vector_search_ms": 1.4497000011033379,
+        "lexical_search_ms": 83.08260000194423
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.009399998816661537,
+        "vector_search_ms": 1.5910999936750159,
+        "lexical_search_ms": 72.93519999802811
+      },
+      "top5_ids": [
+        "a7397277d72ccb1bd630ac63df7f60f95049ba775a4136c6cab973a1d4acc167",
+        "7b1957c9b4375bc166f9d64b229b21b8aceefb1128755ab02cdde9a0a3f9c3a2",
+        "ada28f04b62c7f84533d35c09eacd5142c247eb6a438488fcfee4a4bdd4b0f85",
+        "889edd88653351bbfd0e58fd285a88771237ec2089fbac599698b9c02f47406d",
+        "4e29eb7826004c99a5251d2ba84ebe8ed631b6d68a85253a3c8e776e26e27262"
+      ]
+    },
+    {
+      "id": "sql-049",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 291.1595999976271,
+      "repeat_query_ms": 104.61850000137929,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 174.92020000645425,
+        "vector_search_ms": 2.1869999982300214,
+        "lexical_search_ms": 105.66159999871161
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.2244999961694703,
+        "lexical_search_ms": 95.31779999815626
+      },
+      "top5_ids": [
+        "930c9b045df9db34ba0f7ec5504164646491d4f697f72bea2d12c8fef117e8af",
+        "177bc6e9fb39d676a8c5c78a8541ed14703df27a3da896c61f883aeffbed38d0",
+        "13e24164e5ff1a8b238429282e9b980463d4b499b8bdfd577b33168473272adc",
+        "dd0a65147a1ce21bf025d502eefa15b0a323deb44a52469c4c11feeb75a0903b",
+        "92e36353f66dc764c70102fd641e31591f554262c7ce70122b9070465025c1a9"
+      ]
+    },
+    {
+      "id": "sql-008",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 203.86650000000373,
+      "repeat_query_ms": 74.82129999698373,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 137.33650000358466,
+        "vector_search_ms": 1.6192000039154664,
+        "lexical_search_ms": 56.85239999729674
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.008100003469735384,
+        "vector_search_ms": 1.5949000007822178,
+        "lexical_search_ms": 61.68520000210265
+      },
+      "top5_ids": [
+        "8e2f48958b8f3c6f79d9216dd96164f1c0941695d0b81c2b8589d96e384eb177",
+        "91603e488825b9d4f0265b30e6d419f6cc9cd1ba7aea71a4a84d0a3f20e54367",
+        "b2e130492b2fb15e9bcbbd4f6d219a4e5a99ad55b1e4d77f9c577647231918c9",
+        "b40183d7f355be7fc4a59a3c6bb93fe3e11781e98c23498f068b6b6ec4b4351a",
+        "4551857ea2b0ba6467571065465e955eb111a07a396477fa3a00d787ab18797f"
+      ]
+    },
+    {
+      "id": "sql-028",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 272.1633999972255,
+      "repeat_query_ms": 128.0646999948658,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 170.13840000436176,
+        "vector_search_ms": 1.7423999961465597,
+        "lexical_search_ms": 93.23099999892293
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.3697999966097996,
+        "lexical_search_ms": 118.4997000018484
+      },
+      "top5_ids": [
+        "3845d412a99fef199685bd1beac0777e1a9af726812c9ba6b718c922e4cbbc14",
+        "be17ff97f4394760f95ed2773585cb5a1508bc15445055195e060ceed0c2797c",
+        "14371a50f20f010e42a61912624b88d7789f3145951566f33718da2449d47549",
+        "42e7fa67154500f52898af2d10e87cef3ffb7b9c55a9cee54dc31df33e442730",
+        "d59fe35c3047b6941adceee712753be5e1100860c0c3833bd4ee9553742b9015"
+      ]
+    },
+    {
+      "id": "sql-012",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 223.53129999828525,
+      "repeat_query_ms": 88.24399999866728,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 134.67140000284417,
+        "vector_search_ms": 1.1915999930351973,
+        "lexical_search_ms": 75.59600000240607
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007099995855242014,
+        "vector_search_ms": 1.5009999988251366,
+        "lexical_search_ms": 76.53560000471771
+      },
+      "top5_ids": [
+        "6203f795b1cbe3bd72403af332382437689257a73157fdf636b5a1d7b86d14f3",
+        "1ebab00fba46fc86a84a625ae9e1d82162ef65370c4ba2be2a5d5233049b75c2",
+        "9519c4629003c68500ef9e11640509087ea2f63b9319bad6158ef54a9ef055c4",
+        "e7416205f17467112f15b1a5b6792e066757ff4650546a7b775a2eae8827b9e3",
+        "cbf3f8b1040f7130c059f09fbcaaa23a337f11be322cc7fc8d8182a89f7f570a"
+      ]
+    },
+    {
+      "id": "sql-035",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 214.86690000165254,
+      "repeat_query_ms": 68.81150000117486,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 157.3664000025019,
+        "vector_search_ms": 2.112200003466569,
+        "lexical_search_ms": 47.35200000141049
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.005599998985417187,
+        "vector_search_ms": 1.3495999955921434,
+        "lexical_search_ms": 47.558600002957974
+      },
+      "top5_ids": [
+        "aaabb3089b2d851b1cfe354d7bde2351b507ddc4815423ce033808cfc1c1a935",
+        "0f5b0a13a850e3e140718c841206e48562841ecf526bcf1b8ff465d8965fe8f9",
+        "4a677a94ee3908a3f06f708c3f14f096f12c4a1637a41ea6ab6756a18b006d73",
+        "bde5a265998452196a52e3957a14c532a8010b15efa1dc33144a2e7e41c61794",
+        "6fce19b9809fd5eecb84a3eaf866e828e4666c2166c52c5cd03ccf98c54e04fe"
+      ]
+    },
+    {
+      "id": "sql-037",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 246.00459999783197,
+      "repeat_query_ms": 98.0649999983143,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 134.95830000465503,
+        "vector_search_ms": 2.379900004598312,
+        "lexical_search_ms": 101.02389999519801
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007999995432328433,
+        "vector_search_ms": 1.516500000434462,
+        "lexical_search_ms": 89.07639999961248
+      },
+      "top5_ids": [
+        "6496df02741a96d6653ae1e15315d30fd63b323f0778b6dde6fdf528545fa902",
+        "52d4a6956e53ce392bfcef8df64a6ed380d47902c86828719552cee8ef85141d",
+        "0e2c0e28a432f37b592161cfb04c4f71264023c97612f2c24463c5ffc365d040",
+        "661e1d32a94792256ef3da2620ee19e94e91d66a00967e7ab054f189199e2b2e",
+        "9b7254b17f309be4947dada95d08421d65af19360aebc78fbd94fe983fb0c70a"
+      ]
+    },
+    {
+      "id": "sql-024",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 240.6881999995676,
+      "repeat_query_ms": 92.91440000379225,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 155.21090000402182,
+        "vector_search_ms": 1.3397000002441928,
+        "lexical_search_ms": 76.2243999997736
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.4246999999159016,
+        "lexical_search_ms": 83.67900000303052
+      },
+      "top5_ids": [
+        "aee1e5a54e477d8efc11b813e6f6b675286c5b4f2738381c591d39b513a6e297",
+        "b797ad219873193c40cb75bb682c987426cb550941f23fbd64b9555dddb09c92",
+        "da56425debacf4b7d7acd635aae9aeae3c8b2e36aecf7bb1f2b401bf4ebfc745",
+        "58071623e6dc3fb0bc4595fea4083e99fc29f60499eb8d51948899f8dfb4d797",
+        "eb426f9de421190fd3b8a29d50fda13a7dbd68e9c60ac182dcb36c2c1d26b496"
+      ]
+    },
+    {
+      "id": "sql-023",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 243.46350000269013,
+      "repeat_query_ms": 122.79320000379812,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 140.88310000079218,
+        "vector_search_ms": 1.4142999934847467,
+        "lexical_search_ms": 93.41500000300584
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.010399999155197293,
+        "vector_search_ms": 1.479099999414757,
+        "lexical_search_ms": 112.08169999736128
+      },
+      "top5_ids": [
+        "e850a11f19675ec5a68dd3bcc46863685030ff9bb4b3a0d65cb9e4d48dcb65e8",
+        "156b04444bd9113337d76991ae235beb6b9e575000d513326dc2878a18374eac",
+        "1bca18658f2ca81fbe593df62e86ae7f95b97d10fc9fb3c858d41d409622530e",
+        "808732b45f4005f66cd8a666bda57e07d08dd17aca4bcd80f65413a4b8072f80",
+        "157f10656d8f1cd795f7e18d7053c8b353ec1449c10cbac9d3756c1f50fb730a"
+      ]
+    },
+    {
+      "id": "sql-032",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 211.53559999947902,
+      "repeat_query_ms": 67.69619999977294,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 142.54809999692952,
+        "vector_search_ms": 3.078499998082407,
+        "lexical_search_ms": 56.62760000268463
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.005299996701069176,
+        "vector_search_ms": 2.6849999994738027,
+        "lexical_search_ms": 58.34840000170516
+      },
+      "top5_ids": [
+        "9f39c396df7a1d4915e7848dc5588ae72b3d90409dd0f8e333e61fdb92ad92ca",
+        "5bca340d4e83c8bd2ab87edb2957e0920e02a9b0b4e2cf4a285c3218a8023313",
+        "1bcf72a8878dae2017dbbcf23278985ff29a91f7abffb4c07f9023270084b76f",
+        "38eef824675d3ad9fffb4a075bf40487f13be2d60061198d238842d2122e2a65",
+        "aee7b4283da1f2b9ef7284d0dc41f6fa3df0b655603636c6c9ed3cd7ca4489f3"
+      ]
+    },
+    {
+      "id": "sql-045",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 235.17429999628803,
+      "repeat_query_ms": 99.79269999894314,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 144.35170000069775,
+        "vector_search_ms": 1.3267999966046773,
+        "lexical_search_ms": 81.13170000433456
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.011199997970834374,
+        "vector_search_ms": 1.6773999959696084,
+        "lexical_search_ms": 86.86909999960335
+      },
+      "top5_ids": [
+        "5f6094d2b6ea874cb12ac2e610f6b4d1f4ecd2517e3d92ebaa65a1f8b3768e78",
+        "658d3b4e46638a08ca79cc4f9f78b618402881567d2d8b34e3ec8b948a2c5a99",
+        "96a4e7ca6aad759876d588532c0e68fc34bb74467eaf39649f83b7eafe6b64fa",
+        "f73bf73feac602cd6b2f3c7571ec272b7dd296cbba24344e2f8b6880812bdeca",
+        "990086109b912ec0ccaa17301482708264794c34a38e8c48e6575875d60bd735"
+      ]
+    },
+    {
+      "id": "sql-017",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 299.3428000045242,
+      "repeat_query_ms": 101.52409999864176,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 188.31919999502134,
+        "vector_search_ms": 1.472800002375152,
+        "lexical_search_ms": 101.43819999939296
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007800001185387373,
+        "vector_search_ms": 1.4054999992367812,
+        "lexical_search_ms": 91.82009999494767
+      },
+      "top5_ids": [
+        "085c02ba2fa5ffdaace9d754aab01103973c7ca6983446b4c2155950a28bb862",
+        "0d1f3143f48edb2da4b4bb89a712f2f3bfe980e18ea963f9eba5df57bb97334e",
+        "4845475561abb1005a196ab07cb2c552d468a23a8f01b77c35cd2b45bed5724a",
+        "6cad2c2825ea870def046eb850f3ed78fd76a0fbccd8177870426e052eaa6dbd",
+        "690830b7fb1a61814a8976fd24607ba82838404682a9f931da03beb7c3444245"
+      ]
+    },
+    {
+      "id": "sql-027",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 227.6687999983551,
+      "repeat_query_ms": 78.63070000166772,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 151.94180000253255,
+        "vector_search_ms": 1.6852999979164451,
+        "lexical_search_ms": 65.66290000046138
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006200003554113209,
+        "vector_search_ms": 1.3762000016868114,
+        "lexical_search_ms": 70.41790000221226
+      },
+      "top5_ids": [
+        "0c4becabca9aa43ec25ee553eebdc749219ecbbfcaad17fee4e7664ebf8022f8",
+        "9a49128c11572698cddf9665b3d1ad56218588d6613ed0417bda762c9d20a3f7",
+        "a1e40601d4c1ae3de7837b95752a410d0975a4e1abec1c39c648c7f975fc12c2",
+        "a20d4161d7657f51caa2385ade47c66adca669203ace52f5ef193795e8ab2c3f",
+        "37cd0c0f8ba73af8d974210c3a49c1f61d000de5f47cdac9c26cb5ad70ee9979"
+      ]
+    },
+    {
+      "id": "sql-039",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 249.74289999954635,
+      "repeat_query_ms": 100.06419999990612,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 147.2446999978274,
+        "vector_search_ms": 1.4114000005065463,
+        "lexical_search_ms": 93.84149999823421
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007100003131199628,
+        "vector_search_ms": 1.572200002556201,
+        "lexical_search_ms": 91.25269999640295
+      },
+      "top5_ids": [
+        "ba3941baaaa468c82c395b5f20337f45a319e765f76f7c1a9e2fca22fe4f302b",
+        "990086109b912ec0ccaa17301482708264794c34a38e8c48e6575875d60bd735",
+        "ab07d085197b81a01879bd53545748800991aa855469ad9cb7be1da0499439ec",
+        "19468430fdfd7bc7e187a653d363f89bf3df4aebb1d99b1b04f2e4ab3f1a5d8d",
+        "90472be1bd960551e3bbc2e23347944ee84be9523d14530ed093f84c1be33d29"
+      ]
+    },
+    {
+      "id": "sql-010",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 232.03790000115987,
+      "repeat_query_ms": 88.15509999840287,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 144.80079999339068,
+        "vector_search_ms": 1.323600001342129,
+        "lexical_search_ms": 78.60860000073444
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007199996616691351,
+        "vector_search_ms": 1.4171000002534129,
+        "lexical_search_ms": 79.39699999406002
+      },
+      "top5_ids": [
+        "a11241f5efdcb7e4e843c375454edde951570d628a843c051e7e65b4ffe44e45",
+        "178b1c16e130d49d1b8d4121b05ad805843d4014cce0c434ca62f9e2f48c7d95",
+        "b21ac64970eeece70498ba356784a3c32786f6e81030f0aca4a2c9e4d8b72a68",
+        "7bc7674a51b2426e8f1459b599ddbf0e9c1155661384b16245c99f141a627e7f",
+        "afd2f4959372d4f728d4d89fc52f7b3bd713ee42225a7629c744d72c91f4a142"
+      ]
+    },
+    {
+      "id": "sql-025",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 227.07700000319164,
+      "repeat_query_ms": 63.901600005920045,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 144.51810000173282,
+        "vector_search_ms": 1.3609000016003847,
+        "lexical_search_ms": 73.50440000300296
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.009999996109399945,
+        "vector_search_ms": 1.6230000037467107,
+        "lexical_search_ms": 51.31610000535147
+      },
+      "top5_ids": [
+        "48b783ee8ff48a97a0b21ee6e7746e3c75ce5406830842a6b34f96c9f4ab3e00",
+        "6c937ad50988810a9742877400275abff6c7ef18547d78435ff6ca383c2ee608",
+        "f2a8006204991ccfc36035d334cc5629bdd4f9cb862fdb13eb2976d662788a17",
+        "b520f9718556266cf53b00ee7b8ed14b70c567c56009a3e23bcae01196840d73",
+        "3ec40c9c6223b8ccf4e8a5311dc5af7eecb72bc55119955d3e75b866e4dc568a"
+      ]
+    },
+    {
+      "id": "sql-013",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 203.71610000438523,
+      "repeat_query_ms": 61.77210000168998,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 142.45820000360254,
+        "vector_search_ms": 1.6172000032383949,
+        "lexical_search_ms": 47.95310000190511
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007299997378140688,
+        "vector_search_ms": 1.5914999967208132,
+        "lexical_search_ms": 53.04469999828143
+      },
+      "top5_ids": [
+        "eca64a092fead6f58cdd88f7c0aec7a05ba3a556811d8078906ea6cfb92f0d95",
+        "38744d5459cadf29c6bd7b95cfb0f3a08e745ea358d465d1c5eb6aedff36dd44",
+        "40cbddc9a4a01ebb0fbb40dad478f0df15baa622ec2557dc5f442d8442bf43ea",
+        "94268c00c31a11b08607e2ccb6274761174bbd1b5445ca07ec6d0ed70517f112",
+        "e7416205f17467112f15b1a5b6792e066757ff4650546a7b775a2eae8827b9e3"
+      ]
+    },
+    {
+      "id": "sql-036",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 224.39960000338033,
+      "repeat_query_ms": 80.61799999995856,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 142.26749999943422,
+        "vector_search_ms": 1.3729000056628138,
+        "lexical_search_ms": 72.66659999731928
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.3765999974566512,
+        "lexical_search_ms": 71.94840000011027
+      },
+      "top5_ids": [
+        "0e2c0e28a432f37b592161cfb04c4f71264023c97612f2c24463c5ffc365d040",
+        "d6edaf8b0a03159b620db5c7286d3da883b0446154b3c3240cf500f8b69f4845",
+        "9b7254b17f309be4947dada95d08421d65af19360aebc78fbd94fe983fb0c70a",
+        "bfbdbef922ece10403f9be27cf1d34a30f27ade551a00efd68f6a8b5479995cf",
+        "90472be1bd960551e3bbc2e23347944ee84be9523d14530ed093f84c1be33d29"
+      ]
+    },
+    {
+      "id": "sql-002",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 257.6688999979524,
+      "repeat_query_ms": 102.34869999840157,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 147.0123999970383,
+        "vector_search_ms": 1.4876999994157813,
+        "lexical_search_ms": 101.49890000320738
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.008900002285372466,
+        "vector_search_ms": 1.4460999955190346,
+        "lexical_search_ms": 89.59450000111246
+      },
+      "top5_ids": [
+        "c55ba713f238c65325f8d0f84c064501fe61d3391a6f74548a02a5401091e9b4",
+        "c8ff24917ea2bfcadcb772f9f093a8ec152d0441e1de8a32c20fbcd07e0d8b1e",
+        "8724046f08306ecc74b08b8ca7d1dd534ea61feb49a4a2cba3a9638d8fc2ee19",
+        "4a6236b42cd5c4996c2ec13fe9d2fe4fd6989adad9a37ac0f5453d798bd89c13",
+        "e06b7913f920f855ee456b706d47c850518da153baa937beb7f9b6ca1554aaee"
+      ]
+    },
+    {
+      "id": "sql-029",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 215.50489999935962,
+      "repeat_query_ms": 79.35770000040065,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 139.88629999948898,
+        "vector_search_ms": 1.2753999981214292,
+        "lexical_search_ms": 65.10110000090208
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006299997039604932,
+        "vector_search_ms": 1.320399998803623,
+        "lexical_search_ms": 68.9806000009412
+      },
+      "top5_ids": [
+        "d8351be5478d97796af5cb0da94f60a72850fb58b73555e1cb423303619c7e9c",
+        "0740b7f31fd378e6bd8a42c24247a625204e6915a6a1130c9a9f980ce84a43ff",
+        "e984a3dc72c2bdcbc58ae0d61e860b0ff763be0dfffe51b844918c1668639401",
+        "400c8fc70024b6ed7cde8f4ec65394d18be901b3c0f981a3787f7599dd4ad24e",
+        "d295f1e2b5a78924a58daf8022789d497dbaa67fcaea7815a66bd9af0d33db50"
+      ]
+    },
+    {
+      "id": "sql-030",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 231.72799999883864,
+      "repeat_query_ms": 130.44120000267867,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 136.63500000257045,
+        "vector_search_ms": 2.037800004472956,
+        "lexical_search_ms": 85.03280000149971
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006000002031214535,
+        "vector_search_ms": 1.3895000010961667,
+        "lexical_search_ms": 119.9482000010903
+      },
+      "top5_ids": [
+        "0edb9bbae3f485c37dd0223cab97fe25bc26537916de63e9b78703e87d4c1e76",
+        "ca23c5fd626f959bd274371d0ace33e7669a360c88aa3c106e44bf4153c3d4f5",
+        "4a7f82ab7af3c13527f88f8e484d5c16bf48720c314a291c2581dea65abfaf3e",
+        "c5204f40338dadc6160b31a4ebbe93ea828edaae5e57af157e8905a47195ff82",
+        "1199e5447157579ac0f2c4dbd34072c8b066b8aa51768007b2185bc2bb66632c"
+      ]
+    },
+    {
+      "id": "sql-011",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 220.3282999980729,
+      "repeat_query_ms": 82.13850000174716,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 133.54729999991832,
+        "vector_search_ms": 1.8225000021629967,
+        "lexical_search_ms": 69.75160000001779
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.261499994143378,
+        "lexical_search_ms": 73.47570000274573
+      },
+      "top5_ids": [
+        "4d744f75e0d6c0c41aca4e8334d183a80b19763ac6029c8c85f7ca109d6618be",
+        "e7416205f17467112f15b1a5b6792e066757ff4650546a7b775a2eae8827b9e3",
+        "1bc765b13974a8ef3a8490503484e5b55cca86f04204976d78f42e799e97ded2",
+        "0ecea57fe5511ad03695344f47f395b01dea4ebf0216bbfe310ed39d90d39034",
+        "1ebab00fba46fc86a84a625ae9e1d82162ef65370c4ba2be2a5d5233049b75c2"
+      ]
+    },
+    {
+      "id": "sql-044",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 321.64449999982025,
+      "repeat_query_ms": 135.99590000376338,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 177.05140000180108,
+        "vector_search_ms": 2.2772000011173077,
+        "lexical_search_ms": 132.84379999822704
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.3376999995671213,
+        "lexical_search_ms": 125.30690000130562
+      },
+      "top5_ids": [
+        "df1dff1e1202b4a9c43d1781796ca98b023537b44a9cabd9d50b951a8aa67772",
+        "a037df03a03d580f75b3af0344e86879ea977f37fda2112e26e4510d197274f6",
+        "7c6aa5cc9a2a59925d27110a135d985fb46d8bcd90931f92329a7cfc61e847f2",
+        "f8a038dbe352aac94f30f85da610cd6564915737e2d701f4d513e75f2b3367bb",
+        "8c9337754b80f9445e8ae4416847b326cfbe6a3a52c7ffa44d799a6ea6eb303f"
+      ]
+    },
+    {
+      "id": "sql-042",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 237.44470000383444,
+      "repeat_query_ms": 105.08850000042003,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 133.9998999974341,
+        "vector_search_ms": 1.6602000032435171,
+        "lexical_search_ms": 93.14309999899706
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.00790000194683671,
+        "vector_search_ms": 1.5512999962083995,
+        "lexical_search_ms": 96.10850000171922
+      },
+      "top5_ids": [
+        "47150f0ceef3b5f8db2877d5a2d37aadaff6ae0ab2ac5e6b78c3f616853de65c",
+        "7ac749c2c0290a178b8c78446f1601ea730d92809f02c242702d7db3c6b6bce8",
+        "139bc082b0f66abef7b252fef9e6b664a0c4a0108159842019d625a488ff447a",
+        "e7ee11246879b8cded6700d3b981adb1b765cbd053e856f635a7df2bf0cf4c50",
+        "46d50e2bea37fe9f4489acb908b5502db9fd7336432c735573eff9e33024a596"
+      ]
+    },
+    {
+      "id": "sql-026",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 255.11790000018664,
+      "repeat_query_ms": 109.38970000279369,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 134.0598000024329,
+        "vector_search_ms": 1.3928999978816137,
+        "lexical_search_ms": 94.08039999834727
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007199996616691351,
+        "vector_search_ms": 1.6703000001143664,
+        "lexical_search_ms": 96.2165000019013
+      },
+      "top5_ids": [
+        "96a91a735f144d7df9ee3964c7651a451b6872df0d41e6e190edb32e1f5c96c8",
+        "34a5993a53cd3b9992c1ba889989875141fd48c5791d029ab25b3ac00205a74e",
+        "4cb7757f06d6981a4fdf9dd7a030464c6c0556b92547449fe93ff4b5075469b0",
+        "4dee21d5e3885845e58e10895d09f54f09c407835a8a491a49226b757bc63f84",
+        "85413d7f790a7cf5a46b24d091d81025b10abe1c34d3bbe7602257303e7fb5ea"
+      ]
+    },
+    {
+      "id": "sql-048",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 225.32090000458993,
+      "repeat_query_ms": 80.76599999913014,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 143.48420000169426,
+        "vector_search_ms": 1.3508999982150272,
+        "lexical_search_ms": 73.03160000446951
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007700000423938036,
+        "vector_search_ms": 1.5309000009438023,
+        "lexical_search_ms": 70.23440000193659
+      },
+      "top5_ids": [
+        "8c8891de8b1358156d8d75bb1770724c9cce4f0e0cd7d867d357f01a7702ddc6",
+        "180971d7783f5d718a652690fa06055aaf912cb95f85f6b6e114684e983d381d",
+        "2293f4d92394d298191e322b6fe337440569510901d29fac2ab33229b96ca5f8",
+        "ac1acc318d22e67673771337cc174592a6c555769c3e6e8f966774bcf67caa1c",
+        "e15adbf383c3b39d33c3f73f6d1215e5fa24f84ff48f6fce2b88356f53f164b1"
+      ]
+    },
+    {
+      "id": "sql-043",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 243.75399999553338,
+      "repeat_query_ms": 105.46030000114115,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 135.62899999669753,
+        "vector_search_ms": 1.3400000025285408,
+        "lexical_search_ms": 99.42620000219904
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.3403999982983805,
+        "lexical_search_ms": 94.91720000369241
+      },
+      "top5_ids": [
+        "b2002394e20d081cfcc35a7c911e8e16a632e65c7b443eb6f2ff0bfdf3c44e7f",
+        "fb6c0796d0f5c4a9891bfaf0616573da3cbc5cb7ff906d2a6fd81527d8d9965a",
+        "cdd5f83854ff6144885c36c10b035a56c1d5997712a1bb62aa8ecac05ebf2931",
+        "8d9a7d17bf0c3c66125341e8164abd7b58fe0b619bc1f2ed79cf0c3d7d3c4005",
+        "ffad3f03ab1d1304a1ead49b965ba449141e02fd423451d4f5c1dd0d50ea0418"
+      ]
+    },
+    {
+      "id": "sql-022",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 237.2520999997505,
+      "repeat_query_ms": 78.60749999963446,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 154.60069999971893,
+        "vector_search_ms": 1.2592999992193654,
+        "lexical_search_ms": 74.47490000049584
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.5936000054352917,
+        "lexical_search_ms": 68.72329999896465
+      },
+      "top5_ids": [
+        "a999f9d4076a934d3fd9508cf50a67d65372484c0173ca5ea1e5712094ca906a",
+        "c69a8b15f3d07c3c2cb31fbae2ec36dd435bd9a6fa345bb42626859dc3dea04a",
+        "156b04444bd9113337d76991ae235beb6b9e575000d513326dc2878a18374eac",
+        "f082734725217d13cbeca24db61d41bd7e92f487601c7b84ccc61fb9160ca03d",
+        "7fe28ef424a739584beb9968e3ad6e705b401507873ac3f3358ca51672cdb824"
+      ]
+    },
+    {
+      "id": "sql-019",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 269.9192000000039,
+      "repeat_query_ms": 123.27530000038678,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 144.11110000219196,
+        "vector_search_ms": 1.4689000017824583,
+        "lexical_search_ms": 117.53199999657227
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006900001608300954,
+        "vector_search_ms": 1.2088000003132038,
+        "lexical_search_ms": 113.97259999648668
+      },
+      "top5_ids": [
+        "6d4698f695b9c75c41c1fe3d7f50e592f2d0794ac15cdc83a88f5ea9931edd7a",
+        "bd491da3a81f0cc78fedbbbaac31bcdb54613309005fbe1172c190eb15aec198",
+        "705b4ce53c283ed7f5d86e1619e6690184e7411cf808c60c15ad820a6bd5541b",
+        "9b818e86b90f0822f20f20fc5984f66ec5455907b33f4b764e7e035667c54e14",
+        "18d684607d2f199510d2d414d5f326249d7b0af99fee83c370b4299dd230a83a"
+      ]
+    },
+    {
+      "id": "sql-047",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 216.35519999836106,
+      "repeat_query_ms": 83.95860000018729,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 131.00239999766927,
+        "vector_search_ms": 1.811500005715061,
+        "lexical_search_ms": 74.50360000075307
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007700000423938036,
+        "vector_search_ms": 1.517299999250099,
+        "lexical_search_ms": 74.70770000509219
+      },
+      "top5_ids": [
+        "d53094af0516bf867193d49f9f3892d3a40a53a09154e92f2c2c95b25276cfca",
+        "ca4d112324d0c2a93a6dbc25a60cd0604f972f09a40bc16e1bc1aaaaf88d2e04",
+        "eee255fcd7cbb0137a18d03af3b6f58064e911267de0028b563b8d6a1578656a",
+        "1200381e5baebdc04301f28b74f9143ae9ec6d67074223c13d9371ddee8cd3d8",
+        "627a230e21f6cb3a855b70a6dbb9e292508648cddaca269f43675235e75115b4"
+      ]
+    },
+    {
+      "id": "sql-001",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 216.46160000091186,
+      "repeat_query_ms": 74.52779999584891,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 140.1668000034988,
+        "vector_search_ms": 1.7388999985996634,
+        "lexical_search_ms": 66.1921999999322
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006400005077011883,
+        "vector_search_ms": 1.4388000054168515,
+        "lexical_search_ms": 65.15149999904679
+      },
+      "top5_ids": [
+        "816c75c8621c10fc3c7e75fa963e3874dd8da05ad8058dea84530d7796731d67",
+        "5e9dde47f946d016be48cd4306e127887c28d7116fb07e19a85d551bec1a87b6",
+        "dbb1e45509854a7eb655f448b9706bfe0d1b57140ebb6c8e35d3f11ee4645ae5",
+        "d2deba5fa34990308ca14a325e8d126b34c97bf48ef457db3541a402ae912e7d",
+        "0f49e5c01cd5b4fbfc6035476c35d89bce898d4992a37040ccc8be2c7ef434e5"
+      ]
+    },
+    {
+      "id": "sql-040",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 287.29430000385037,
+      "repeat_query_ms": 141.66500000283122,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 144.34919999621343,
+        "vector_search_ms": 1.5397000024677254,
+        "lexical_search_ms": 130.8530000023893
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007099995855242014,
+        "vector_search_ms": 1.9093000009888783,
+        "lexical_search_ms": 131.25120000040624
+      },
+      "top5_ids": [
+        "53262ff4987efd344b7329af5af3e87400ed18f78c4439eaf96f407aa872a3f8",
+        "96a4e7ca6aad759876d588532c0e68fc34bb74467eaf39649f83b7eafe6b64fa",
+        "923f99660a256d2fd18e56dc096ba9b83144e5ce1c22b0cb38364e94ce8cfc50",
+        "76549161c339c3f5328b8314fefbe31a4da7e9e961bc222823d5fdec62fad9b8",
+        "47150f0ceef3b5f8db2877d5a2d37aadaff6ae0ab2ac5e6b78c3f616853de65c"
+      ]
+    },
+    {
+      "id": "sql-041",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 199.56059999822173,
+      "repeat_query_ms": 64.13420000171755,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 135.99290000274777,
+        "vector_search_ms": 2.168899998650886,
+        "lexical_search_ms": 54.10870000196155
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.005999994755256921,
+        "vector_search_ms": 1.545099999930244,
+        "lexical_search_ms": 55.16499999794178
+      },
+      "top5_ids": [
+        "7fbbad1e4ecaa8ba739d8a24b6a88b488178e51340d11b830fb15ec14aa88d98",
+        "c03a5ba0d3d0b6875ca12694dd186c5a01684d406bdef6dade221a88aa068776",
+        "fbb706aceb5d8d907e4ccfbc8a616ba555bac4db7a6c8a98b9cdfce1547a485e",
+        "39417266c13022d141f0690194bc9f6b4bee272b7f825ee8d2316eb0e3059c20",
+        "b453bc76d30a865b8df5106841ae8da33c3b9641b5eaa839396ff830e4ce3328"
+      ]
+    },
+    {
+      "id": "sql-004",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 223.7715000010212,
+      "repeat_query_ms": 94.05210000113584,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 135.21480000053998,
+        "vector_search_ms": 1.6168000001925975,
+        "lexical_search_ms": 79.62989999941783
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.008299997716676444,
+        "vector_search_ms": 1.6570000007050112,
+        "lexical_search_ms": 84.55160000448814
+      },
+      "top5_ids": [
+        "9317ca9c515cc65f0e6ea8ba2011de42ef2cccb351d491faeb2499ce06a1d24a",
+        "573ce085c4dbdf93d28f14f55d0bc3c6de4e87cfb6d301bae14881e6d104593c",
+        "265630da3095ca8013c7c91a99ad10861a07df8c4a5fe866ae18663a38740dcf",
+        "bae64e4819419e7748dd62f0b5f424321ef1db51dd7ecf4e5b09ab49ad8375a0",
+        "7cd4f434bde4024e8e8d17909fdf16550c2816b986b7909ba46c5507ea07e4b4"
+      ]
+    },
+    {
+      "id": "sql-009",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 268.53660000051605,
+      "repeat_query_ms": 115.12310000398429,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 149.33629999723053,
+        "vector_search_ms": 1.3030999980401248,
+        "lexical_search_ms": 110.3992000062135
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006900001608300954,
+        "vector_search_ms": 1.4351999998325482,
+        "lexical_search_ms": 106.70849999587517
+      },
+      "top5_ids": [
+        "414aef610523f15f42974bb72175062a773b5d6cdc37fa308a9d865302039094",
+        "f1984802e769cf94b621daebeb1d2d7c3bb7d308b57d1b570cf44bd95b9dfa17",
+        "f8e8e21618cb3ce23639e7619155f3bef942e8a5dbfa38df430c629a6c3ed897",
+        "ff88c3c0687a438ecfe632769650a5c4e49a79a15397b1f7651bea4ff7abbfdc",
+        "594eb36fa38f4abf8481a5ee3a0177d1202125ff79c5e11e296eb52ff205a752"
+      ]
+    },
+    {
+      "id": "sql-014",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 224.96969999338035,
+      "repeat_query_ms": 84.94259999861242,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 137.22450000204844,
+        "vector_search_ms": 1.9720999989658594,
+        "lexical_search_ms": 78.39320000493899
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.4437999998335727,
+        "lexical_search_ms": 75.41029999993043
+      },
+      "top5_ids": [
+        "9b818e86b90f0822f20f20fc5984f66ec5455907b33f4b764e7e035667c54e14",
+        "ef9a69db0f0e0311e6334fb85aec0dff9c26e083e5da97d5000db14646cd7c45",
+        "6ef032a771e8f5f0459815f1e0f6920cebd2aa9639c11cce639f840abfb4e892",
+        "6680c24c53a71ad250d252fb05c76a189866e7f280c117f62ccfac06e50bfcc6",
+        "4fe5e9aac20e60082cc12c5843b0746e55e68511ce5a8d2375bd2c50d62a8b23"
+      ]
+    },
+    {
+      "id": "sql-020",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 249.39550000271993,
+      "repeat_query_ms": 124.78720000217436,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 143.02320000570035,
+        "vector_search_ms": 5.546199994569179,
+        "lexical_search_ms": 88.97849999630125
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.010399999155197293,
+        "vector_search_ms": 1.7777999964891933,
+        "lexical_search_ms": 94.40770000219345
+      },
+      "top5_ids": [
+        "18315c8c260faa1f24b23a0aefcfa367a2c62e952dc4df8685484f9a37aa0328",
+        "a9bfa12785f9199da8e26ba952e75e3f2efad411706a6fc96d5443b33b21673d",
+        "632c8e74e79d40d75caa9a2a4b8c44ade3c90fadf1cdd7e4c2066408e13031b8",
+        "8025408a1305e7bbdf8b1ea5aa4b024d201300a45cd25ac09a62f5aff0c1049e",
+        "7fb4054c00c28e3dee181d450c648fbe5e83d791945b591469a92aaa16c57a67"
+      ]
+    },
+    {
+      "id": "sql-003",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 279.23359999840613,
+      "repeat_query_ms": 124.76189999870257,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 164.6811999962665,
+        "vector_search_ms": 1.2057999992975965,
+        "lexical_search_ms": 102.3473000022932
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.007200003892648965,
+        "vector_search_ms": 1.2705000044661574,
+        "lexical_search_ms": 116.27240000234451
+      },
+      "top5_ids": [
+        "db99bf010334300b37d33dc4018a3442de2918c79475b8bc9d176ad239b65dce",
+        "bae64e4819419e7748dd62f0b5f424321ef1db51dd7ecf4e5b09ab49ad8375a0",
+        "3a4b8e871ced8f8f1363378a3201a7145fde2a18918cbfe0012248c475d91991",
+        "b3ee2f9172346731ae0a5ea7a307d18b21891735770dd2c71628fb46014d10e6",
+        "9317ca9c515cc65f0e6ea8ba2011de42ef2cccb351d491faeb2499ce06a1d24a"
+      ]
+    },
+    {
+      "id": "sql-015",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 243.5425999938161,
+      "repeat_query_ms": 92.70870000182185,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 138.08309999876656,
+        "vector_search_ms": 1.5717999995104037,
+        "lexical_search_ms": 96.23920000012731
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.3289999988046475,
+        "lexical_search_ms": 83.8627000048291
+      },
+      "top5_ids": [
+        "e4c69b162ef27d69686b7fcfbe0ff4b88b4d83572db58bb0621925dfa3a1cff5",
+        "67899c2cbb207d0a1a4378a85ffc47bc4efa3d1ae2b36edc577dbeb97d7b1e49",
+        "df60829ee47bff9f221fed9411296dea5d266fb403fe063e939d95e347e6cb00",
+        "30f9208e67462f066860cc9af21ef00e4f75244267c2171d9c79b473558632bd",
+        "3a957516e6d873190ab252b5d53147d4b1e467d1dbfbeff9f25b62260f6a1a74"
+      ]
+    },
+    {
+      "id": "sql-007",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 276.15079999668524,
+      "repeat_query_ms": 172.1079999988433,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 131.91929999447893,
+        "vector_search_ms": 1.3828000010107644,
+        "lexical_search_ms": 135.05129999975907
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006399997801054269,
+        "vector_search_ms": 1.4606999975512736,
+        "lexical_search_ms": 163.43500000220956
+      },
+      "top5_ids": [
+        "ddf0fe0d9b7ee526f8b83d1bf1b0cfa782dc456e54533fe5b374d219f7c2cf29",
+        "6f2146d3aec60423af450be0ec16dfee1eb96849843815ae7bce1a704db15e0f",
+        "5737fb1149f1f3f2403a7ba214e687c985930968d159665c431089b5b1ddd1e3",
+        "98f31afbc11c9e3126879a01649c77d4f5e655c6779753ece407dca15d877805",
+        "dacf13e8fd45a8541d7db3ec7c3a36821c38c4b0bdeb47a83167b3774c726f74"
+      ]
+    },
+    {
+      "id": "sql-031",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 250.36570000520442,
+      "repeat_query_ms": 90.62439999979688,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 149.63410000200383,
+        "vector_search_ms": 2.103500002704095,
+        "lexical_search_ms": 89.72350000112783
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.4417999991565011,
+        "lexical_search_ms": 80.35479999671225
+      },
+      "top5_ids": [
+        "e2faf423899ac5b0cbb99033b0f9d94e3d9b730b999a84402c6915557f3f5a09",
+        "1fdaab1d3e8da118ecda8b262bd7bc66cb82afbc31fbaf20dad488e3ec9a153e",
+        "ca23c5fd626f959bd274371d0ace33e7669a360c88aa3c106e44bf4153c3d4f5",
+        "7e33bead9d6f0b443da4914c21bd26679258db33e20712cafc6904edde754548",
+        "0edb9bbae3f485c37dd0223cab97fe25bc26537916de63e9b78703e87d4c1e76"
+      ]
+    },
+    {
+      "id": "sql-021",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 250.25759999698494,
+      "repeat_query_ms": 93.19349999714177,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 163.94500000023982,
+        "vector_search_ms": 1.887699996586889,
+        "lexical_search_ms": 76.44969999819295
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.4026999997440726,
+        "lexical_search_ms": 68.69599999481579
+      },
+      "top5_ids": [
+        "630a3df38791d7078689c70d2b3ad8105b9d2ecf04008e2561548b8051724c84",
+        "ef3af3b7dbb413cdcb81507c302da6d650003dbdfaae6c903a73354fea816abc",
+        "18315c8c260faa1f24b23a0aefcfa367a2c62e952dc4df8685484f9a37aa0328",
+        "8025408a1305e7bbdf8b1ea5aa4b024d201300a45cd25ac09a62f5aff0c1049e",
+        "899e9f03f0fc64df6787e37e1e8e9bc72e059df9881cd0f6d823d5711e561ce3"
+      ]
+    },
+    {
+      "id": "sql-033",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 202.5556000007782,
+      "repeat_query_ms": 57.90879999403842,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 143.51239999814425,
+        "vector_search_ms": 1.431899996532593,
+        "lexical_search_ms": 49.37439999775961
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.00960000033956021,
+        "vector_search_ms": 1.5921000012895092,
+        "lexical_search_ms": 48.016399996413384
+      },
+      "top5_ids": [
+        "23415558994992cdc6c56dc1ede473182c039c2e27595e865e08cd23a5a360d9",
+        "0f922794e28dc7107dbeacdfbcbee48baa776942053e1bb0c047831b9fdf5f0c",
+        "f2d751653c5b7529031d48e03837d08d423c4823db86eb245e389b07c76b2554",
+        "37d11c2941e8a614850302ccc7838f202436fbef62ca9cdb4bee0ab8f426fa4b",
+        "131cfbc6e155d37ecf09825eb69f4247b4db4eda90efa2835390fd9e21965f65"
+      ]
+    },
+    {
+      "id": "sql-050",
+      "split": "dev",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 241.4483000029577,
+      "repeat_query_ms": 97.12299999955576,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 148.5275000013644,
+        "vector_search_ms": 1.4689000017824583,
+        "lexical_search_ms": 84.55120000144234
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.009199997293762863,
+        "vector_search_ms": 1.699400003417395,
+        "lexical_search_ms": 87.2181999948225
+      },
+      "top5_ids": [
+        "b833ae28505888b1a34e37176f23a291dd59a28f96b97f219db7c5dcd405caa5",
+        "95b593b83a8041263660cd02588325525d128efa4477f4f2ad48301bace7d78c",
+        "8540275b6c13516b935525bae8f5c83f7c4ea7b456bd8a9424f6e9f2257a4cad",
+        "76b904d4f12ad373e5ffbd6eda5eeed058130250b056cee85b28dee4478a84ce",
+        "1be7bdf3222213b3e71ca856b3ab274001caee212cabe7c915110ade4d123412"
+      ]
+    },
+    {
+      "id": "sql-046",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 284.7464000005857,
+      "repeat_query_ms": 145.43990000674967,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 149.08189999550814,
+        "vector_search_ms": 1.5812999990885146,
+        "lexical_search_ms": 126.24520000099437
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.005299996701069176,
+        "vector_search_ms": 1.7536000013933517,
+        "lexical_search_ms": 134.73449999582954
+      },
+      "top5_ids": [
+        "079a9e06b2adaec26a00283bf2620670e26567ddaee4609373d8d9b6ef3809fc",
+        "b9ebd880b5730cd7045040c71e2317eea6ee586e032ddb394d3245d8a85b670b",
+        "e0c17003330ead0bd308b3f7fcb8b6c83ea92113e2d0c5348f939f23e6575cb2",
+        "0d8c30e4a9895a90a17b69fbaa1c7fe8dd1a4a7c18dff8a65ad9839945cc282e",
+        "76c750c7b1ae6a0ad1c55b14cbeef573efff012f58b0061433ffa3b5e2649478"
+      ]
+    },
+    {
+      "id": "sql-006",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 217.30720000050496,
+      "repeat_query_ms": 84.44829999643844,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 130.8086999997613,
+        "vector_search_ms": 2.0204000029480085,
+        "lexical_search_ms": 73.51070000004256
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006399997801054269,
+        "vector_search_ms": 1.4023000039742328,
+        "lexical_search_ms": 72.99029999558115
+      },
+      "top5_ids": [
+        "6ffce0b14664db756e1d8cbeec1088b05cbe897190271674962bac3710efe28f",
+        "e8ee2452c53b1019bd8e6d0e432dd7d468e5271199541708db3cd0c7aee81eef",
+        "7bc86331f9a4e2afa558f39e3e28451deecb16d3db77292942c36617501a1cc4",
+        "6467dd77a766e8632e43988c7df9bf9841c86fa3cd3abcef755acbeb3ae95526",
+        "6a42b352ea6690e34437aef41409fe2f50192f35113472f871ca7b0f528a5f91"
+      ]
+    },
+    {
+      "id": "sql-018",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": false,
+      "first_query_ms": 251.78779999987455,
+      "repeat_query_ms": 78.49710000300547,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 151.38819999992847,
+        "vector_search_ms": 1.6897000023163855,
+        "lexical_search_ms": 90.84099999745376
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.4448000001721084,
+        "lexical_search_ms": 68.81419999990612
+      },
+      "top5_ids": [
+        "c43e810bf62bc65c50b171037e2d658cb9024d307c91e83a6f15d34ea3d282ad",
+        "4f6b92c43808cf6144490237d603fd3039267c16a0ae32a52df229de08c7690e",
+        "18d684607d2f199510d2d414d5f326249d7b0af99fee83c370b4299dd230a83a",
+        "52a8d5d4a73be1fad0bc1987bf4a87849e26c6cad4f56577304994339b2c4a83",
+        "622a4111610cda8fed9baa23448daf61f9a29859f46445f5a398229bea626506"
+      ]
+    },
+    {
+      "id": "sql-038",
+      "split": "heldout",
+      "mode": "hybrid",
+      "source_hit_at_5": true,
+      "evidence_hit_at_5": true,
+      "first_query_ms": 232.68200000165962,
+      "repeat_query_ms": 62.290599998959806,
+      "first_timings": {
+        "query_embedding_cache_hit": false,
+        "query_embedding_ms": 173.09889999887673,
+        "vector_search_ms": 1.5765999996801838,
+        "lexical_search_ms": 50.89099999895552
+      },
+      "repeat_timings": {
+        "query_embedding_cache_hit": true,
+        "query_embedding_ms": 0.006200003554113209,
+        "vector_search_ms": 1.3435999935609289,
+        "lexical_search_ms": 53.36810000153491
+      },
+      "top5_ids": [
+        "ac382e48ec40240019cce2c239925c23ac9d00316a8326af05d426e272dbd7fe",
+        "8079af39611f069b76f1e86866f8c949833c48fd94f0788fa4887e2270be6cd5",
+        "139aaabdf939683958e4427a1e3d3278f600ea2429988380acc70bb1b4c8c207",
+        "5025c45bc11ceca7dea57d2d3bb66adfc93a5dc8c26a6d2246235950f1cd6e4e",
+        "10536338cbc06f8096a864d3e7a35a5eeb992013770238e0ea6f7aa2ac35fa7d"
+      ]
+    }
+  ]
+}

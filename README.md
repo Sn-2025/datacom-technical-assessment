@@ -101,6 +101,8 @@ Retrieval compares dense HNSW, SQLite FTS5/BM25, and reciprocal-rank fusion. Opt
 
 `evals/questions.jsonl` contains 50 evidence-backed questions (10 development, 40 held-out) and five unanswerable controls. Questions were AI-authored and their gold evidence verified against the source; they are reviewable, not represented as independently human-graded. Metrics distinguish source Hit@5 from stricter evidence-span Hit@5. First-query latency clears the query-vector cache; repeat-query latency uses the bounded 256-entry cache. Both include the whole retrieval pipeline; neither includes answer generation. The benchmark saves raw per-question measurements as well as medians/p95s. Do not compare repeat-cache numbers with another system's uncached numbers.
 
+`scripts/ablate_chunking.py` adds a small controlled chunk-size / overlap sensitivity experiment on top of the same benchmark. By default it compares the submitted `320/40` configuration against `240/40` and `320/20`, writing per-variant retrieval reports plus `artifacts/evaluation/chunk_ablation/summary.json`. This is intended as a focused ablation, not a full hyperparameter search.
+
 `qa.jsonl` preserves the generated answers and original nano judgments. `qa-audit.json` re-scores those unchanged answers with GPT-5.4 after finding rubric errors in the original judge. The audited answer correctness is 34/40; 36/37 affirmative answers have fully supported citations. All five negative controls abstain. This is a post-hoc automated audit, not an independent human score or a fresh held-out run. Judge-model pricing is left unknown unless explicitly configured.
 
 ## Travel agent
@@ -163,6 +165,9 @@ docker compose exec api /app/.venv/bin/python scripts/reproduce.py
 docker compose exec api /app/.venv/bin/python scripts/reproduce.py --with-qa
 docker compose exec api /app/.venv/bin/python scripts/evaluate_qa.py
 docker compose exec api /app/.venv/bin/python -m scripts.audit_qa_scores --judge-model gpt-5.4
+
+# Chunk-size / overlap ablation on the fixed retrieval benchmark:
+docker compose exec api /app/.venv/bin/python scripts/ablate_chunking.py
 ```
 
 The production image is intentionally built with `uv sync --no-dev`, so `pytest` and `ruff` are not installed in the long-running `api` container by default. For validation commands that need dev dependencies, run an ephemeral one-off container from the same Compose service:
