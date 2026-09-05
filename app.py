@@ -2,7 +2,10 @@
 from __future__ import annotations
 
 import json
+import os
 import statistics
+import subprocess
+import sys
 import tempfile
 from datetime import date, timedelta
 from pathlib import Path
@@ -40,6 +43,7 @@ state.setdefault("session_keys", {})
 state.setdefault("base_url", runtime.settings.openai_base_url)
 state.setdefault("model_name", runtime.settings.model_name)
 state.setdefault("chat", ChatSession())
+state.setdefault("management_result", None)
 
 
 def get_connection():
@@ -50,6 +54,36 @@ def get_connection():
         key = default.api_key.get_secret_value()
     return Connection(base_url=base, model=state["model_name"], api_key=SecretStr(key or ""),
                       profile="session" if key and base in state["session_keys"] else default.profile)
+
+
+def management_environment():
+    env = os.environ.copy()
+    connection = get_connection()
+    env["OPENAI_BASE_URL"] = connection.base_url
+    env["MODEL_NAME"] = connection.model
+    if connection.api_key.get_secret_value():
+        env["OPENAI_API_KEY"] = connection.api_key.get_secret_value()
+    return env
+
+
+def run_management_command(label: str, args: list[str], *, timeout_s: int = 3600, refresh_runtime: bool = False):
+    with st.spinner(f"{label} in progress"):
+        completed = subprocess.run(args, cwd=ROOT, env=management_environment(), capture_output=True,
+                                   text=True, timeout=timeout_s)
+    state["management_result"] = {"label": label, "args": args, "returncode": completed.returncode,
+                                  "stdout": completed.stdout[-30000:], "stderr": completed.stderr[-12000:]}
+    if refresh_runtime:
+        get_runtime.clear()
+        st.rerun()
+
+
+def read_json_artifact(path: Path):
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
 
 
 with st.sidebar:
@@ -175,6 +209,63 @@ elif page == "Knowledge base":
     title("Retrieval-grounded QA", "Answers with evidence", "Inspect sources, compare retrieval modes and add technical documents.")
     st.info("Answers here retrieve evidence from this knowledge base and include citations. "
             "Each question is independent. Chat uses conversation history without knowledge-base retrieval.")
+    with st.expander("Standard corpus and evaluation"):
+        st.caption("Run the committed corpus import and evaluation scripts from the UI. Commands execute inside this app's environment and write into `data/` and `artifacts/`.")
+        left, middle, right = st.columns(3)
+        if left.button("Index committed corpus"):
+            try:
+                run_management_command("Index committed corpus",
+                                       [sys.executable, "-m", "assessment.cli", "ingest", "data/corpus/documents.jsonl"],
+                                       timeout_s=7200, refresh_runtime=True)
+            except Exception as exc:
+                st.error(f"Indexing failed: {type(exc).__name__}: {exc}")
+        if middle.button("Run retrieval evaluation"):
+            try:
+                run_management_command("Run retrieval evaluation",
+                                       [sys.executable, "scripts/evaluate_retrieval.py"], timeout_s=7200)
+            except Exception as exc:
+                st.error(f"Retrieval evaluation failed: {type(exc).__name__}: {exc}")
+        if right.button("Run QA evaluation"):
+            try:
+                run_management_command("Run QA evaluation",
+                                       [sys.executable, "scripts/evaluate_qa.py"], timeout_s=14400)
+            except Exception as exc:
+                st.error(f"QA evaluation failed: {type(exc).__name__}: {exc}")
+        audit_a, audit_b = st.columns([1, 2])
+        if audit_a.button("Run QA audit"):
+            try:
+                run_management_command("Run QA audit",
+                                       [sys.executable, "-m", "scripts.audit_qa_scores", "--judge-model", "gpt-5.4-nano"],
+                                       timeout_s=14400)
+            except Exception as exc:
+                st.error(f"QA audit failed: {type(exc).__name__}: {exc}")
+        audit_b.caption("QA commands use the server-side environment or the current session override for `OPENAI_BASE_URL`, `MODEL_NAME`, and `OPENAI_API_KEY`. Embedding settings still come from `.env`.")
+        if result := state.get("management_result"):
+            status = "success" if result["returncode"] == 0 else "error"
+            getattr(st, status)(f"{result['label']} finished with exit code {result['returncode']}.")
+            st.code(" ".join(result["args"]), language="bash")
+            if result["stdout"]:
+                st.text_area("Command output", result["stdout"], height=220, disabled=True)
+            if result["stderr"]:
+                st.text_area("Command stderr", result["stderr"], height=160, disabled=True)
+        retrieval_report = read_json_artifact(ROOT / "artifacts/evaluation/retrieval.json")
+        qa_summary = read_json_artifact(ROOT / "artifacts/evaluation/qa-summary.json")
+        qa_audit = read_json_artifact(ROOT / "artifacts/evaluation/qa-audit.json")
+        if retrieval_report:
+            st.write("**Latest retrieval evaluation**")
+            st.dataframe(pd.DataFrame(retrieval_report["summary"]), hide_index=True, width="stretch")
+        if qa_summary:
+            qa_cols = st.columns(4)
+            qa_cols[0].metric("QA correct", f"{qa_summary['answer_correct']*100:.1f}%")
+            qa_cols[1].metric("Citation support", f"{qa_summary['all_claims_supported_by_their_citations']*100:.1f}%")
+            qa_cols[2].metric("Citation coverage", f"{qa_summary['all_factual_claims_have_citations']*100:.1f}%")
+            qa_cols[3].metric("Abstention", f"{qa_summary['abstention_accuracy']*100:.1f}%")
+        if qa_audit:
+            audit_cols = st.columns(4)
+            audit_cols[0].metric("Audit correct", f"{qa_audit['answer_correct']*100:.1f}%")
+            audit_cols[1].metric("Supported among answers", f"{qa_audit['fully_supported_among_answers']*100:.1f}%")
+            audit_cols[2].metric("Citation coverage", f"{qa_audit['citation_coverage_among_answers']*100:.1f}%")
+            audit_cols[3].metric("Answered", f"{qa_audit['answers_produced']}/{qa_audit['answerable_questions']}")
     overview = st.container()
     with st.expander("Add documents"):
         uploads = st.file_uploader("TXT, Markdown, HTML, PDF or DOCX", type=["txt", "md", "html", "pdf", "docx"],

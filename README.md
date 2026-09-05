@@ -125,12 +125,63 @@ Docker files are delivered locally. No cloud deployment is performed. With Docke
 
 ```powershell
 if (!(Test-Path .env)) { Copy-Item .env.example .env }
+git lfs install
+git lfs pull
 docker build -f docker/Sandbox.Dockerfile -t assessment-sandbox:local .
 docker compose build
 docker compose up -d chroma tools runner api ui
 ```
 
-Supply a backend key through `.env` or a mounted secret; the host's automatic key file is intentionally excluded from images. The Compose topology is for a Docker host: Chroma and SQLite require persistent storage, and the code runner requires a Docker engine. For your later Cloud Run deployment, preserve those persistence and runner boundaries rather than assuming local volumes or a Docker socket are available. The included GitHub workflow runs tests only; it does not deploy.
+Supply a backend key through `.env` or a mounted secret; the host's automatic key file is intentionally excluded from images. Pull the Git LFS corpus payload on the host before building or indexing, otherwise `data/corpus/documents.jsonl` remains a small pointer file. The Compose topology is for a Docker host: Chroma and SQLite require persistent storage, and the code runner requires a Docker engine. For your later Cloud Run deployment, preserve those persistence and runner boundaries rather than assuming local volumes or a Docker socket are available. The included GitHub workflow runs tests only; it does not deploy.
+
+After the stack is up, use the `api` container for ingestion, search, evaluation scripts, and ad-hoc CLI commands because it has the application environment plus the mounted `data/` and `artifacts/` directories:
+
+```bash
+# Confirm the corpus payload is real, not an LFS pointer:
+ls -lh data/corpus
+head -5 data/corpus/documents.jsonl
+
+# Build the runtime index inside the running stack:
+docker compose exec api python -m assessment.cli ingest data/corpus/documents.jsonl
+
+# Inspect the resulting index:
+docker compose exec api python -m assessment.cli stats
+docker compose exec api python -m assessment.cli search "How does READ COMMITTED prevent dirty reads?" --mode hybrid
+```
+
+For the reproduction and evaluation scripts, stay in the `api` container as well:
+
+```bash
+# Retrieval-only reproduction:
+docker compose exec api python scripts/reproduce.py --dry-run
+docker compose exec api python scripts/reproduce.py
+
+# Full QA rerun and audit; billable provider calls:
+docker compose exec api python scripts/reproduce.py --with-qa
+docker compose exec api python scripts/evaluate_qa.py
+docker compose exec api python -m scripts.audit_qa_scores --judge-model gpt-5.4
+```
+
+The production image is intentionally built with `uv sync --no-dev`, so `pytest` and `ruff` are not installed in the long-running `api` container by default. For validation commands that need dev dependencies, run an ephemeral one-off container from the same Compose service:
+
+```bash
+# Install dev extras only in the throwaway container, then run checks:
+docker compose run --rm api sh -lc "uv sync --frozen --extra dev && ruff check ."
+docker compose run --rm api sh -lc "uv sync --frozen --extra dev && pytest -q"
+
+# Explicit billable provider smoke checks:
+docker compose run --rm api sh -lc "uv sync --frozen --extra dev && python scripts/smoke_provider.py"
+docker compose run --rm api sh -lc "uv sync --frozen --extra dev && python scripts/smoke_planner.py"
+```
+
+If you rebuild after changing code or environment wiring, restart the stack and then rerun ingestion when the runtime directory is empty:
+
+```bash
+docker compose down
+docker compose build --no-cache
+docker compose up -d chroma tools runner api ui
+docker compose exec api python -m assessment.cli ingest data/corpus/documents.jsonl
+```
 
 ## Validation and layout
 
