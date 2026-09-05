@@ -25,10 +25,10 @@
       "questions": 10,
       "source_hit_at_5": 0.9,
       "evidence_hit_at_5": 0.9,
-      "first_median_ms": 101.93905000005543,
-      "first_p95_ms": 144.68625499966944,
-      "repeat_median_ms": 92.07694999986415,
-      "repeat_p95_ms": 130.0369949999094
+      "first_median_ms": 105.64699999849836,
+      "first_p95_ms": 170.37830500157722,
+      "repeat_median_ms": 87.86495000094874,
+      "repeat_p95_ms": 121.31163999929409
     },
     {
       "mode": "lexical",
@@ -36,10 +36,10 @@
       "questions": 40,
       "source_hit_at_5": 0.95,
       "evidence_hit_at_5": 0.825,
-      "first_median_ms": 101.60269999960292,
-      "first_p95_ms": 145.62771000032623,
-      "repeat_median_ms": 89.04675000076168,
-      "repeat_p95_ms": 135.6839149997995
+      "first_median_ms": 113.68314999890572,
+      "first_p95_ms": 166.82279500128058,
+      "repeat_median_ms": 84.5551999991585,
+      "repeat_p95_ms": 121.92191500180341
     },
     {
       "mode": "dense",
@@ -47,10 +47,10 @@
       "questions": 10,
       "source_hit_at_5": 0.8,
       "evidence_hit_at_5": 0.8,
-      "first_median_ms": 163.99090000004435,
-      "first_p95_ms": 178.90702499998952,
-      "repeat_median_ms": 10.087450000355602,
-      "repeat_p95_ms": 27.77187499964381
+      "first_median_ms": 176.56524999983958,
+      "first_p95_ms": 197.53381999853445,
+      "repeat_median_ms": 9.070449999853736,
+      "repeat_p95_ms": 12.615915002243128
     },
     {
       "mode": "dense",
@@ -58,10 +58,10 @@
       "questions": 40,
       "source_hit_at_5": 0.95,
       "evidence_hit_at_5": 0.8,
-      "first_median_ms": 153.62370000002556,
-      "first_p95_ms": 178.21870499988108,
-      "repeat_median_ms": 10.089599999901111,
-      "repeat_p95_ms": 12.865620000002304
+      "first_median_ms": 172.5656499984325,
+      "first_p95_ms": 212.4693700003263,
+      "repeat_median_ms": 9.338800000477931,
+      "repeat_p95_ms": 13.981344998501294
     },
     {
       "mode": "hybrid",
@@ -69,10 +69,10 @@
       "questions": 10,
       "source_hit_at_5": 1,
       "evidence_hit_at_5": 0.9,
-      "first_median_ms": 238.17430000008244,
-      "first_p95_ms": 294.6105399997122,
-      "repeat_median_ms": 92.43490000017118,
-      "repeat_p95_ms": 122.2374549998676
+      "first_median_ms": 241.9048499996279,
+      "first_p95_ms": 290.62082000145887,
+      "repeat_median_ms": 87.16274999824236,
+      "repeat_p95_ms": 121.48004000046055
     },
     {
       "mode": "hybrid",
@@ -80,10 +80,10 @@
       "questions": 40,
       "source_hit_at_5": 0.975,
       "evidence_hit_at_5": 0.875,
-      "first_median_ms": 234.2043499997999,
-      "first_p95_ms": 295.32698000002705,
-      "repeat_median_ms": 91.89689999993789,
-      "repeat_p95_ms": 132.289929999888
+      "first_median_ms": 241.30580000019108,
+      "first_p95_ms": 296.44360000092996,
+      "repeat_median_ms": 84.80785000028845,
+      "repeat_p95_ms": 126.5423750021
     }
   ],
   "rows": [
@@ -93,13 +93,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 139.15780000024824,
-      "repeat_query_ms": 120.42349999956059,
+      "first_query_ms": 232.13790000227164,
+      "repeat_query_ms": 106.5651999997499,
       "first_timings": {
-        "lexical_search_ms": 123.5910999994303
+        "lexical_search_ms": 213.67530000134138
       },
       "repeat_timings": {
-        "lexical_search_ms": 111.09310000028927
+        "lexical_search_ms": 99.33380000074976
       },
       "top5_ids": [
         "0cf0a99415539f166d6b5b3e572f65cb509a05fb7176a2355d92be513dd3e959",
@@ -115,13 +115,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 134.28679999924498,
-      "repeat_query_ms": 109.70960000031482,
+      "first_query_ms": 180.76210000072024,
+      "repeat_query_ms": 98.5774999971909,
       "first_timings": {
-        "lexical_search_ms": 113.79659999965952
+        "lexical_search_ms": 160.2039000026707
       },
       "repeat_timings": {
-        "lexical_search_ms": 102.10780000033992
+        "lexical_search_ms": 91.37560000090161
       },
       "top5_ids": [
         "fe15b679834a5f32540001f3a3d64b99db5bb617a08a1d20f81ec2ab646f4cbc",
@@ -137,13 +137,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 105.17479999998613,
-      "repeat_query_ms": 78.5225999998147,
+      "first_query_ms": 128.37610000133282,
+      "repeat_query_ms": 85.05389999845647,
       "first_timings": {
-        "lexical_search_ms": 89.01020000030258
+        "lexical_search_ms": 113.87110000214307
       },
       "repeat_timings": {
-        "lexical_search_ms": 70.4224000000977
+        "lexical_search_ms": 77.05859999987297
       },
       "top5_ids": [
         "fbe9c657db2221f962181645f8a8ff82c86c6acdbaa471e3778d6ff2bf6c3cb1",
@@ -159,13 +159,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 139.8866999998063,
-      "repeat_query_ms": 119.72040000000561,
+      "first_query_ms": 146.4640000012878,
+      "repeat_query_ms": 94.95030000107363,
       "first_timings": {
-        "lexical_search_ms": 122.5600999996459
+        "lexical_search_ms": 132.20800000271993
       },
       "repeat_timings": {
-        "lexical_search_ms": 111.9263000000501
+        "lexical_search_ms": 87.78610000081244
       },
       "top5_ids": [
         "dcdf647d8b95d1ca3cdc26ba0c6f5e4d144a5cec0e85af91608c2f2412ce247e",
@@ -181,13 +181,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 84.54530000017257,
-      "repeat_query_ms": 69.43750000027649,
+      "first_query_ms": 110.7278999988921,
+      "repeat_query_ms": 62.460499997541774,
       "first_timings": {
-        "lexical_search_ms": 75.11419999991631
+        "lexical_search_ms": 97.47250000145868
       },
       "repeat_timings": {
-        "lexical_search_ms": 62.0044000006601
+        "lexical_search_ms": 54.94800000087707
       },
       "top5_ids": [
         "40f76b6c1eced0692eee554777eef96447ac71865270300a8d469c804591ad41",
@@ -203,13 +203,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 103.13739999946847,
-      "repeat_query_ms": 102.52510000009352,
+      "first_query_ms": 127.41079999977956,
+      "repeat_query_ms": 91.91540000028908,
       "first_timings": {
-        "lexical_search_ms": 93.1775999997626
+        "lexical_search_ms": 112.04989999896497
       },
       "repeat_timings": {
-        "lexical_search_ms": 92.9943999999523
+        "lexical_search_ms": 83.7643000013486
       },
       "top5_ids": [
         "2cf725be4bee022d20e18e80206b1ea3e1acc4e6155063ad478bebf128cbe833",
@@ -225,13 +225,13 @@
       "mode": "lexical",
       "source_hit_at_5": false,
       "evidence_hit_at_5": false,
-      "first_query_ms": 103.57509999994363,
-      "repeat_query_ms": 88.88710000064748,
+      "first_query_ms": 113.63059999712277,
+      "repeat_query_ms": 80.56410000062897,
       "first_timings": {
-        "lexical_search_ms": 92.70410000044649
+        "lexical_search_ms": 100.01380000176141
       },
       "repeat_timings": {
-        "lexical_search_ms": 81.53110000057495
+        "lexical_search_ms": 73.32170000154292
       },
       "top5_ids": [
         "709c20104a3ae3d0c737f38de0932aff068157562f49c9d8d810db0f2000166d",
@@ -247,13 +247,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 68.08219999948051,
-      "repeat_query_ms": 57.46699999963312,
+      "first_query_ms": 73.73629999710829,
+      "repeat_query_ms": 51.02859999897191,
       "first_timings": {
-        "lexical_search_ms": 59.33030000051076
+        "lexical_search_ms": 61.45260000266717
       },
       "repeat_timings": {
-        "lexical_search_ms": 48.12630000014906
+        "lexical_search_ms": 43.95279999880586
       },
       "top5_ids": [
         "f74a1c71c9c3707e69915560028ace6a9d1d5fd8f44193f5414e9eb05f7988f9",
@@ -269,13 +269,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 121.34460000015679,
-      "repeat_query_ms": 99.58300000016607,
+      "first_query_ms": 133.89500000266708,
+      "repeat_query_ms": 109.55580000154441,
       "first_timings": {
-        "lexical_search_ms": 105.13900000023568
+        "lexical_search_ms": 119.9014999983774
       },
       "repeat_timings": {
-        "lexical_search_ms": 92.17230000012933
+        "lexical_search_ms": 101.2970999981917
       },
       "top5_ids": [
         "261bdd13d76b514b6c8c992f174197232ce2be22ea29b70c7d7978ce067d0a5a",
@@ -291,13 +291,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 94.64979999938805,
-      "repeat_query_ms": 86.83920000021317,
+      "first_query_ms": 128.09639999977662,
+      "repeat_query_ms": 97.36450000127661,
       "first_timings": {
-        "lexical_search_ms": 85.71190000020579
+        "lexical_search_ms": 113.4816999983741
       },
       "repeat_timings": {
-        "lexical_search_ms": 78.790200000185
+        "lexical_search_ms": 88.23779999875114
       },
       "top5_ids": [
         "6d6de8e5e42d99efab9838b05c1fd5f71e3ec516366ce9519d93b5736ebe00d2",
@@ -313,13 +313,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 111.29170000003796,
-      "repeat_query_ms": 99.09109999989596,
+      "first_query_ms": 116.23129999861703,
+      "repeat_query_ms": 92.1425000015006,
       "first_timings": {
-        "lexical_search_ms": 102.33919999973295
+        "lexical_search_ms": 104.0558000022429
       },
       "repeat_timings": {
-        "lexical_search_ms": 89.18629999971017
+        "lexical_search_ms": 83.72070000041276
       },
       "top5_ids": [
         "cefc755cf77725900519799d6b4db48e078f59c6f23dc3ef1468f459141451ec",
@@ -335,13 +335,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 81.66410000012547,
-      "repeat_query_ms": 61.77240000033635,
+      "first_query_ms": 84.17170000029728,
+      "repeat_query_ms": 55.407200001354795,
       "first_timings": {
-        "lexical_search_ms": 63.34640000022773
+        "lexical_search_ms": 64.84999999884167
       },
       "repeat_timings": {
-        "lexical_search_ms": 53.72689999967406
+        "lexical_search_ms": 48.511700002563884
       },
       "top5_ids": [
         "245deb092a7491f4ef11303448a156c66a64daf0d465da69f327289a57a7d305",
@@ -357,13 +357,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 111.4597000005233,
-      "repeat_query_ms": 93.49010000005364,
+      "first_query_ms": 132.38170000113314,
+      "repeat_query_ms": 92.79029999743216,
       "first_timings": {
-        "lexical_search_ms": 101.74389999974665
+        "lexical_search_ms": 117.54959999962011
       },
       "repeat_timings": {
-        "lexical_search_ms": 85.755799999788
+        "lexical_search_ms": 83.40840000164462
       },
       "top5_ids": [
         "888131dfca9964659295b2e211652838feb68aeb42746eda795e237c8290f2a4",
@@ -379,13 +379,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 119.64270000044053,
-      "repeat_query_ms": 103.40009999981703,
+      "first_query_ms": 129.72339999760152,
+      "repeat_query_ms": 97.3188999996637,
       "first_timings": {
-        "lexical_search_ms": 102.60920000018814
+        "lexical_search_ms": 117.46909999783384
       },
       "repeat_timings": {
-        "lexical_search_ms": 94.67440000025817
+        "lexical_search_ms": 89.70389999740291
       },
       "top5_ids": [
         "64a48a8f11472ccd1c2e336a06a0a2b2ffe0d9617001d0d47957d4e409f94a1b",
@@ -401,13 +401,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 91.30589999949734,
-      "repeat_query_ms": 74.85530000030849,
+      "first_query_ms": 91.87700000256882,
+      "repeat_query_ms": 71.66680000227643,
       "first_timings": {
-        "lexical_search_ms": 77.11089999975229
+        "lexical_search_ms": 80.20649999889429
       },
       "repeat_timings": {
-        "lexical_search_ms": 65.89919999987615
+        "lexical_search_ms": 64.54529999973602
       },
       "top5_ids": [
         "4b015a9099110733ab88ffa00211623636b87eea93af814c827a20aa5e837f14",
@@ -423,13 +423,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 120.67759999990813,
-      "repeat_query_ms": 107.01810000045953,
+      "first_query_ms": 117.78430000049411,
+      "repeat_query_ms": 95.69079999710084,
       "first_timings": {
-        "lexical_search_ms": 106.69210000014573
+        "lexical_search_ms": 107.36390000238316
       },
       "repeat_timings": {
-        "lexical_search_ms": 99.5188999995662
+        "lexical_search_ms": 88.05819999906817
       },
       "top5_ids": [
         "1e7fce9f3d0fa004f7501777d697e5efd1a2b0bc5590a900869d8aa753a22b33",
@@ -445,13 +445,13 @@
       "mode": "lexical",
       "source_hit_at_5": false,
       "evidence_hit_at_5": false,
-      "first_query_ms": 100.20369999983814,
-      "repeat_query_ms": 90.66379999967467,
+      "first_query_ms": 102.79829999853973,
+      "repeat_query_ms": 82.3926000011852,
       "first_timings": {
-        "lexical_search_ms": 89.16469999985566
+        "lexical_search_ms": 89.83230000012554
       },
       "repeat_timings": {
-        "lexical_search_ms": 80.99889999994048
+        "lexical_search_ms": 74.63519999873824
       },
       "top5_ids": [
         "bddda64557f233f799b8f659a681eee6d1b64906ca42c8c0d0e1fd376d38ca84",
@@ -467,13 +467,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 72.15770000038901,
-      "repeat_query_ms": 65.73990000015328,
+      "first_query_ms": 84.97849999912432,
+      "repeat_query_ms": 59.077800000522984,
       "first_timings": {
-        "lexical_search_ms": 63.90260000080161
+        "lexical_search_ms": 72.32459999795537
       },
       "repeat_timings": {
-        "lexical_search_ms": 56.55899999965186
+        "lexical_search_ms": 50.59560000154306
       },
       "top5_ids": [
         "d646c3ddd267d101f694e3b1ee6b3436b4c23cc889a9e75c4c98d518c264e49d",
@@ -489,13 +489,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 72.13130000036472,
-      "repeat_query_ms": 58.14430000009452,
+      "first_query_ms": 78.24149999942165,
+      "repeat_query_ms": 55.42239999704179,
       "first_timings": {
-        "lexical_search_ms": 62.95349999982136
+        "lexical_search_ms": 66.07289999737986
       },
       "repeat_timings": {
-        "lexical_search_ms": 49.29279999942082
+        "lexical_search_ms": 47.185600000375416
       },
       "top5_ids": [
         "be9950e15d986b1bb7ececd2c71fca6974bb67a614fca55638a8ea71de127f54",
@@ -511,13 +511,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 84.13860000018758,
-      "repeat_query_ms": 79.02649999959976,
+      "first_query_ms": 86.92359999986365,
+      "repeat_query_ms": 75.63800000207266,
       "first_timings": {
-        "lexical_search_ms": 70.47510000029433
+        "lexical_search_ms": 77.87910000115517
       },
       "repeat_timings": {
-        "lexical_search_ms": 71.6459000004761
+        "lexical_search_ms": 68.4555999978329
       },
       "top5_ids": [
         "61a2b7c821104722a53d901befca1d3c49cf9b936ce9a05638eaaa4adc799915",
@@ -533,13 +533,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 105.6628999995155,
-      "repeat_query_ms": 105.71729999992385,
+      "first_query_ms": 116.8379000009736,
+      "repeat_query_ms": 92.76099999988219,
       "first_timings": {
-        "lexical_search_ms": 90.96529999987979
+        "lexical_search_ms": 103.68680000101449
       },
       "repeat_timings": {
-        "lexical_search_ms": 98.40729999996256
+        "lexical_search_ms": 85.15800000168383
       },
       "top5_ids": [
         "b92cf7c11f9fdd694ae200508edc95f395d2e5dfb0eba19c1ba98217daf38073",
@@ -555,13 +555,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 84.16420000048674,
-      "repeat_query_ms": 73.22610000028362,
+      "first_query_ms": 84.23539999785135,
+      "repeat_query_ms": 69.21480000164593,
       "first_timings": {
-        "lexical_search_ms": 72.19810000060534
+        "lexical_search_ms": 73.04339999973308
       },
       "repeat_timings": {
-        "lexical_search_ms": 64.4376000000193
+        "lexical_search_ms": 61.55600000056438
       },
       "top5_ids": [
         "bc0d935f95c465d971c89489fd00b912a3e83ec15caddcf29b08d7c0eb2ec09a",
@@ -577,13 +577,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 102.59849999965809,
-      "repeat_query_ms": 101.50479999992967,
+      "first_query_ms": 112.40469999756897,
+      "repeat_query_ms": 96.95780000038212,
       "first_timings": {
-        "lexical_search_ms": 93.8640000003943
+        "lexical_search_ms": 99.48699999949895
       },
       "repeat_timings": {
-        "lexical_search_ms": 84.41180000045279
+        "lexical_search_ms": 80.72710000124061
       },
       "top5_ids": [
         "51b1895b7278a110ad05b0f3d9a4c456dc055a4ad748d707175575d2fe0fcfb7",
@@ -599,13 +599,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 88.80959999987681,
-      "repeat_query_ms": 76.1928000001717,
+      "first_query_ms": 88.86859999984154,
+      "repeat_query_ms": 72.41670000075828,
       "first_timings": {
-        "lexical_search_ms": 74.44979999945645
+        "lexical_search_ms": 77.30520000040997
       },
       "repeat_timings": {
-        "lexical_search_ms": 66.75600000016857
+        "lexical_search_ms": 63.95730000076583
       },
       "top5_ids": [
         "d5453f21aba424762035ae73c6485e57b165c128c39bb8db3ab1d055e36830b4",
@@ -621,13 +621,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 157.91449999960605,
-      "repeat_query_ms": 135.3393999997934,
+      "first_query_ms": 173.7862000009045,
+      "repeat_query_ms": 126.09650000013062,
       "first_timings": {
-        "lexical_search_ms": 144.6806000003562
+        "lexical_search_ms": 162.58430000016233
       },
       "repeat_timings": {
-        "lexical_search_ms": 126.38309999965713
+        "lexical_search_ms": 118.92820000139182
       },
       "top5_ids": [
         "203d3db582ab414f6a86c2809b8a91364b0a352fa18f0ab5407ebad4ef486bc3",
@@ -643,13 +643,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 122.19720000030065,
-      "repeat_query_ms": 101.79539999990084,
+      "first_query_ms": 116.01270000028308,
+      "repeat_query_ms": 94.38040000168257,
       "first_timings": {
-        "lexical_search_ms": 107.36249999990832
+        "lexical_search_ms": 103.36449999886099
       },
       "repeat_timings": {
-        "lexical_search_ms": 94.39760000077513
+        "lexical_search_ms": 86.27419999902486
       },
       "top5_ids": [
         "6c472379987db954a322070d606c1545fa04d621f491a6ba945c42afb00bd128",
@@ -665,13 +665,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 111.57970000022033,
-      "repeat_query_ms": 107.33820000041305,
+      "first_query_ms": 113.73570000068867,
+      "repeat_query_ms": 97.16440000192961,
       "first_timings": {
-        "lexical_search_ms": 102.20879999997123
+        "lexical_search_ms": 103.01210000034189
       },
       "repeat_timings": {
-        "lexical_search_ms": 100.06090000024415
+        "lexical_search_ms": 90.11129999998957
       },
       "top5_ids": [
         "a1727ad569800edc7f1c5c335e2c9a240a13e0164930dece18903be3d09b41cf",
@@ -687,13 +687,13 @@
       "mode": "lexical",
       "source_hit_at_5": false,
       "evidence_hit_at_5": false,
-      "first_query_ms": 93.48920000047656,
-      "repeat_query_ms": 79.42629999979545,
+      "first_query_ms": 101.50840000278549,
+      "repeat_query_ms": 73.533500002668,
       "first_timings": {
-        "lexical_search_ms": 83.72659999986354
+        "lexical_search_ms": 89.84530000088853
       },
       "repeat_timings": {
-        "lexical_search_ms": 71.52690000020812
+        "lexical_search_ms": 66.43650000114576
       },
       "top5_ids": [
         "f25a478257747feb17d92405d388ef328e157182f1c4a7511e25b2756bc33151",
@@ -709,13 +709,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 118.14409999988129,
-      "repeat_query_ms": 103.09529999994993,
+      "first_query_ms": 135.93519999994896,
+      "repeat_query_ms": 102.94969999813475,
       "first_timings": {
-        "lexical_search_ms": 106.93350000019564
+        "lexical_search_ms": 123.14490000062506
       },
       "repeat_timings": {
-        "lexical_search_ms": 95.2571000007083
+        "lexical_search_ms": 93.5187000031874
       },
       "top5_ids": [
         "2226ee563d10cc99253c45f0986034175340a77ce65dc8263a46123d2a556e4b",
@@ -731,13 +731,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 82.15480000035313,
-      "repeat_query_ms": 81.12619999974413,
+      "first_query_ms": 103.84800000247196,
+      "repeat_query_ms": 74.39869999871007,
       "first_timings": {
-        "lexical_search_ms": 73.49650000014663
+        "lexical_search_ms": 93.99739999935264
       },
       "repeat_timings": {
-        "lexical_search_ms": 73.4682000002067
+        "lexical_search_ms": 67.17940000089584
       },
       "top5_ids": [
         "dc80664374ea80e22696609256e57fe97df81197837056711176a44f5c222470",
@@ -753,13 +753,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 144.9921000003087,
-      "repeat_query_ms": 129.43559999985155,
+      "first_query_ms": 142.6726999998209,
+      "repeat_query_ms": 121.70220000189147,
       "first_timings": {
-        "lexical_search_ms": 131.25940000008995
+        "lexical_search_ms": 127.06210000033025
       },
       "repeat_timings": {
-        "lexical_search_ms": 120.74250000023312
+        "lexical_search_ms": 114.60340000121505
       },
       "top5_ids": [
         "807873f046c6e3e7dee18e4263709181f6aaecb93530a7d6e4bfece70954fa59",
@@ -775,13 +775,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 105.81639999963954,
-      "repeat_query_ms": 89.20640000087587,
+      "first_query_ms": 116.6462999972282,
+      "repeat_query_ms": 80.13139999820851,
       "first_timings": {
-        "lexical_search_ms": 90.16090000022814
+        "lexical_search_ms": 104.11409999869647
       },
       "repeat_timings": {
-        "lexical_search_ms": 80.85220000066329
+        "lexical_search_ms": 71.86120000187657
       },
       "top5_ids": [
         "531df8b368e819a3402372807d51c5efbfeebb0f031fb554199c4de57c07bff6",
@@ -797,13 +797,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 89.64620000006107,
-      "repeat_query_ms": 78.07880000018486,
+      "first_query_ms": 90.07919999930891,
+      "repeat_query_ms": 74.50509999762289,
       "first_timings": {
-        "lexical_search_ms": 79.93509999960224
+        "lexical_search_ms": 78.13820000228588
       },
       "repeat_timings": {
-        "lexical_search_ms": 68.26739999996789
+        "lexical_search_ms": 65.93960000100196
       },
       "top5_ids": [
         "89afc0ee29f7b72960bf018b2b9d7ccb0d3d41168b05415816bdfd173ef29009",
@@ -819,13 +819,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 153.1949000000168,
-      "repeat_query_ms": 146.66849999957776,
+      "first_query_ms": 157.6870000026247,
+      "repeat_query_ms": 139.91230000101496,
       "first_timings": {
-        "lexical_search_ms": 138.41390000015963
+        "lexical_search_ms": 147.07199999975273
       },
       "repeat_timings": {
-        "lexical_search_ms": 128.237299999455
+        "lexical_search_ms": 123.35449999955017
       },
       "top5_ids": [
         "98aa52d8bf5a287c8c2e8f97fdde762d32bc8b9abefe3576c232a523ea774db8",
@@ -841,13 +841,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 66.11749999956373,
-      "repeat_query_ms": 62.35539999943285,
+      "first_query_ms": 84.97279999937746,
+      "repeat_query_ms": 57.50299999999697,
       "first_timings": {
-        "lexical_search_ms": 58.59539999983099
+        "lexical_search_ms": 72.19650000115507
       },
       "repeat_timings": {
-        "lexical_search_ms": 54.79699999978038
+        "lexical_search_ms": 50.280200000997866
       },
       "top5_ids": [
         "edf59ce838591a6d6a05ab137ce3d9e947c28b0ae28cb8917a785f22c746748f",
@@ -863,13 +863,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 100.06799999973737,
-      "repeat_query_ms": 87.67080000052374,
+      "first_query_ms": 96.32080000301357,
+      "repeat_query_ms": 85.49739999943995,
       "first_timings": {
-        "lexical_search_ms": 84.89940000072238
+        "lexical_search_ms": 82.22089999981108
       },
       "repeat_timings": {
-        "lexical_search_ms": 80.2588000005926
+        "lexical_search_ms": 77.48450000144658
       },
       "top5_ids": [
         "535a75fb0c9251379e1abac5df1fc899b83548d5c90e397a298a6eca5e525518",
@@ -885,13 +885,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 140.25020000008226,
-      "repeat_query_ms": 122.61279999984254,
+      "first_query_ms": 135.6210000012652,
+      "repeat_query_ms": 110.61870000048657,
       "first_timings": {
-        "lexical_search_ms": 125.01869999960036
+        "lexical_search_ms": 122.52889999945182
       },
       "repeat_timings": {
-        "lexical_search_ms": 113.65500000010798
+        "lexical_search_ms": 102.36690000238013
       },
       "top5_ids": [
         "068e5236aa8eaa2d36aada5292f81e653154a484e3811660f74c47bdeedc55f6",
@@ -907,13 +907,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 95.18000000025495,
-      "repeat_query_ms": 89.53449999989971,
+      "first_query_ms": 96.93370000240975,
+      "repeat_query_ms": 68.6941999992996,
       "first_timings": {
-        "lexical_search_ms": 86.05119999992894
+        "lexical_search_ms": 87.07739999954356
       },
       "repeat_timings": {
-        "lexical_search_ms": 78.96940000046015
+        "lexical_search_ms": 61.10940000144183
       },
       "top5_ids": [
         "114d57e4783f42af835d2b1941917d47472ea270807e597f621164443c879dca",
@@ -929,13 +929,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 105.95550000016374,
-      "repeat_query_ms": 98.40580000036425,
+      "first_query_ms": 99.09540000080597,
+      "repeat_query_ms": 88.29210000112653,
       "first_timings": {
-        "lexical_search_ms": 93.73000000050524
+        "lexical_search_ms": 87.26620000015828
       },
       "repeat_timings": {
-        "lexical_search_ms": 88.21880000050442
+        "lexical_search_ms": 81.06689999840455
       },
       "top5_ids": [
         "4516aca63e6d4fe736f587a985ac647feee586990c91cf704e53731a05f0225e",
@@ -951,13 +951,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 133.0576000000292,
-      "repeat_query_ms": 142.2296999999162,
+      "first_query_ms": 120.09369999941555,
+      "repeat_query_ms": 110.47099999996135,
       "first_timings": {
-        "lexical_search_ms": 124.42029999965598
+        "lexical_search_ms": 108.13830000188318
       },
       "repeat_timings": {
-        "lexical_search_ms": 132.62639999993553
+        "lexical_search_ms": 102.49390000171843
       },
       "top5_ids": [
         "a1522b88256a0e3a2e799fe06b91ec58fc6b3a491df83c83f64b8983184b3993",
@@ -973,13 +973,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 89.8866999996244,
-      "repeat_query_ms": 87.29660000062722,
+      "first_query_ms": 102.04430000158027,
+      "repeat_query_ms": 84.30640000005951,
       "first_timings": {
-        "lexical_search_ms": 81.924699999945
+        "lexical_search_ms": 93.16799999942305
       },
       "repeat_timings": {
-        "lexical_search_ms": 80.11159999932715
+        "lexical_search_ms": 76.51009999972302
       },
       "top5_ids": [
         "ec0a7e127930409abb248546c74649a7951e71bb27b42a274c5ac6118df5ae5a",
@@ -995,13 +995,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 157.7043000006597,
-      "repeat_query_ms": 150.7713999999396,
+      "first_query_ms": 166.4563000013004,
+      "repeat_query_ms": 141.93019999947865,
       "first_timings": {
-        "lexical_search_ms": 142.4207000000024
+        "lexical_search_ms": 153.03580000181682
       },
       "repeat_timings": {
-        "lexical_search_ms": 143.31049999964307
+        "lexical_search_ms": 134.00039999760338
       },
       "top5_ids": [
         "5e8c05c1b317ba7c8655705612949baf7f8e788c8fd08982b95bd0521049bde9",
@@ -1017,13 +1017,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 97.42930000084016,
-      "repeat_query_ms": 90.13319999939995,
+      "first_query_ms": 87.50999999756459,
+      "repeat_query_ms": 84.05649999986053,
       "first_timings": {
-        "lexical_search_ms": 83.8224999997692
+        "lexical_search_ms": 77.6661999989301
       },
       "repeat_timings": {
-        "lexical_search_ms": 81.69060000000172
+        "lexical_search_ms": 76.49390000005951
       },
       "top5_ids": [
         "39ab1f21a12e74754e5b9e1653ae971ec5ca8ff0ba1781a55b4602562df08259",
@@ -1039,13 +1039,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 86.66460000040388,
-      "repeat_query_ms": 75.50650000030146,
+      "first_query_ms": 104.2615999976988,
+      "repeat_query_ms": 72.10940000004484,
       "first_timings": {
-        "lexical_search_ms": 78.25169999978243
+        "lexical_search_ms": 93.75010000076145
       },
       "repeat_timings": {
-        "lexical_search_ms": 67.08830000025046
+        "lexical_search_ms": 63.71709999802988
       },
       "top5_ids": [
         "9038ea89248724caab583aa848fdfe319c408241858edc6b8f7a6a59571baaed",
@@ -1061,13 +1061,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 74.01570000001811,
-      "repeat_query_ms": 54.41489999975602,
+      "first_query_ms": 88.87360000153421,
+      "repeat_query_ms": 53.15560000235564,
       "first_timings": {
-        "lexical_search_ms": 54.9460000002
+        "lexical_search_ms": 68.34370000069612
       },
       "repeat_timings": {
-        "lexical_search_ms": 46.37350000029983
+        "lexical_search_ms": 46.32750000018859
       },
       "top5_ids": [
         "845f5ee6d06cf8fef52d47267d6a0781839beaf3d325c358855a702f67a9782c",
@@ -1083,13 +1083,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 101.27960000045277,
-      "repeat_query_ms": 89.23450000020239,
+      "first_query_ms": 108.49569999845698,
+      "repeat_query_ms": 87.43780000077095,
       "first_timings": {
-        "lexical_search_ms": 86.65759999985312
+        "lexical_search_ms": 94.9709000014991
       },
       "repeat_timings": {
-        "lexical_search_ms": 81.46359999955166
+        "lexical_search_ms": 79.06279999951948
       },
       "top5_ids": [
         "fc8521ec05778ae8a0ad79968d022dc2963f92d98edd7dacabc4fe9700712bc1",
@@ -1105,13 +1105,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 131.67049999992742,
-      "repeat_query_ms": 125.58629999966797,
+      "first_query_ms": 137.16730000305688,
+      "repeat_query_ms": 121.68130000281963,
       "first_timings": {
-        "lexical_search_ms": 121.82680000023538
+        "lexical_search_ms": 125.32690000080038
       },
       "repeat_timings": {
-        "lexical_search_ms": 118.15819999992527
+        "lexical_search_ms": 113.54539999956614
       },
       "top5_ids": [
         "7d7c9bcadc2323ff88a251de2ee38878f37dc5dbde0ff3a87afb6058308eb222",
@@ -1127,13 +1127,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 90.496499999972,
-      "repeat_query_ms": 82.91580000059184,
+      "first_query_ms": 98.45000000132131,
+      "repeat_query_ms": 79.39980000082869,
       "first_timings": {
-        "lexical_search_ms": 79.89589999942837
+        "lexical_search_ms": 85.87199999965378
       },
       "repeat_timings": {
-        "lexical_search_ms": 75.5273999993733
+        "lexical_search_ms": 71.41540000156965
       },
       "top5_ids": [
         "b0ab4c390537579190b618eaed220451741c2698a8b923fd0b7f42a00db64426",
@@ -1149,13 +1149,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 85.33900000020367,
-      "repeat_query_ms": 76.83610000003682,
+      "first_query_ms": 85.5608999991091,
+      "repeat_query_ms": 76.3939999997092,
       "first_timings": {
-        "lexical_search_ms": 75.73219999994762
+        "lexical_search_ms": 73.77309999719728
       },
       "repeat_timings": {
-        "lexical_search_ms": 69.42830000025424
+        "lexical_search_ms": 68.32589999976335
       },
       "top5_ids": [
         "257495776a2ba057d038f307959c94fee8e3de28fe5dc652acbcd8a1727bdbdd",
@@ -1171,13 +1171,13 @@
       "mode": "lexical",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 73.34170000012818,
-      "repeat_query_ms": 56.371699999544944,
+      "first_query_ms": 65.81780000124127,
+      "repeat_query_ms": 54.25489999834099,
       "first_timings": {
-        "lexical_search_ms": 64.28070000038133
+        "lexical_search_ms": 56.905099998402875
       },
       "repeat_timings": {
-        "lexical_search_ms": 48.871300000428164
+        "lexical_search_ms": 47.210000000632135
       },
       "top5_ids": [
         "25cbae980e6cbcb772b8e968b19730f85ec80f68a742f7a151baf71c84c805a2",
@@ -1193,17 +1193,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 224.0241999998034,
-      "repeat_query_ms": 9.703800000352203,
+      "first_query_ms": 585.1763000027859,
+      "repeat_query_ms": 9.793100001843413,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 211.26159999948868,
-        "vector_search_ms": 2.2156000004542875
+        "query_embedding_ms": 575.448100000358,
+        "vector_search_ms": 1.332100000581704
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006399999620043673,
-        "vector_search_ms": 1.5684999998484273
+        "query_embedding_ms": 0.006399997801054269,
+        "vector_search_ms": 1.479400001699105
       },
       "top5_ids": [
         "0cf0a99415539f166d6b5b3e572f65cb509a05fb7176a2355d92be513dd3e959",
@@ -1219,17 +1219,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 157.79639999982464,
-      "repeat_query_ms": 9.329999999863503,
+      "first_query_ms": 180.24090000108117,
+      "repeat_query_ms": 8.882300000550458,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 146.3371999998344,
-        "vector_search_ms": 1.9017999993593548
+        "query_embedding_ms": 167.63390000051004,
+        "vector_search_ms": 1.6405999995185994
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006000000212225132,
-        "vector_search_ms": 1.6544000000067172
+        "query_embedding_ms": 0.005500001861946657,
+        "vector_search_ms": 1.6410999996878672
       },
       "top5_ids": [
         "fe15b679834a5f32540001f3a3d64b99db5bb617a08a1d20f81ec2ab646f4cbc",
@@ -1245,17 +1245,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 164.96269999970536,
-      "repeat_query_ms": 9.664799999882234,
+      "first_query_ms": 201.64759999897797,
+      "repeat_query_ms": 9.993100000428967,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 153.24239999972633,
-        "vector_search_ms": 1.8241999996462255
+        "query_embedding_ms": 191.66439999753493,
+        "vector_search_ms": 1.7763000032573473
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0068999997893115506,
-        "vector_search_ms": 1.7084999999497086
+        "query_embedding_ms": 0.006200003554113209,
+        "vector_search_ms": 1.6064999981608707
       },
       "top5_ids": [
         "883d30f15fd99da0f68ef6bd43bb397615d4b28a5fe1b428518c06af8410628d",
@@ -1271,17 +1271,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 162.20290000001114,
-      "repeat_query_ms": 12.245599999914702,
+      "first_query_ms": 181.44029999893974,
+      "repeat_query_ms": 9.080199997697491,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 151.7639000003328,
-        "vector_search_ms": 1.5880000000834116
+        "query_embedding_ms": 169.8850000029779,
+        "vector_search_ms": 1.6825000020617153
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008800000614428427,
-        "vector_search_ms": 1.850699999522476
+        "query_embedding_ms": 0.005099998816149309,
+        "vector_search_ms": 1.744700002745958
       },
       "top5_ids": [
         "115f004fbba136d7dae86d0db4dec5b2855d7be5bcd2ff021c1aad9b2388b3b7",
@@ -1297,17 +1297,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 156.12509999937174,
-      "repeat_query_ms": 9.69359999999142,
+      "first_query_ms": 179.40630000157398,
+      "repeat_query_ms": 9.507000002486166,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 142.48930000030668,
-        "vector_search_ms": 1.9320000001243898
+        "query_embedding_ms": 164.50380000242149,
+        "vector_search_ms": 1.504799998656381
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005599999894911889,
-        "vector_search_ms": 1.731600000312028
+        "query_embedding_ms": 0.006099999154685065,
+        "vector_search_ms": 1.9111000001430511
       },
       "top5_ids": [
         "40f76b6c1eced0692eee554777eef96447ac71865270300a8d469c804591ad41",
@@ -1323,17 +1323,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 153.30679999988206,
-      "repeat_query_ms": 10.41700000041601,
+      "first_query_ms": 158.12179999920772,
+      "repeat_query_ms": 13.823799999954645,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 142.13459999973566,
-        "vector_search_ms": 1.5815000006114133
+        "query_embedding_ms": 142.41209999818238,
+        "vector_search_ms": 4.049099999974715
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007300000106624793,
-        "vector_search_ms": 1.5449000002263347
+        "query_embedding_ms": 0.006099999154685065,
+        "vector_search_ms": 1.6104000023915432
       },
       "top5_ids": [
         "6559957e59bd6c9b3721c4bcf5db2d677ae43e49b9ddd6ec231c00c3654466b1",
@@ -1349,17 +1349,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 139.82670000041253,
-      "repeat_query_ms": 10.32770000074379,
+      "first_query_ms": 173.95289999694796,
+      "repeat_query_ms": 9.134600000834325,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 129.48299999970914,
-        "vector_search_ms": 1.6648999999233638
+        "query_embedding_ms": 161.49370000130148,
+        "vector_search_ms": 1.6435999968962278
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.824700000724988
+        "query_embedding_ms": 0.006000002031214535,
+        "vector_search_ms": 1.2481999983720016
       },
       "top5_ids": [
         "6eb96986675063bfcc3b13d2a8ccfdde8c083ca9150b3879cdaa809ffcf06095",
@@ -1375,17 +1375,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 173.76570000033098,
-      "repeat_query_ms": 9.70679999954882,
+      "first_query_ms": 190.60890000037034,
+      "repeat_query_ms": 9.258599999157013,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 162.27099999923666,
-        "vector_search_ms": 1.63070000053267
+        "query_embedding_ms": 179.72379999991972,
+        "vector_search_ms": 1.4053999984753318
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006499999471998308,
-        "vector_search_ms": 1.6792000005807495
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.4489999994111713
       },
       "top5_ids": [
         "97e29f8c486f7b50f6039be80585bfbbdb037a277c226de01473d43d4f11dfc1",
@@ -1401,17 +1401,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 150.28160000019852,
-      "repeat_query_ms": 11.36190000033821,
+      "first_query_ms": 212.290600000415,
+      "repeat_query_ms": 8.574000003136462,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 140.1424000005136,
-        "vector_search_ms": 1.7707999995764112
+        "query_embedding_ms": 201.5073999973538,
+        "vector_search_ms": 1.632300001801923
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0068999997893115506,
-        "vector_search_ms": 1.7206000002261135
+        "query_embedding_ms": 0.005699999746866524,
+        "vector_search_ms": 1.64289999884204
       },
       "top5_ids": [
         "2540c3346dc870605b824be49731e0b089587cdd732bb947db380ae70bd35425",
@@ -1427,17 +1427,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 159.25900000002002,
-      "repeat_query_ms": 12.775099999998929,
+      "first_query_ms": 148.02700000291225,
+      "repeat_query_ms": 9.391100000357255,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 148.7803999998505,
-        "vector_search_ms": 1.5064999997775885
+        "query_embedding_ms": 136.29999999830034,
+        "vector_search_ms": 1.2247999984538183
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006900000698806252,
-        "vector_search_ms": 1.692600000751554
+        "query_embedding_ms": 0.006199999916134402,
+        "vector_search_ms": 1.9418999982008245
       },
       "top5_ids": [
         "c5331c9623b63d991b39eff15d0d1635ee5d4c65e804fae53ce2738b36ea25bb",
@@ -1453,17 +1453,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 159.76260000024922,
-      "repeat_query_ms": 9.514899999885529,
+      "first_query_ms": 153.81179999894812,
+      "repeat_query_ms": 8.844699998007854,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 147.9245999998966,
-        "vector_search_ms": 1.7191999995702645
+        "query_embedding_ms": 144.03329999913694,
+        "vector_search_ms": 1.7045000022335444
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0057999995988211595,
-        "vector_search_ms": 1.5478000004804926
+        "query_embedding_ms": 0.004599998646881431,
+        "vector_search_ms": 1.535299998067785
       },
       "top5_ids": [
         "50eaa32962fd76b333685fd8b559b32a3960e9aadda8033ba862d7af142f8ab6",
@@ -1479,17 +1479,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 138.55880000028264,
-      "repeat_query_ms": 9.780899999896064,
+      "first_query_ms": 155.8310000000347,
+      "repeat_query_ms": 9.383399999933317,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 126.38400000014371,
-        "vector_search_ms": 1.9235999998272746
+        "query_embedding_ms": 144.46010000028764,
+        "vector_search_ms": 1.9253999998909421
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006199999916134402,
-        "vector_search_ms": 1.6414000001532258
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.7994000008911826
       },
       "top5_ids": [
         "245deb092a7491f4ef11303448a156c66a64daf0d465da69f327289a57a7d305",
@@ -1505,17 +1505,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 151.60720000039873,
-      "repeat_query_ms": 11.306800000056683,
+      "first_query_ms": 165.7935000002908,
+      "repeat_query_ms": 9.609600001567742,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 139.65989999996964,
-        "vector_search_ms": 1.87629999982164
+        "query_embedding_ms": 153.9879000010842,
+        "vector_search_ms": 1.6644999996060506
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007200000254670158,
-        "vector_search_ms": 1.7087999995055725
+        "query_embedding_ms": 0.007199996616691351,
+        "vector_search_ms": 1.421400000253925
       },
       "top5_ids": [
         "3c02820555bad4ff242510cacf7fbc52f7df3c40e3cba960539d16e426b8a3af",
@@ -1531,17 +1531,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 178.09769999985292,
-      "repeat_query_ms": 9.135100000094099,
+      "first_query_ms": 156.3294000006863,
+      "repeat_query_ms": 9.011400001327274,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 165.94309999982215,
-        "vector_search_ms": 2.3378999994747574
+        "query_embedding_ms": 145.19759999893722,
+        "vector_search_ms": 1.691400000709109
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006000000212225132,
-        "vector_search_ms": 1.6624999998384737
+        "query_embedding_ms": 0.006899997970322147,
+        "vector_search_ms": 1.5292999996745493
       },
       "top5_ids": [
         "271bda879d2fd268b035ee0d817a7f28810cddf6561b99769ab5f430d3f973d5",
@@ -1557,17 +1557,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 151.07819999957428,
-      "repeat_query_ms": 10.234500000478874,
+      "first_query_ms": 199.30119999844464,
+      "repeat_query_ms": 8.361399999557761,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 140.40789999944536,
-        "vector_search_ms": 1.6097999996418366
+        "query_embedding_ms": 187.97970000014175,
+        "vector_search_ms": 1.9049000002269167
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0068999997893115506,
-        "vector_search_ms": 1.4914000003045658
+        "query_embedding_ms": 0.005799996870337054,
+        "vector_search_ms": 1.470899998821551
       },
       "top5_ids": [
         "4b015a9099110733ab88ffa00211623636b87eea93af814c827a20aa5e837f14",
@@ -1583,17 +1583,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 144.05549999992218,
-      "repeat_query_ms": 11.396399999284768,
+      "first_query_ms": 188.62459999945713,
+      "repeat_query_ms": 9.960299998056144,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 134.46610000028159,
-        "vector_search_ms": 1.4860999999655178
+        "query_embedding_ms": 174.01239999890095,
+        "vector_search_ms": 3.157800001645228
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006999999641266186,
-        "vector_search_ms": 1.8033000005743816
+        "query_embedding_ms": 0.006400001439033076,
+        "vector_search_ms": 1.7036999997799285
       },
       "top5_ids": [
         "1e7fce9f3d0fa004f7501777d697e5efd1a2b0bc5590a900869d8aa753a22b33",
@@ -1609,17 +1609,17 @@
       "mode": "dense",
       "source_hit_at_5": false,
       "evidence_hit_at_5": false,
-      "first_query_ms": 179.88599999989674,
-      "repeat_query_ms": 10.735699999713688,
+      "first_query_ms": 158.53019999849494,
+      "repeat_query_ms": 8.512299998983508,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 166.71909999968193,
-        "vector_search_ms": 1.8445999994582962
+        "query_embedding_ms": 146.5527000000293,
+        "vector_search_ms": 1.8512999995436985
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008099999831756577,
-        "vector_search_ms": 1.7330000000583823
+        "query_embedding_ms": 0.005399997462518513,
+        "vector_search_ms": 1.6819000011309981
       },
       "top5_ids": [
         "de89809bbc2236bfaabae7fa4c980b87eb44a5932b0ff284b7524fb1c583479f",
@@ -1635,17 +1635,17 @@
       "mode": "dense",
       "source_hit_at_5": false,
       "evidence_hit_at_5": false,
-      "first_query_ms": 142.97090000036405,
-      "repeat_query_ms": 41.16859999976441,
+      "first_query_ms": 196.40280000021448,
+      "repeat_query_ms": 8.610699998826021,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 132.54270000015822,
-        "vector_search_ms": 1.4744000000064261
+        "query_embedding_ms": 184.39930000022287,
+        "vector_search_ms": 1.5167000019573607
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.009300000783696305,
-        "vector_search_ms": 29.134700000213343
+        "query_embedding_ms": 0.004800000169780105,
+        "vector_search_ms": 1.536400002805749
       },
       "top5_ids": [
         "d646c3ddd267d101f694e3b1ee6b3436b4c23cc889a9e75c4c98d518c264e49d",
@@ -1661,17 +1661,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 158.23230000023614,
-      "repeat_query_ms": 14.585500000066531,
+      "first_query_ms": 183.6239000003843,
+      "repeat_query_ms": 13.901499998610234,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 143.77369999965595,
-        "vector_search_ms": 1.9974999995611142
+        "query_embedding_ms": 168.6212999993586,
+        "vector_search_ms": 3.4635000010894146
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.009299999874201603,
-        "vector_search_ms": 1.7502000000604312
+        "query_embedding_ms": 0.007200000254670158,
+        "vector_search_ms": 1.9634000018413644
       },
       "top5_ids": [
         "be9950e15d986b1bb7ececd2c71fca6974bb67a614fca55638a8ea71de127f54",
@@ -1687,17 +1687,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 148.11490000010963,
-      "repeat_query_ms": 19.79589999973541,
+      "first_query_ms": 182.72260000230744,
+      "repeat_query_ms": 20.907599999191007,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 137.3075000001336,
-        "vector_search_ms": 1.9037000001844717
+        "query_embedding_ms": 171.1412000004202,
+        "vector_search_ms": 1.7272000004595611
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.00830000044516055,
-        "vector_search_ms": 2.069199999823468
+        "query_embedding_ms": 0.006800000846851617,
+        "vector_search_ms": 1.9098000011581462
       },
       "top5_ids": [
         "433016dc4f9ae5d9b02b5b9aff72c7746fc98c268e77b79581db6240f10b36e4",
@@ -1713,17 +1713,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 149.00269999998272,
-      "repeat_query_ms": 9.990199999265315,
+      "first_query_ms": 150.4553999984637,
+      "repeat_query_ms": 8.679100003064377,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 138.82969999940542,
-        "vector_search_ms": 1.2861000004704692
+        "query_embedding_ms": 138.2225000015751,
+        "vector_search_ms": 1.2072999998054001
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007600000571983401,
-        "vector_search_ms": 1.781999999366235
+        "query_embedding_ms": 0.006099999154685065,
+        "vector_search_ms": 1.6642000009596813
       },
       "top5_ids": [
         "4b17e5ff3a3053ce4d0fe7f277fef6b5e86340b4f71eeeb310524ce7fd76a629",
@@ -1739,17 +1739,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 153.94060000016907,
-      "repeat_query_ms": 9.808499999962805,
+      "first_query_ms": 176.2174999967101,
+      "repeat_query_ms": 8.429099998465972,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 141.53500000065833,
-        "vector_search_ms": 2.0343999995020567
+        "query_embedding_ms": 164.0914999989036,
+        "vector_search_ms": 1.9637000004877336
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006199999916134402,
-        "vector_search_ms": 1.385399999890069
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.7048000008799136
       },
       "top5_ids": [
         "bc0d935f95c465d971c89489fd00b912a3e83ec15caddcf29b08d7c0eb2ec09a",
@@ -1765,17 +1765,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 169.3847000005917,
-      "repeat_query_ms": 11.39809999949648,
+      "first_query_ms": 188.7060000008205,
+      "repeat_query_ms": 10.667099999409402,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 157.20560000045225,
-        "vector_search_ms": 1.6957999996520812
+        "query_embedding_ms": 176.28379999950994,
+        "vector_search_ms": 1.7422999990230892
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007099999493220821,
-        "vector_search_ms": 1.8551000002844376
+        "query_embedding_ms": 0.006399997801054269,
+        "vector_search_ms": 1.7888000002130866
       },
       "top5_ids": [
         "51b1895b7278a110ad05b0f3d9a4c456dc055a4ad748d707175575d2fe0fcfb7",
@@ -1791,17 +1791,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 161.76919999998063,
-      "repeat_query_ms": 10.879800000111572,
+      "first_query_ms": 180.14129999937722,
+      "repeat_query_ms": 9.167999996861909,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 148.6947000003056,
-        "vector_search_ms": 1.5509000004385598
+        "query_embedding_ms": 170.50400000152877,
+        "vector_search_ms": 1.5607999994244892
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0068999997893115506,
-        "vector_search_ms": 1.6404999996666447
+        "query_embedding_ms": 0.005500001861946657,
+        "vector_search_ms": 1.7982999997911975
       },
       "top5_ids": [
         "d5453f21aba424762035ae73c6485e57b165c128c39bb8db3ab1d055e36830b4",
@@ -1817,17 +1817,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 168.47150000012334,
-      "repeat_query_ms": 9.407699999428587,
+      "first_query_ms": 171.17839999991702,
+      "repeat_query_ms": 10.207900002569659,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 158.22970000044734,
-        "vector_search_ms": 1.7092999996748404
+        "query_embedding_ms": 156.94430000075954,
+        "vector_search_ms": 2.29849999959697
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006499999471998308,
-        "vector_search_ms": 1.61260000004404
+        "query_embedding_ms": 0.006899997970322147,
+        "vector_search_ms": 1.5993000015441794
       },
       "top5_ids": [
         "ffff608087b506659aadede5127cda7119337273a8a65bea9809e7c6cfcaddbe",
@@ -1843,17 +1843,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 146.53660000021773,
-      "repeat_query_ms": 10.991100000865117,
+      "first_query_ms": 202.04580000063288,
+      "repeat_query_ms": 9.264599997550249,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 136.00250000035885,
-        "vector_search_ms": 1.5261999997164821
+        "query_embedding_ms": 191.2357000001066,
+        "vector_search_ms": 1.3890999980503693
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007300000106624793,
-        "vector_search_ms": 1.6704999998182757
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.7299999999522697
       },
       "top5_ids": [
         "6fc173606117b4e00a27d4069afbdc3927be98a6ff6bdf1de35972bc7978dbb0",
@@ -1869,17 +1869,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 157.60560000035184,
-      "repeat_query_ms": 11.447400000179186,
+      "first_query_ms": 182.91379999936908,
+      "repeat_query_ms": 8.70990000112215,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 147.22939999955997,
-        "vector_search_ms": 1.683799999227631
+        "query_embedding_ms": 171.94240000026184,
+        "vector_search_ms": 1.704900001641363
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.723600000332226
+        "query_embedding_ms": 0.009100000170292333,
+        "vector_search_ms": 1.5242000008584
       },
       "top5_ids": [
         "c175fd31d9aa8a2cea0c726b48382e0dc671840adcffc98c4fe62ddeab60e960",
@@ -1895,17 +1895,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 161.46170000047277,
-      "repeat_query_ms": 8.990199999971082,
+      "first_query_ms": 150.3408999997191,
+      "repeat_query_ms": 8.650700001453515,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 151.09790000042267,
-        "vector_search_ms": 1.4958000001570326
+        "query_embedding_ms": 139.43980000112788,
+        "vector_search_ms": 1.77590000021155
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005599999894911889,
-        "vector_search_ms": 1.5323999996326165
+        "query_embedding_ms": 0.005100002454128116,
+        "vector_search_ms": 1.8587000013212673
       },
       "top5_ids": [
         "ebf24d29dc045dfc5d5b36aa5fe4ff586aeb8911639f7ce3c3751aa0e00511c6",
@@ -1921,17 +1921,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 142.00419999997393,
-      "repeat_query_ms": 9.446699999898556,
+      "first_query_ms": 153.70439999969676,
+      "repeat_query_ms": 12.965300000360003,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 131.4487999998164,
-        "vector_search_ms": 1.643099999455444
+        "query_embedding_ms": 142.11209999848506,
+        "vector_search_ms": 1.7500999965704978
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.7781999995349906
+        "query_embedding_ms": 0.009999999747378752,
+        "vector_search_ms": 1.7283000015595462
       },
       "top5_ids": [
         "5823bc8e63e0d7c05c2d0ece3d6e3846af78f7680d54f7b5493f5cde43338d67",
@@ -1947,17 +1947,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 156.3933999996152,
-      "repeat_query_ms": 9.10100000055536,
+      "first_query_ms": 143.2600000007369,
+      "repeat_query_ms": 10.624599999573547,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 144.77379999971163,
-        "vector_search_ms": 1.6380000006392947
+        "query_embedding_ms": 129.72440000157803,
+        "vector_search_ms": 1.5873999982431997
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005199999577598646,
-        "vector_search_ms": 1.5753000006952789
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.2676000005740207
       },
       "top5_ids": [
         "88f9f31f5e71a48361653fdce345fc5dfb0aff70040d8e0942251dd19d9b15aa",
@@ -1973,17 +1973,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 151.53389999977662,
-      "repeat_query_ms": 10.59259999965434,
+      "first_query_ms": 160.52789999957895,
+      "repeat_query_ms": 10.01390000237734,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 141.0597999993115,
-        "vector_search_ms": 1.579600000695791
+        "query_embedding_ms": 149.7034000021813,
+        "vector_search_ms": 1.0877999993681442
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.6675000006216578
+        "query_embedding_ms": 0.009700001101009548,
+        "vector_search_ms": 1.7947000014828518
       },
       "top5_ids": [
         "c431084c95a46d48cb4599df0c6b021e6f49888378fb674dd32cad7e2a16b83a",
@@ -1999,17 +1999,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 159.1640999995434,
-      "repeat_query_ms": 10.080699999889475,
+      "first_query_ms": 175.21789999955217,
+      "repeat_query_ms": 13.67000000027474,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 146.77539999956934,
-        "vector_search_ms": 1.738199999635981
+        "query_embedding_ms": 159.01540000049863,
+        "vector_search_ms": 3.1587000012223143
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005399999281507917,
-        "vector_search_ms": 1.7163000002256013
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.266299997951137
       },
       "top5_ids": [
         "7f4f1bd4d90107cec6012859d0b774b72198927b45bea55c1476ca8836c438e9",
@@ -2025,17 +2025,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 156.29449999960343,
-      "repeat_query_ms": 9.759800000210817,
+      "first_query_ms": 181.99620000086725,
+      "repeat_query_ms": 10.797300001286203,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 143.8598999993701,
-        "vector_search_ms": 2.242600000499806
+        "query_embedding_ms": 169.52590000073542,
+        "vector_search_ms": 2.009100000577746
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.00599999930273043,
-        "vector_search_ms": 1.6900999999052146
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 2.0258999975339975
       },
       "top5_ids": [
         "89afc0ee29f7b72960bf018b2b9d7ccb0d3d41168b05415816bdfd173ef29009",
@@ -2051,17 +2051,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 177.7105000001029,
-      "repeat_query_ms": 8.993599999485014,
+      "first_query_ms": 172.889599998598,
+      "repeat_query_ms": 12.467800002923468,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 164.75639999953273,
-        "vector_search_ms": 1.6286999998555984
+        "query_embedding_ms": 156.38119999857736,
+        "vector_search_ms": 4.482100001041545
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0054000001910026185,
-        "vector_search_ms": 1.6496999996888917
+        "query_embedding_ms": 0.007700000423938036,
+        "vector_search_ms": 1.73460000223713
       },
       "top5_ids": [
         "98aa52d8bf5a287c8c2e8f97fdde762d32bc8b9abefe3576c232a523ea774db8",
@@ -2077,17 +2077,17 @@
       "mode": "dense",
       "source_hit_at_5": false,
       "evidence_hit_at_5": false,
-      "first_query_ms": 159.41389999989042,
-      "repeat_query_ms": 10.05669999995007,
+      "first_query_ms": 208.72380000218982,
+      "repeat_query_ms": 10.677800000848947,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 149.484499999744,
-        "vector_search_ms": 1.67180000062217
+        "query_embedding_ms": 196.40629999776138,
+        "vector_search_ms": 2.0546000014292076
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.00670000008540228,
-        "vector_search_ms": 2.1294999996825936
+        "query_embedding_ms": 0.008099999831756577,
+        "vector_search_ms": 1.7432000022381544
       },
       "top5_ids": [
         "afec079fe861e0da77e4377eba55a876ba55fb95c83be30b4e0b8d599e1437e0",
@@ -2103,17 +2103,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 145.65979999952106,
-      "repeat_query_ms": 11.85299999997369,
+      "first_query_ms": 166.01509999964037,
+      "repeat_query_ms": 8.914699999877485,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 134.87649999933637,
-        "vector_search_ms": 1.4218000005712383
+        "query_embedding_ms": 155.77790000315872,
+        "vector_search_ms": 1.572099998156773
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006799999937356915,
-        "vector_search_ms": 1.6999999998006388
+        "query_embedding_ms": 0.006099999154685065,
+        "vector_search_ms": 1.6324999996868428
       },
       "top5_ids": [
         "7d6bb50776c7792690bf2892600f76df24a14d6d9a2d85b1483c98ff16530e64",
@@ -2129,17 +2129,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 144.52000000073895,
-      "repeat_query_ms": 9.126300000389165,
+      "first_query_ms": 151.4461000006122,
+      "repeat_query_ms": 8.943900000303984,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 134.95789999979024,
-        "vector_search_ms": 1.6526999997950043
+        "query_embedding_ms": 137.31840000036755,
+        "vector_search_ms": 1.7348000001220498
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006200000825629104,
-        "vector_search_ms": 1.5778000006321236
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.716300001135096
       },
       "top5_ids": [
         "068e5236aa8eaa2d36aada5292f81e653154a484e3811660f74c47bdeedc55f6",
@@ -2155,17 +2155,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 142.66809999935504,
-      "repeat_query_ms": 9.239400000296882,
+      "first_query_ms": 215.8659999986412,
+      "repeat_query_ms": 15.498399996431544,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 131.30349999937607,
-        "vector_search_ms": 1.7500999992989819
+        "query_embedding_ms": 202.60179999968386,
+        "vector_search_ms": 3.939300000638468
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005700000656361226,
-        "vector_search_ms": 1.6487000002598506
+        "query_embedding_ms": 0.007700000423938036,
+        "vector_search_ms": 1.6195000025618356
       },
       "top5_ids": [
         "12bc37b505bf13d6e43da2bd375a2b31a920a18008a1f6d34dec3749b54435eb",
@@ -2181,17 +2181,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 139.53099999980623,
-      "repeat_query_ms": 9.946400000444555,
+      "first_query_ms": 169.12170000068727,
+      "repeat_query_ms": 12.737100001686485,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 126.74769999921409,
-        "vector_search_ms": 2.5836000004346715
+        "query_embedding_ms": 155.4534999995667,
+        "vector_search_ms": 2.9280000017024577
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005599999894911889,
-        "vector_search_ms": 1.759999999194406
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.5472000013687648
       },
       "top5_ids": [
         "db5e2f6b0e4e428a8197398487d315487f103e0cb3df5b6b94a50f58ea3e6fb1",
@@ -2207,17 +2207,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 165.5637999992905,
-      "repeat_query_ms": 12.140000000727014,
+      "first_query_ms": 178.2734000007622,
+      "repeat_query_ms": 8.630199998151511,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 153.56559999963793,
-        "vector_search_ms": 1.5247000001181732
+        "query_embedding_ms": 168.28890000033425,
+        "vector_search_ms": 1.19270000141114
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.012599999536178075,
-        "vector_search_ms": 1.4390000005732873
+        "query_embedding_ms": 0.006199999916134402,
+        "vector_search_ms": 1.619799997570226
       },
       "top5_ids": [
         "42cdc3fc2f6cad6395dd00231a396eb93d96ab08b3f31991deee136bf9601599",
@@ -2233,17 +2233,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 164.94299999976647,
-      "repeat_query_ms": 10.22850000026665,
+      "first_query_ms": 198.45919999715989,
+      "repeat_query_ms": 8.350199997948948,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 152.46039999965433,
-        "vector_search_ms": 1.7886999994516373
+        "query_embedding_ms": 189.03080000018235,
+        "vector_search_ms": 1.1049000022467226
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006100000064179767,
-        "vector_search_ms": 1.5143000000534812
+        "query_embedding_ms": 0.005300000339047983,
+        "vector_search_ms": 1.666699998168042
       },
       "top5_ids": [
         "ec0a7e127930409abb248546c74649a7951e71bb27b42a274c5ac6118df5ae5a",
@@ -2259,17 +2259,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 180.51780000041617,
-      "repeat_query_ms": 11.37170000038168,
+      "first_query_ms": 138.74789999681525,
+      "repeat_query_ms": 10.576700002275174,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 170.01579999941896,
-        "vector_search_ms": 1.508299999841256
+        "query_embedding_ms": 128.30839999878663,
+        "vector_search_ms": 1.7539999971631914
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008099999831756577,
-        "vector_search_ms": 1.6740999999456108
+        "query_embedding_ms": 0.006899997970322147,
+        "vector_search_ms": 1.591199998074444
       },
       "top5_ids": [
         "5876e9ea0f43ec5558b2723a9a81714a489f19bbf24e579bb113126113a3a0be",
@@ -2285,17 +2285,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 170.20450000018172,
-      "repeat_query_ms": 11.687000000165426,
+      "first_query_ms": 154.7711999992316,
+      "repeat_query_ms": 8.574999999837019,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 160.567799999626,
-        "vector_search_ms": 1.546299999972689
+        "query_embedding_ms": 144.95679999890854,
+        "vector_search_ms": 1.7797000000427943
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007600000571983401,
-        "vector_search_ms": 1.7846999999164836
+        "query_embedding_ms": 0.005300000339047983,
+        "vector_search_ms": 1.67919999876176
       },
       "top5_ids": [
         "5e649986526e0939a9c58964ef1db5f8e86f094acef18c371ba6c219cca11d26",
@@ -2311,17 +2311,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 148.43480000035925,
-      "repeat_query_ms": 9.471100000155275,
+      "first_query_ms": 188.15360000007786,
+      "repeat_query_ms": 9.182900001178496,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 138.53779999953986,
-        "vector_search_ms": 1.4283000000432367
+        "query_embedding_ms": 175.51340000136406,
+        "vector_search_ms": 1.7091000008804258
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.00830000044516055,
-        "vector_search_ms": 1.6415000000051805
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.792099999875063
       },
       "top5_ids": [
         "9038ea89248724caab583aa848fdfe319c408241858edc6b8f7a6a59571baaed",
@@ -2337,17 +2337,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 145.35559999967518,
-      "repeat_query_ms": 10.098499999912747,
+      "first_query_ms": 144.50530000249273,
+      "repeat_query_ms": 10.124899999937043,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 134.7155000003113,
-        "vector_search_ms": 1.5856999998504762
+        "query_embedding_ms": 131.38030000118306,
+        "vector_search_ms": 2.4057000009634066
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.5937999996822327
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.7446000019845087
       },
       "top5_ids": [
         "845f5ee6d06cf8fef52d47267d6a0781839beaf3d325c358855a702f67a9782c",
@@ -2363,17 +2363,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 163.03880000032223,
-      "repeat_query_ms": 9.249199999430857,
+      "first_query_ms": 161.92030000092927,
+      "repeat_query_ms": 8.773999998084037,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 149.54149999994115,
-        "vector_search_ms": 1.714900000479247
+        "query_embedding_ms": 147.58050000091316,
+        "vector_search_ms": 1.5448000012838747
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006199999916134402,
-        "vector_search_ms": 1.6640999992887373
+        "query_embedding_ms": 0.009799998224480078,
+        "vector_search_ms": 1.8571000000520144
       },
       "top5_ids": [
         "9c368768c83bf5ad22c713dd08c114e014b3f1b07894bc5b61b6327046e97309",
@@ -2389,17 +2389,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 152.9675000001589,
-      "repeat_query_ms": 10.825600000316626,
+      "first_query_ms": 163.9647000010882,
+      "repeat_query_ms": 9.705799999210285,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 142.22979999976815,
-        "vector_search_ms": 1.5091000004758826
+        "query_embedding_ms": 153.4758999987389,
+        "vector_search_ms": 1.8210999987786636
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0073999999585794285,
-        "vector_search_ms": 1.6241999992416822
+        "query_embedding_ms": 0.005999998393235728,
+        "vector_search_ms": 1.670699999522185
       },
       "top5_ids": [
         "92521232c67a72fa5a2a958cb7cb6f06e88d7be6151182665d527e531434e029",
@@ -2415,17 +2415,17 @@
       "mode": "dense",
       "source_hit_at_5": false,
       "evidence_hit_at_5": false,
-      "first_query_ms": 145.14109999981883,
-      "repeat_query_ms": 9.811900000386231,
+      "first_query_ms": 164.61429999981192,
+      "repeat_query_ms": 9.216099999321159,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 134.37979999980598,
-        "vector_search_ms": 2.5144000001091626
+        "query_embedding_ms": 152.5937000005797,
+        "vector_search_ms": 1.9188999976904597
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006999999641266186,
-        "vector_search_ms": 1.6635000001770095
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.9094999988737982
       },
       "top5_ids": [
         "88307a1230ffcd2a8d86bbd5ddd78a0576a3473eb4512c9388f93cfe3dae320a",
@@ -2441,17 +2441,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 149.08650000052148,
-      "repeat_query_ms": 12.373399999887624,
+      "first_query_ms": 166.23320000144304,
+      "repeat_query_ms": 8.774099998845486,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 138.5019999997894,
-        "vector_search_ms": 1.3554999995903927
+        "query_embedding_ms": 155.75410000019474,
+        "vector_search_ms": 1.869200001237914
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0068999997893115506,
-        "vector_search_ms": 1.8831000006684917
+        "query_embedding_ms": 0.005999998393235728,
+        "vector_search_ms": 1.5105999991646968
       },
       "top5_ids": [
         "e4958cf48c9e95834defed5a5336811a79417e75e52c620a6d059aacc2fd6fe0",
@@ -2467,17 +2467,17 @@
       "mode": "dense",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 144.47579999978188,
-      "repeat_query_ms": 9.237400000529306,
+      "first_query_ms": 169.78259999814327,
+      "repeat_query_ms": 9.294200001022546,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 133.77070000024105,
-        "vector_search_ms": 2.196100000219303
+        "query_embedding_ms": 160.26200000123936,
+        "vector_search_ms": 1.7583000008016825
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006399999620043673,
-        "vector_search_ms": 1.5146999994612997
+        "query_embedding_ms": 0.006300000677583739,
+        "vector_search_ms": 1.30640000134008
       },
       "top5_ids": [
         "68dbe7dee6d4e318413acad417c51a9de985e2538a698d1aada2669e05aadb18",
@@ -2493,19 +2493,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 258.2621999999901,
-      "repeat_query_ms": 116.72959999941668,
+      "first_query_ms": 252.03660000261152,
+      "repeat_query_ms": 110.47719999987748,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 132.29110000065702,
-        "vector_search_ms": 1.5536999999312684,
-        "lexical_search_ms": 108.15199999979086
+        "query_embedding_ms": 136.07350000165752,
+        "vector_search_ms": 1.691400000709109,
+        "lexical_search_ms": 101.85049999927287
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005699999746866524,
-        "vector_search_ms": 1.5766999995321385,
-        "lexical_search_ms": 107.73680000056629
+        "query_embedding_ms": 0.006199999916134402,
+        "vector_search_ms": 1.2876000000687782,
+        "lexical_search_ms": 101.68419999899925
       },
       "top5_ids": [
         "0cf0a99415539f166d6b5b3e572f65cb509a05fb7176a2355d92be513dd3e959",
@@ -2521,19 +2521,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 272.75529999951686,
-      "repeat_query_ms": 105.19070000009378,
+      "first_query_ms": 262.49470000038855,
+      "repeat_query_ms": 105.72210000100313,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 167.0205000000351,
-        "vector_search_ms": 1.500800000030722,
-        "lexical_search_ms": 96.57939999942755
+        "query_embedding_ms": 154.8317999986466,
+        "vector_search_ms": 1.9250999976065941,
+        "lexical_search_ms": 93.185400000948
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.00670000008540228,
-        "vector_search_ms": 1.6872999995030113,
-        "lexical_search_ms": 94.17050000047311
+        "query_embedding_ms": 0.006299997039604932,
+        "vector_search_ms": 1.5977000002749264,
+        "lexical_search_ms": 95.70000000167056
       },
       "top5_ids": [
         "fe15b679834a5f32540001f3a3d64b99db5bb617a08a1d20f81ec2ab646f4cbc",
@@ -2549,19 +2549,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 246.21839999963413,
-      "repeat_query_ms": 78.78979999986768,
+      "first_query_ms": 274.4181000016397,
+      "repeat_query_ms": 75.24740000008023,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 160.99510000003647,
-        "vector_search_ms": 1.6298999998980435,
-        "lexical_search_ms": 74.11950000005163
+        "query_embedding_ms": 188.92369999957737,
+        "vector_search_ms": 3.164700003253529,
+        "lexical_search_ms": 69.67879999865545
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006299999768089037,
-        "vector_search_ms": 1.582099999723141,
-        "lexical_search_ms": 68.05989999975282
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.53399999908288,
+        "lexical_search_ms": 66.2073000021337
       },
       "top5_ids": [
         "fbe9c657db2221f962181645f8a8ff82c86c6acdbaa471e3778d6ff2bf6c3cb1",
@@ -2577,19 +2577,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 232.71049999948445,
-      "repeat_query_ms": 100.91449999981705,
+      "first_query_ms": 264.37000000078115,
+      "repeat_query_ms": 118.14679999952205,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 134.3378000001394,
-        "vector_search_ms": 2.1454999996421975,
-        "lexical_search_ms": 89.36390000053507
+        "query_embedding_ms": 158.664199996565,
+        "vector_search_ms": 2.2712999998475425,
+        "lexical_search_ms": 91.13970000180416
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006000000212225132,
-        "vector_search_ms": 1.5591999999742256,
-        "lexical_search_ms": 92.39890000026207
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.663300001382595,
+        "lexical_search_ms": 108.19280000214349
       },
       "top5_ids": [
         "115f004fbba136d7dae86d0db4dec5b2855d7be5bcd2ff021c1aad9b2388b3b7",
@@ -2605,19 +2605,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 203.46679999966,
-      "repeat_query_ms": 66.97710000025836,
+      "first_query_ms": 203.80629999999655,
+      "repeat_query_ms": 67.05270000020391,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 135.5242999998154,
-        "vector_search_ms": 2.5405000005775946,
-        "lexical_search_ms": 58.45289999979286
+        "query_embedding_ms": 135.17449999926612,
+        "vector_search_ms": 1.5383999998448417,
+        "lexical_search_ms": 58.528100002149586
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006200000825629104,
-        "vector_search_ms": 1.683700000285171,
-        "lexical_search_ms": 57.07780000011553
+        "query_embedding_ms": 0.005300000339047983,
+        "vector_search_ms": 1.5397000024677254,
+        "lexical_search_ms": 58.85869999838178
       },
       "top5_ids": [
         "40f76b6c1eced0692eee554777eef96447ac71865270300a8d469c804591ad41",
@@ -2633,19 +2633,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 228.9906999994855,
-      "repeat_query_ms": 95.9528000003047,
+      "first_query_ms": 262.377999999444,
+      "repeat_query_ms": 94.16029999920283,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 131.53090000014345,
-        "vector_search_ms": 1.6180000002350425,
-        "lexical_search_ms": 87.74230000017269
+        "query_embedding_ms": 164.18100000009872,
+        "vector_search_ms": 1.7965999977604952,
+        "lexical_search_ms": 84.44109999982174
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.004900000021734741,
-        "vector_search_ms": 1.5267999997377046,
-        "lexical_search_ms": 87.49009999974078
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.5118999981496017,
+        "lexical_search_ms": 85.85849999872153
       },
       "top5_ids": [
         "2cf725be4bee022d20e18e80206b1ea3e1acc4e6155063ad478bebf128cbe833",
@@ -2661,19 +2661,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 224.10719999970752,
-      "repeat_query_ms": 86.76519999971788,
+      "first_query_ms": 248.48850000125822,
+      "repeat_query_ms": 82.12780000030762,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 138.1013999998686,
-        "vector_search_ms": 1.7035999999279738,
-        "lexical_search_ms": 77.30300000002899
+        "query_embedding_ms": 164.63649999786867,
+        "vector_search_ms": 1.5467999983229674,
+        "lexical_search_ms": 74.12359999943874
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008099999831756577,
-        "vector_search_ms": 1.9441000004007947,
-        "lexical_search_ms": 76.62849999996979
+        "query_embedding_ms": 0.006900001608300954,
+        "vector_search_ms": 1.7116000017267652,
+        "lexical_search_ms": 73.10489999872516
       },
       "top5_ids": [
         "6eb96986675063bfcc3b13d2a8ccfdde8c083ca9150b3879cdaa809ffcf06095",
@@ -2689,19 +2689,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 208.1649000001562,
-      "repeat_query_ms": 66.35289999940142,
+      "first_query_ms": 216.0068000011961,
+      "repeat_query_ms": 62.218099999881815,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 150.5528999996386,
-        "vector_search_ms": 1.6939000006459537,
-        "lexical_search_ms": 47.58479999964038
+        "query_embedding_ms": 160.6467999990855,
+        "vector_search_ms": 1.6811999994388316,
+        "lexical_search_ms": 46.20269999941229
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005599999894911889,
-        "vector_search_ms": 1.59929999972519,
-        "lexical_search_ms": 46.49330000029295
+        "query_embedding_ms": 0.009899998985929415,
+        "vector_search_ms": 1.8930999976873863,
+        "lexical_search_ms": 44.40709999835235
       },
       "top5_ids": [
         "97e29f8c486f7b50f6039be80585bfbbdb037a277c226de01473d43d4f11dfc1",
@@ -2717,19 +2717,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 232.45270000006713,
-      "repeat_query_ms": 93.18499999972119,
+      "first_query_ms": 244.19810000108555,
+      "repeat_query_ms": 92.05350000047474,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 136.72309999947174,
-        "vector_search_ms": 2.0697999998446903,
-        "lexical_search_ms": 86.78929999950924
+        "query_embedding_ms": 153.41039999839268,
+        "vector_search_ms": 1.4077000014367513,
+        "lexical_search_ms": 82.33759999711765
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005599999894911889,
-        "vector_search_ms": 1.614799999515526,
-        "lexical_search_ms": 84.72950000032142
+        "query_embedding_ms": 0.006999998731771484,
+        "vector_search_ms": 1.7370999994454905,
+        "lexical_search_ms": 82.70360000096844
       },
       "top5_ids": [
         "2540c3346dc870605b824be49731e0b089587cdd732bb947db380ae70bd35425",
@@ -2745,19 +2745,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 250.48839999999473,
-      "repeat_query_ms": 87.39239999977144,
+      "first_query_ms": 239.7888999985298,
+      "repeat_query_ms": 81.96160000079544,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 162.93949999999313,
-        "vector_search_ms": 1.429699999789591,
-        "lexical_search_ms": 76.49360000050365
+        "query_embedding_ms": 155.7332000011229,
+        "vector_search_ms": 1.779599999281345,
+        "lexical_search_ms": 74.66869999916526
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005700000656361226,
-        "vector_search_ms": 1.6496000007464318,
-        "lexical_search_ms": 77.10670000051323
+        "query_embedding_ms": 0.007499998901039362,
+        "vector_search_ms": 1.5738000001874752,
+        "lexical_search_ms": 72.19239999903948
       },
       "top5_ids": [
         "c5331c9623b63d991b39eff15d0d1635ee5d4c65e804fae53ce2738b36ea25bb",
@@ -2773,19 +2773,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 245.13710000064748,
-      "repeat_query_ms": 94.17839999969146,
+      "first_query_ms": 232.7726999974402,
+      "repeat_query_ms": 95.59660000013537,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 149.88309999989724,
-        "vector_search_ms": 1.417599999513186,
-        "lexical_search_ms": 86.81669999987207
+        "query_embedding_ms": 129.1730999982974,
+        "vector_search_ms": 1.9434999994700775,
+        "lexical_search_ms": 87.9975000025297
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006300000677583739,
-        "vector_search_ms": 1.5241000000969507,
-        "lexical_search_ms": 84.91879999928642
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.5031000002636574,
+        "lexical_search_ms": 85.73450000039884
       },
       "top5_ids": [
         "cefc755cf77725900519799d6b4db48e078f59c6f23dc3ef1468f459141451ec",
@@ -2801,19 +2801,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 206.1185000002297,
-      "repeat_query_ms": 61.153200000262586,
+      "first_query_ms": 201.2362999994366,
+      "repeat_query_ms": 57.267600001068786,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 146.8416999996407,
-        "vector_search_ms": 1.6095000000859727,
-        "lexical_search_ms": 50.58740000004036
+        "query_embedding_ms": 144.64150000276277,
+        "vector_search_ms": 1.4139999984763563,
+        "lexical_search_ms": 48.537900001974776
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006799999937356915,
-        "vector_search_ms": 1.4253999997890787,
-        "lexical_search_ms": 51.78370000066934
+        "query_embedding_ms": 0.007099999493220821,
+        "vector_search_ms": 2.0120999979553744,
+        "lexical_search_ms": 48.06440000174916
       },
       "top5_ids": [
         "245deb092a7491f4ef11303448a156c66a64daf0d465da69f327289a57a7d305",
@@ -2829,19 +2829,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 229.69489999923098,
-      "repeat_query_ms": 92.273600000226,
+      "first_query_ms": 250.82280000060564,
+      "repeat_query_ms": 89.65160000298056,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 137.24120000006224,
-        "vector_search_ms": 1.659999999901629,
-        "lexical_search_ms": 83.43700000023091
+        "query_embedding_ms": 155.19249999852036,
+        "vector_search_ms": 2.146900002117036,
+        "lexical_search_ms": 86.07670000128564
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005199999577598646,
-        "vector_search_ms": 1.65130000004865,
-        "lexical_search_ms": 83.53809999971418
+        "query_embedding_ms": 0.00549999822396785,
+        "vector_search_ms": 1.6936000029090792,
+        "lexical_search_ms": 81.26740000079735
       },
       "top5_ids": [
         "3c02820555bad4ff242510cacf7fbc52f7df3c40e3cba960539d16e426b8a3af",
@@ -2857,19 +2857,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 232.8881999992518,
-      "repeat_query_ms": 107.87040000013803,
+      "first_query_ms": 274.5388000003004,
+      "repeat_query_ms": 99.82669999953941,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 125.36220000038156,
-        "vector_search_ms": 2.540999999837368,
-        "lexical_search_ms": 96.3502000004155
+        "query_embedding_ms": 173.82010000073933,
+        "vector_search_ms": 1.6810999986773822,
+        "lexical_search_ms": 91.7935999968904
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006599999323952943,
-        "vector_search_ms": 1.4929999997548293,
-        "lexical_search_ms": 97.24929999993037
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.3366999992285855,
+        "lexical_search_ms": 90.25289999772212
       },
       "top5_ids": [
         "271bda879d2fd268b035ee0d817a7f28810cddf6561b99769ab5f430d3f973d5",
@@ -2885,19 +2885,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 232.1868999997605,
-      "repeat_query_ms": 100.36910000053467,
+      "first_query_ms": 234.4699999994191,
+      "repeat_query_ms": 89.17819999987842,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 145.71299999988696,
-        "vector_search_ms": 1.566599999932805,
-        "lexical_search_ms": 76.17309999932331
+        "query_embedding_ms": 151.3368999985687,
+        "vector_search_ms": 1.1130999992019497,
+        "lexical_search_ms": 67.96269999904325
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006399999620043673,
-        "vector_search_ms": 1.5132999997149454,
-        "lexical_search_ms": 80.28990000002523
+        "query_embedding_ms": 0.006000002031214535,
+        "vector_search_ms": 1.8278999996255152,
+        "lexical_search_ms": 64.04750000001513
       },
       "top5_ids": [
         "4b015a9099110733ab88ffa00211623636b87eea93af814c827a20aa5e837f14",
@@ -2913,19 +2913,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 238.70869999973365,
-      "repeat_query_ms": 104.20320000048378,
+      "first_query_ms": 240.66300000049523,
+      "repeat_query_ms": 100.6414000003133,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 133.0259999995178,
-        "vector_search_ms": 1.437699999769393,
-        "lexical_search_ms": 97.32789999998204
+        "query_embedding_ms": 143.9351999979408,
+        "vector_search_ms": 1.766900000802707,
+        "lexical_search_ms": 88.24140000069747
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007799999366397969,
-        "vector_search_ms": 1.750700000229699,
-        "lexical_search_ms": 93.64110000024084
+        "query_embedding_ms": 0.005599998985417187,
+        "vector_search_ms": 1.7402999983460177,
+        "lexical_search_ms": 90.82269999998971
       },
       "top5_ids": [
         "1e7fce9f3d0fa004f7501777d697e5efd1a2b0bc5590a900869d8aa753a22b33",
@@ -2941,19 +2941,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 240.51890000009735,
-      "repeat_query_ms": 92.59620000011637,
+      "first_query_ms": 242.986799999926,
+      "repeat_query_ms": 86.78859999781707,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 139.06000000042695,
-        "vector_search_ms": 1.6018999995139893,
-        "lexical_search_ms": 91.87190000011469
+        "query_embedding_ms": 159.46450000046752,
+        "vector_search_ms": 1.6763999992690515,
+        "lexical_search_ms": 74.05030000154511
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007100000402715523,
-        "vector_search_ms": 1.5987999995559221,
-        "lexical_search_ms": 82.39319999938743
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.7412999986845534,
+        "lexical_search_ms": 77.9435000004014
       },
       "top5_ids": [
         "de89809bbc2236bfaabae7fa4c980b87eb44a5932b0ff284b7524fb1c583479f",
@@ -2969,19 +2969,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 217.16730000025564,
-      "repeat_query_ms": 71.17829999970127,
+      "first_query_ms": 256.6564000007929,
+      "repeat_query_ms": 59.046000002126675,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 137.77589999972406,
-        "vector_search_ms": 1.2948000003234483,
-        "lexical_search_ms": 67.85480000053212
+        "query_embedding_ms": 196.09289999789326,
+        "vector_search_ms": 1.5665000028093345,
+        "lexical_search_ms": 50.94150000149966
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006800000846851617,
-        "vector_search_ms": 1.2940000005983165,
-        "lexical_search_ms": 60.79240000053687
+        "query_embedding_ms": 0.006099999154685065,
+        "vector_search_ms": 1.6157999998540618,
+        "lexical_search_ms": 50.58479999934207
       },
       "top5_ids": [
         "d646c3ddd267d101f694e3b1ee6b3436b4c23cc889a9e75c4c98d518c264e49d",
@@ -2997,19 +2997,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 211.21349999975791,
-      "repeat_query_ms": 61.86049999996612,
+      "first_query_ms": 192.61220000043977,
+      "repeat_query_ms": 55.85799999971641,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 137.5188000001799,
-        "vector_search_ms": 1.9471000005069072,
-        "lexical_search_ms": 64.22360000033223
+        "query_embedding_ms": 137.00530000278377,
+        "vector_search_ms": 1.2772000009135809,
+        "lexical_search_ms": 47.413300002517644
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.3755999998465995,
-        "lexical_search_ms": 51.948999999694934
+        "query_embedding_ms": 0.005199999577598646,
+        "vector_search_ms": 1.9107000007352326,
+        "lexical_search_ms": 47.306600001320476
       },
       "top5_ids": [
         "be9950e15d986b1bb7ececd2c71fca6974bb67a614fca55638a8ea71de127f54",
@@ -3025,19 +3025,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 235.52050000034797,
-      "repeat_query_ms": 90.60880000015459,
+      "first_query_ms": 223.27669999867794,
+      "repeat_query_ms": 85.40100000027451,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 151.01750000030734,
-        "vector_search_ms": 1.7275999998673797,
-        "lexical_search_ms": 74.13079999969341
+        "query_embedding_ms": 129.61409999843454,
+        "vector_search_ms": 5.462599998281803,
+        "lexical_search_ms": 81.54669999930775
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008900000466383062,
-        "vector_search_ms": 1.4467000000877306,
-        "lexical_search_ms": 78.95419999931619
+        "query_embedding_ms": 0.006499998562503606,
+        "vector_search_ms": 1.7372000002069399,
+        "lexical_search_ms": 75.36690000051749
       },
       "top5_ids": [
         "433016dc4f9ae5d9b02b5b9aff72c7746fc98c268e77b79581db6240f10b36e4",
@@ -3053,19 +3053,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 292.2816000000239,
-      "repeat_query_ms": 118.67749999964872,
+      "first_query_ms": 269.5248000018182,
+      "repeat_query_ms": 119.55350000062026,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 166.72840000046563,
-        "vector_search_ms": 1.6022999998313026,
-        "lexical_search_ms": 109.72820000006323
+        "query_embedding_ms": 169.60150000159047,
+        "vector_search_ms": 1.7325999979220796,
+        "lexical_search_ms": 90.80250000261003
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007600000571983401,
-        "vector_search_ms": 1.4031999999133404,
-        "lexical_search_ms": 108.72100000051432
+        "query_embedding_ms": 0.005699999746866524,
+        "vector_search_ms": 1.645799999096198,
+        "lexical_search_ms": 110.90999999942142
       },
       "top5_ids": [
         "9dcc42d7e0f6f38d4b400c524d72a07b5cae7ac6b2eb8bd05fbf7131a2c65bec",
@@ -3081,19 +3081,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 239.80070000015985,
-      "repeat_query_ms": 85.7426000002306,
+      "first_query_ms": 231.30480000327225,
+      "repeat_query_ms": 71.29949999944074,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 151.17219999956433,
-        "vector_search_ms": 1.1817999993581907,
-        "lexical_search_ms": 73.22219999969093
+        "query_embedding_ms": 150.1027999984217,
+        "vector_search_ms": 1.8450000025040936,
+        "lexical_search_ms": 64.06910000077914
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005700000656361226,
-        "vector_search_ms": 1.4058999995540944,
-        "lexical_search_ms": 73.57210000009218
+        "query_embedding_ms": 0.004900000931229442,
+        "vector_search_ms": 1.537699998152675,
+        "lexical_search_ms": 63.118399997620145
       },
       "top5_ids": [
         "bc0d935f95c465d971c89489fd00b912a3e83ec15caddcf29b08d7c0eb2ec09a",
@@ -3109,19 +3109,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 234.26019999988057,
-      "repeat_query_ms": 95.06389999933162,
+      "first_query_ms": 230.6468999995559,
+      "repeat_query_ms": 91.22740000020713,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 140.48280000042723,
-        "vector_search_ms": 1.5130000001590815,
-        "lexical_search_ms": 84.67089999976452
+        "query_embedding_ms": 136.92030000311206,
+        "vector_search_ms": 1.601299998583272,
+        "lexical_search_ms": 85.4118000024755
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0057999995988211595,
-        "vector_search_ms": 1.6400000004068715,
-        "lexical_search_ms": 86.42350000081933
+        "query_embedding_ms": 0.004900000931229442,
+        "vector_search_ms": 1.7550999982631765,
+        "lexical_search_ms": 82.9299999968498
       },
       "top5_ids": [
         "51b1895b7278a110ad05b0f3d9a4c456dc055a4ad748d707175575d2fe0fcfb7",
@@ -3137,19 +3137,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 224.9664999999368,
-      "repeat_query_ms": 82.86439999938011,
+      "first_query_ms": 225.41830000045593,
+      "repeat_query_ms": 74.95860000199173,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 133.86850000006234,
-        "vector_search_ms": 1.3896999998905812,
-        "lexical_search_ms": 82.80329999979585
+        "query_embedding_ms": 144.74300000074436,
+        "vector_search_ms": 3.2030000002123415,
+        "lexical_search_ms": 69.64249999873573
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008600000001024455,
-        "vector_search_ms": 1.5401000000565546,
-        "lexical_search_ms": 70.59409999965283
+        "query_embedding_ms": 0.005200003215577453,
+        "vector_search_ms": 1.7606000001251232,
+        "lexical_search_ms": 66.09430000025895
       },
       "top5_ids": [
         "d5453f21aba424762035ae73c6485e57b165c128c39bb8db3ab1d055e36830b4",
@@ -3165,19 +3165,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 308.06419999953505,
-      "repeat_query_ms": 168.35360000004584,
+      "first_query_ms": 286.8060000000696,
+      "repeat_query_ms": 129.8346000003221,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 138.93370000005234,
-        "vector_search_ms": 1.499599999988277,
-        "lexical_search_ms": 152.60179999950196
+        "query_embedding_ms": 151.66920000046957,
+        "vector_search_ms": 1.7129000007116701,
+        "lexical_search_ms": 118.99989999801619
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0072999991971300915,
-        "vector_search_ms": 1.5621000002283836,
-        "lexical_search_ms": 158.02540000004228
+        "query_embedding_ms": 0.005899997631786391,
+        "vector_search_ms": 1.5260000000125729,
+        "lexical_search_ms": 121.23399999836693
       },
       "top5_ids": [
         "203d3db582ab414f6a86c2809b8a91364b0a352fa18f0ab5407ebad4ef486bc3",
@@ -3193,19 +3193,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 248.0428999997457,
-      "repeat_query_ms": 101.87300000052346,
+      "first_query_ms": 241.94859999988694,
+      "repeat_query_ms": 97.0058999992034,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 132.13420000010956,
-        "vector_search_ms": 1.1184999993929523,
-        "lexical_search_ms": 103.66919999978563
+        "query_embedding_ms": 141.1353000003146,
+        "vector_search_ms": 2.0389000019349623,
+        "lexical_search_ms": 90.7630000001518
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.00599999930273043,
-        "vector_search_ms": 1.3506000004781527,
-        "lexical_search_ms": 93.36619999976392
+        "query_embedding_ms": 0.004999998054699972,
+        "vector_search_ms": 1.6768999994383194,
+        "lexical_search_ms": 88.27440000095521
       },
       "top5_ids": [
         "6c472379987db954a322070d606c1545fa04d621f491a6ba945c42afb00bd128",
@@ -3221,19 +3221,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 267.2160000001895,
-      "repeat_query_ms": 126.17249999948399,
+      "first_query_ms": 275.57729999898584,
+      "repeat_query_ms": 110.15930000212393,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 141.88480000029813,
-        "vector_search_ms": 1.6907999997783918,
-        "lexical_search_ms": 115.89569999978266
+        "query_embedding_ms": 169.43909999827156,
+        "vector_search_ms": 1.783600000635488,
+        "lexical_search_ms": 91.89379999952507
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007199999345175456,
-        "vector_search_ms": 1.421699999809789,
-        "lexical_search_ms": 106.8955000000642
+        "query_embedding_ms": 0.006199999916134402,
+        "vector_search_ms": 1.7222000024048612,
+        "lexical_search_ms": 89.14290000029723
       },
       "top5_ids": [
         "c175fd31d9aa8a2cea0c726b48382e0dc671840adcffc98c4fe62ddeab60e960",
@@ -3249,19 +3249,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 272.91239999976824,
-      "repeat_query_ms": 116.15669999991951,
+      "first_query_ms": 225.89370000059716,
+      "repeat_query_ms": 77.38579999931972,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 150.4607999995642,
-        "vector_search_ms": 1.5880000000834116,
-        "lexical_search_ms": 104.99029999937193
+        "query_embedding_ms": 144.33079999798792,
+        "vector_search_ms": 1.2461000005714595,
+        "lexical_search_ms": 67.81299999784096
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.0068999997893115506,
-        "vector_search_ms": 1.5086000003066147,
-        "lexical_search_ms": 106.8278000002465
+        "query_embedding_ms": 0.006599999323952943,
+        "vector_search_ms": 1.7679999982647132,
+        "lexical_search_ms": 67.97219999862136
       },
       "top5_ids": [
         "ebf24d29dc045dfc5d5b36aa5fe4ff586aeb8911639f7ce3c3751aa0e00511c6",
@@ -3277,19 +3277,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 274.9458999996932,
-      "repeat_query_ms": 103.30949999934091,
+      "first_query_ms": 251.79879999996047,
+      "repeat_query_ms": 105.65589999896474,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 162.8496000002997,
-        "vector_search_ms": 1.3330999991012504,
-        "lexical_search_ms": 98.70469999987108
+        "query_embedding_ms": 149.48760000334005,
+        "vector_search_ms": 2.0659000001614913,
+        "lexical_search_ms": 92.42530000119586
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.00670000008540228,
-        "vector_search_ms": 1.3588000001618639,
-        "lexical_search_ms": 93.75149999959831
+        "query_embedding_ms": 0.008499999239575118,
+        "vector_search_ms": 1.8583000019134488,
+        "lexical_search_ms": 93.60250000099768
       },
       "top5_ids": [
         "2226ee563d10cc99253c45f0986034175340a77ce65dc8263a46123d2a556e4b",
@@ -3305,19 +3305,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 223.25090000049386,
-      "repeat_query_ms": 79.12930000020424,
+      "first_query_ms": 251.1573000010685,
+      "repeat_query_ms": 74.97689999945578,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 142.02369999929942,
-        "vector_search_ms": 2.260000000205764,
-        "lexical_search_ms": 71.0758999994141
+        "query_embedding_ms": 170.45280000093044,
+        "vector_search_ms": 1.643700001295656,
+        "lexical_search_ms": 66.28460000138148
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006199999916134402,
-        "vector_search_ms": 1.4121000003797235,
-        "lexical_search_ms": 69.31359999998676
+        "query_embedding_ms": 0.00549999822396785,
+        "vector_search_ms": 1.641300001210766,
+        "lexical_search_ms": 66.64499999897089
       },
       "top5_ids": [
         "88f9f31f5e71a48361653fdce345fc5dfb0aff70040d8e0942251dd19d9b15aa",
@@ -3333,19 +3333,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 257.795200000146,
-      "repeat_query_ms": 125.09010000030685,
+      "first_query_ms": 277.6123000003281,
+      "repeat_query_ms": 125.55699999938952,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 129.22410000010132,
-        "vector_search_ms": 1.5099000002010143,
-        "lexical_search_ms": 119.10540000008041
+        "query_embedding_ms": 150.5890999978874,
+        "vector_search_ms": 1.5044000028865412,
+        "lexical_search_ms": 112.52980000062962
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.011599999197642319,
-        "vector_search_ms": 1.8924000005426933,
-        "lexical_search_ms": 115.48089999996591
+        "query_embedding_ms": 0.005599998985417187,
+        "vector_search_ms": 1.7007999995257705,
+        "lexical_search_ms": 116.83869999978924
       },
       "top5_ids": [
         "c431084c95a46d48cb4599df0c6b021e6f49888378fb674dd32cad7e2a16b83a",
@@ -3361,19 +3361,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 224.09040000002278,
-      "repeat_query_ms": 83.37250000022323,
+      "first_query_ms": 272.5460000001476,
+      "repeat_query_ms": 81.83160000044154,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 136.5446999998312,
-        "vector_search_ms": 1.76740000006248,
-        "lexical_search_ms": 77.82309999947756
+        "query_embedding_ms": 172.18059999868274,
+        "vector_search_ms": 3.3867999991343822,
+        "lexical_search_ms": 82.40890000161016
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.004800000169780105,
-        "vector_search_ms": 2.0194999997329433,
-        "lexical_search_ms": 74.2816000001767
+        "query_embedding_ms": 0.007299997378140688,
+        "vector_search_ms": 1.2499000004027039,
+        "lexical_search_ms": 72.76730000012321
       },
       "top5_ids": [
         "7f4f1bd4d90107cec6012859d0b774b72198927b45bea55c1476ca8836c438e9",
@@ -3389,19 +3389,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 223.22720000011032,
-      "repeat_query_ms": 76.90399999955844,
+      "first_query_ms": 220.3183000019635,
+      "repeat_query_ms": 73.50129999758792,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 146.54030000019702,
-        "vector_search_ms": 1.47220000053494,
-        "lexical_search_ms": 67.29640000048676
+        "query_embedding_ms": 139.45400000011432,
+        "vector_search_ms": 2.217099998233607,
+        "lexical_search_ms": 64.6889999989071
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006799999937356915,
-        "vector_search_ms": 1.6341999998985557,
-        "lexical_search_ms": 67.1024999992369
+        "query_embedding_ms": 0.005600002623395994,
+        "vector_search_ms": 1.7034999982570298,
+        "lexical_search_ms": 64.96619999961695
       },
       "top5_ids": [
         "89afc0ee29f7b72960bf018b2b9d7ccb0d3d41168b05415816bdfd173ef29009",
@@ -3417,19 +3417,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 312.49209999987215,
-      "repeat_query_ms": 136.18479999968258,
+      "first_query_ms": 313.6331000023347,
+      "repeat_query_ms": 134.37290000001667,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 164.75589999936346,
-        "vector_search_ms": 2.062100000330247,
-        "lexical_search_ms": 128.35660000018834
+        "query_embedding_ms": 163.16700000243145,
+        "vector_search_ms": 3.7040999995952006,
+        "lexical_search_ms": 124.05679999938002
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005200000487093348,
-        "vector_search_ms": 1.3905000005252077,
-        "lexical_search_ms": 127.91329999981826
+        "query_embedding_ms": 0.005099998816149309,
+        "vector_search_ms": 2.4959999973361846,
+        "lexical_search_ms": 125.23019999935059
       },
       "top5_ids": [
         "98aa52d8bf5a287c8c2e8f97fdde762d32bc8b9abefe3576c232a523ea774db8",
@@ -3445,19 +3445,19 @@
       "mode": "hybrid",
       "source_hit_at_5": false,
       "evidence_hit_at_5": false,
-      "first_query_ms": 201.6833999996379,
-      "repeat_query_ms": 61.1960000005638,
+      "first_query_ms": 229.5242000000144,
+      "repeat_query_ms": 59.21129999842378,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 141.3619999993898,
-        "vector_search_ms": 1.745600000504055,
-        "lexical_search_ms": 51.62019999988843
+        "query_embedding_ms": 164.24349999942933,
+        "vector_search_ms": 4.45689999833121,
+        "lexical_search_ms": 51.09760000050301
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.009299999874201603,
-        "vector_search_ms": 2.4070999998002662,
-        "lexical_search_ms": 51.34029999953782
+        "query_embedding_ms": 0.005199999577598646,
+        "vector_search_ms": 1.7520000001240987,
+        "lexical_search_ms": 50.67350000172155
       },
       "top5_ids": [
         "8ebf441f72d4bb115a7ff2872e883bb9cf582cab882ced452b980e9933da4be4",
@@ -3473,19 +3473,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 247.06870000045456,
-      "repeat_query_ms": 95.5534999993688,
+      "first_query_ms": 224.0555000025779,
+      "repeat_query_ms": 84.2147000003024,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 160.2895999994871,
-        "vector_search_ms": 1.4843999997538049,
-        "lexical_search_ms": 77.98599999932776
+        "query_embedding_ms": 140.03649999722256,
+        "vector_search_ms": 1.613800002814969,
+        "lexical_search_ms": 75.23619999847142
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006299999768089037,
-        "vector_search_ms": 1.6199000001506647,
-        "lexical_search_ms": 86.98120000008203
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.67420000070706,
+        "lexical_search_ms": 75.83960000192747
       },
       "top5_ids": [
         "5fb069c1c7f86d93ec243fd42b0490f3eaa1f9ea6bb432fb7016c07bbeecc164",
@@ -3501,19 +3501,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 251.5504000002693,
-      "repeat_query_ms": 115.42439999993803,
+      "first_query_ms": 293.17140000057407,
+      "repeat_query_ms": 125.20430000222404,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 132.70900000043184,
-        "vector_search_ms": 1.5791999994689832,
-        "lexical_search_ms": 108.80050000014307
+        "query_embedding_ms": 150.63470000313828,
+        "vector_search_ms": 3.6432999986573122,
+        "lexical_search_ms": 126.14620000022114
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007099999493220821,
-        "vector_search_ms": 1.7305000001215376,
-        "lexical_search_ms": 105.85869999977149
+        "query_embedding_ms": 0.007399998139590025,
+        "vector_search_ms": 1.6890999977476895,
+        "lexical_search_ms": 113.23990000164486
       },
       "top5_ids": [
         "068e5236aa8eaa2d36aada5292f81e653154a484e3811660f74c47bdeedc55f6",
@@ -3529,19 +3529,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 215.40990000085003,
-      "repeat_query_ms": 74.27819999975327,
+      "first_query_ms": 236.51489999974729,
+      "repeat_query_ms": 73.40959999783081,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 142.29720000003,
-        "vector_search_ms": 1.8011000001934008,
-        "lexical_search_ms": 62.91550000059942
+        "query_embedding_ms": 160.11889999936102,
+        "vector_search_ms": 1.8706000009842683,
+        "lexical_search_ms": 66.85689999721944
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006800000846851617,
-        "vector_search_ms": 1.6898999992918107,
-        "lexical_search_ms": 63.928999999916414
+        "query_embedding_ms": 0.007300001016119495,
+        "vector_search_ms": 1.5038999990792945,
+        "lexical_search_ms": 61.91760000001523
       },
       "top5_ids": [
         "12bc37b505bf13d6e43da2bd375a2b31a920a18008a1f6d34dec3749b54435eb",
@@ -3557,19 +3557,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 241.35349999960454,
-      "repeat_query_ms": 87.2322000004715,
+      "first_query_ms": 240.82289999932982,
+      "repeat_query_ms": 87.15599999777623,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 148.59469999919384,
-        "vector_search_ms": 1.609900000403286,
-        "lexical_search_ms": 78.27770000039891
+        "query_embedding_ms": 150.62980000220705,
+        "vector_search_ms": 1.8128000010619871,
+        "lexical_search_ms": 74.81149999875925
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.00670000008540228,
-        "vector_search_ms": 1.559600000291539,
-        "lexical_search_ms": 77.38190000054601
+        "query_embedding_ms": 0.005900001269765198,
+        "vector_search_ms": 1.7531000012240838,
+        "lexical_search_ms": 77.3202999989735
       },
       "top5_ids": [
         "db5e2f6b0e4e428a8197398487d315487f103e0cb3df5b6b94a50f58ea3e6fb1",
@@ -3585,19 +3585,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 294.656600000053,
-      "repeat_query_ms": 112.73250000067492,
+      "first_query_ms": 495.5714999996417,
+      "repeat_query_ms": 119.81510000259732,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 166.79599999952188,
-        "vector_search_ms": 1.413699999829987,
-        "lexical_search_ms": 112.63920000055805
+        "query_embedding_ms": 375.61509999795817,
+        "vector_search_ms": 2.646400000230642,
+        "lexical_search_ms": 103.23690000222996
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008800000614428427,
-        "vector_search_ms": 1.409100000273611,
-        "lexical_search_ms": 103.54959999949642
+        "query_embedding_ms": 0.008700000762473792,
+        "vector_search_ms": 2.1124999984749593,
+        "lexical_search_ms": 111.0140999990108
       },
       "top5_ids": [
         "42cdc3fc2f6cad6395dd00231a396eb93d96ab08b3f31991deee136bf9601599",
@@ -3613,19 +3613,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 250.13159999980417,
-      "repeat_query_ms": 87.51870000014605,
+      "first_query_ms": 233.05030000119586,
+      "repeat_query_ms": 85.75379999820143,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 155.0585000004503,
-        "vector_search_ms": 1.6332999994119746,
-        "lexical_search_ms": 81.10539999961475
+        "query_embedding_ms": 140.2282999988529,
+        "vector_search_ms": 1.6181999999389518,
+        "lexical_search_ms": 77.25579999896581
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006199999916134402,
-        "vector_search_ms": 1.578499999595806,
-        "lexical_search_ms": 78.68459999917832
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.376299998810282,
+        "lexical_search_ms": 76.69700000042212
       },
       "top5_ids": [
         "ec0a7e127930409abb248546c74649a7951e71bb27b42a274c5ac6118df5ae5a",
@@ -3641,19 +3641,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 319.27689999974973,
-      "repeat_query_ms": 146.5214999998352,
+      "first_query_ms": 295.7839000009699,
+      "repeat_query_ms": 142.68299999821465,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 163.14670000065234,
-        "vector_search_ms": 1.3504999997167033,
-        "lexical_search_ms": 147.49060000031022
+        "query_embedding_ms": 145.87390000087908,
+        "vector_search_ms": 1.7740000002959277,
+        "lexical_search_ms": 134.41779999993742
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.331200000095123,
-        "lexical_search_ms": 136.9392999995398
+        "query_embedding_ms": 0.006099999154685065,
+        "vector_search_ms": 1.7129000007116701,
+        "lexical_search_ms": 133.01449999926263
       },
       "top5_ids": [
         "5876e9ea0f43ec5558b2723a9a81714a489f19bbf24e579bb113126113a3a0be",
@@ -3669,19 +3669,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 231.01500000029773,
-      "repeat_query_ms": 87.01459999974759,
+      "first_query_ms": 232.84540000167908,
+      "repeat_query_ms": 87.58799999850453,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 137.22820000020874,
-        "vector_search_ms": 1.424800000677351,
-        "lexical_search_ms": 80.0717000001896
+        "query_embedding_ms": 142.26029999917955,
+        "vector_search_ms": 1.595699999597855,
+        "lexical_search_ms": 76.9194000022253
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.005300000339047983,
-        "vector_search_ms": 1.8121000002793153,
-        "lexical_search_ms": 78.27200000065204
+        "query_embedding_ms": 0.004900000931229442,
+        "vector_search_ms": 1.723199999105418,
+        "lexical_search_ms": 79.15339999817661
       },
       "top5_ids": [
         "5e649986526e0939a9c58964ef1db5f8e86f094acef18c371ba6c219cca11d26",
@@ -3697,19 +3697,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 216.07900000071822,
-      "repeat_query_ms": 75.63779999964027,
+      "first_query_ms": 236.13230000046315,
+      "repeat_query_ms": 72.59370000247145,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 142.10970000021916,
-        "vector_search_ms": 1.5897000002951245,
-        "lexical_search_ms": 64.12829999953829
+        "query_embedding_ms": 157.56640000108746,
+        "vector_search_ms": 1.3596999997389503,
+        "lexical_search_ms": 64.86589999985881
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006799999937356915,
-        "vector_search_ms": 1.9628000000011525,
-        "lexical_search_ms": 66.1645000000135
+        "query_embedding_ms": 0.006500002200482413,
+        "vector_search_ms": 1.8306000019947533,
+        "lexical_search_ms": 62.35770000057528
       },
       "top5_ids": [
         "9038ea89248724caab583aa848fdfe319c408241858edc6b8f7a6a59571baaed",
@@ -3725,19 +3725,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 206.90130000002682,
-      "repeat_query_ms": 68.4821999993801,
+      "first_query_ms": 198.96330000119633,
+      "repeat_query_ms": 71.90150000315043,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 148.82659999966563,
-        "vector_search_ms": 1.6283999993902398,
-        "lexical_search_ms": 49.18290000023262
+        "query_embedding_ms": 142.20570000179578,
+        "vector_search_ms": 2.442299999529496,
+        "lexical_search_ms": 46.3285999976506
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007099999493220821,
-        "vector_search_ms": 1.66940000053728,
-        "lexical_search_ms": 48.054499999125255
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.7470999991928693,
+        "lexical_search_ms": 47.21109999809414
       },
       "top5_ids": [
         "845f5ee6d06cf8fef52d47267d6a0781839beaf3d325c358855a702f67a9782c",
@@ -3753,19 +3753,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 235.82970000006753,
-      "repeat_query_ms": 92.85839999938617,
+      "first_query_ms": 216.95140000156243,
+      "repeat_query_ms": 87.16949999870849,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 145.59579999968264,
-        "vector_search_ms": 1.9795999996858882,
-        "lexical_search_ms": 79.85770000050252
+        "query_embedding_ms": 129.71489999836194,
+        "vector_search_ms": 1.3285000022733584,
+        "lexical_search_ms": 79.18179999978747
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.007499999810534064,
-        "vector_search_ms": 1.5090999995663879,
-        "lexical_search_ms": 82.89049999984854
+        "query_embedding_ms": 0.004900000931229442,
+        "vector_search_ms": 1.6851000000315253,
+        "lexical_search_ms": 78.89989999966929
       },
       "top5_ids": [
         "9c368768c83bf5ad22c713dd08c114e014b3f1b07894bc5b61b6327046e97309",
@@ -3781,19 +3781,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 289.00789999988774,
-      "repeat_query_ms": 131.54089999989083,
+      "first_query_ms": 308.97790000017267,
+      "repeat_query_ms": 126.36910000219359,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 155.689700000039,
-        "vector_search_ms": 1.662900000155787,
-        "lexical_search_ms": 119.4906999999148
+        "query_embedding_ms": 178.18120000083582,
+        "vector_search_ms": 1.6097999978228472,
+        "lexical_search_ms": 116.93409999861615
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.6349999996236875,
-        "lexical_search_ms": 121.90270000064629
+        "query_embedding_ms": 0.005599998985417187,
+        "vector_search_ms": 1.8200000013166573,
+        "lexical_search_ms": 117.7084000009927
       },
       "top5_ids": [
         "7d7c9bcadc2323ff88a251de2ee38878f37dc5dbde0ff3a87afb6058308eb222",
@@ -3809,19 +3809,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 217.62119999948482,
-      "repeat_query_ms": 83.58920000046055,
+      "first_query_ms": 270.446800001082,
+      "repeat_query_ms": 80.8260000012524,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 131.1649999997826,
-        "vector_search_ms": 1.6429000006610295,
-        "lexical_search_ms": 75.901199999862
+        "query_embedding_ms": 189.55500000083703,
+        "vector_search_ms": 1.810400000977097,
+        "lexical_search_ms": 70.92000000193366
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008200000593205914,
-        "vector_search_ms": 1.4848000000711181,
-        "lexical_search_ms": 73.80029999967519
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.6724999986763578,
+        "lexical_search_ms": 71.60909999947762
       },
       "top5_ids": [
         "b0ab4c390537579190b618eaed220451741c2698a8b923fd0b7f42a00db64426",
@@ -3837,19 +3837,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": false,
-      "first_query_ms": 242.0231000005515,
-      "repeat_query_ms": 86.09209999940504,
+      "first_query_ms": 224.8053000002983,
+      "repeat_query_ms": 77.67690000036964,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 138.8001000004806,
-        "vector_search_ms": 1.5782999998918967,
-        "lexical_search_ms": 93.1962000004205
+        "query_embedding_ms": 149.1825000011886,
+        "vector_search_ms": 1.4306000011856668,
+        "lexical_search_ms": 66.47900000098161
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.006600000233447645,
-        "vector_search_ms": 1.3116999998601386,
-        "lexical_search_ms": 77.5075999999899
+        "query_embedding_ms": 0.005800000508315861,
+        "vector_search_ms": 1.8210999987786636,
+        "lexical_search_ms": 69.19379999817465
       },
       "top5_ids": [
         "257495776a2ba057d038f307959c94fee8e3de28fe5dc652acbcd8a1727bdbdd",
@@ -3865,19 +3865,19 @@
       "mode": "hybrid",
       "source_hit_at_5": true,
       "evidence_hit_at_5": true,
-      "first_query_ms": 199.4340999999622,
-      "repeat_query_ms": 73.68790000055014,
+      "first_query_ms": 212.1039000012388,
+      "repeat_query_ms": 57.85739999919315,
       "first_timings": {
         "query_embedding_cache_hit": false,
-        "query_embedding_ms": 130.90709999960382,
-        "vector_search_ms": 1.271900000574533,
-        "lexical_search_ms": 59.54019999990123
+        "query_embedding_ms": 155.08279999994556,
+        "vector_search_ms": 1.8138000014005229,
+        "lexical_search_ms": 46.95480000009411
       },
       "repeat_timings": {
         "query_embedding_cache_hit": true,
-        "query_embedding_ms": 0.008099999831756577,
-        "vector_search_ms": 2.6688000007197843,
-        "lexical_search_ms": 62.82939999982773
+        "query_embedding_ms": 0.00670000008540228,
+        "vector_search_ms": 1.6840999996929895,
+        "lexical_search_ms": 48.09150000073714
       },
       "top5_ids": [
         "25cbae980e6cbcb772b8e968b19730f85ec80f68a742f7a151baf71c84c805a2",

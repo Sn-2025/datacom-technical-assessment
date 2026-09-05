@@ -1,5 +1,6 @@
 """Measure complete retrieval, with cache state explicit and no LLM in the timed path."""
 import json
+import os
 import platform
 import random
 import statistics
@@ -57,7 +58,7 @@ def main():
                     "vector/lexical retrieval, fusion and metadata; generation excluded. No answer/result cache.",
         "gold": "AI-authored, exact source evidence verified; source hit and strict evidence-span hit are distinct.",
         "summary": summary, "rows": rows}
-    destination = Path("artifacts/evaluation")
+    destination = Path(os.environ.get("EVALUATION_DIR", "artifacts/evaluation"))
     destination.mkdir(parents=True, exist_ok=True)
     (destination / "retrieval.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
     print(json.dumps(summary, indent=2))

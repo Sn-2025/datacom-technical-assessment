@@ -16,6 +16,8 @@ __pycache__/
 .ruff_cache/
 *.egg-info/
 data/runtime/
+data/reproduction/
+artifacts/reproduction/
 data/corpus/
 data/model_cache/
 artifacts/runs/

@@ -2,7 +2,7 @@ from types import SimpleNamespace as NS
 
 import pytest
 
-from assessment.config import Connection, Pricing
+from assessment.config import Connection, Settings, Pricing
 from assessment.llm import LLM, ChatSession
 from assessment.telemetry import Telemetry, cost_usd, redact
 
@@ -76,3 +76,15 @@ def test_nested_bearer_redaction_preserves_valid_log_json(tmp_path):
     telemetry = Telemetry(tmp_path / "events.sqlite")
     telemetry.record("run", "test", nested={"authorization": "Bearer sensitive"})
     assert telemetry.recent()[0]["nested"]["authorization"] == "Bearer [REDACTED]"
+
+
+def test_dotenv_overrides_process_environment(tmp_path, monkeypatch):
+    env_file = tmp_path / ".env"
+    env_file.write_text("OPENAI_API_KEY=from-dotenv\nMODEL_NAME=dotenv-model\n", encoding="utf-8")
+    monkeypatch.setenv("OPENAI_API_KEY", "from-environment")
+    monkeypatch.setenv("MODEL_NAME", "environment-model")
+
+    settings = Settings(_env_file=env_file)
+
+    assert settings.openai_api_key.get_secret_value() == "from-dotenv"
+    assert settings.model_name == "dotenv-model"

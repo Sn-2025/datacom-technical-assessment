@@ -1,0 +1,20 @@
+{
+  "source_commit": "4f78fa5f8e9f4272c016d2c0f95eca31de866c8b",
+  "corpus": {
+    "documents": 8183,
+    "text_bytes": 53486002,
+    "canonical_sha256": "efb8bb0782b5c32ac63a41eccd9eb727ad5b7e77e810759a7adf9fe286d5cf92"
+  },
+  "environment": {
+    "PROFILE": "assessment",
+    "OPENAI_BASE_URL": "https://aiunifier.lemonforest-8302e80c.australiaeast.azurecontainerapps.io",
+    "MODEL_NAME": "gpt-5.4-nano",
+    "EMBEDDING_BACKEND": "openai",
+    "EMBEDDING_MODEL": "text-embedding-3-small",
+    "EMBEDDING_DIMENSIONS": "384",
+    "CHUNK_TOKENS": "320",
+    "CHUNK_OVERLAP": "40",
+    "RETRIEVAL_MODE": "hybrid"
+  },
+  "baseline": "artifacts/evaluation/retrieval.json"
+}

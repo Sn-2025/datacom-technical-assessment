@@ -1,6 +1,7 @@
 """Audit frozen answers with a stronger judge; retain the original nano judgments."""
 import argparse
 import json
+import os
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -13,15 +14,16 @@ from scripts.evaluate_qa import Judgment
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--judge-model", default="gpt-5.4")
+    parser.add_argument("--judge-model", default="gpt-5.4-nano")
     args = parser.parse_args()
     runtime = Runtime()
     original = runtime.settings.connection()
     connection = Connection(base_url=original.base_url, api_key=original.api_key, model=args.judge_model,
                             profile="evaluation_judge", max_output_tokens=4096)
     llm = LLM(connection, runtime.telemetry)
-    questions = {q["id"]: q for q in map(json.loads, Path("evals/questions.jsonl").read_text().splitlines())}
-    rows = [json.loads(line) for line in Path("artifacts/evaluation/qa.jsonl").read_text().splitlines()]
+    questions = {q["id"]: q for q in map(json.loads, Path("evals/questions.jsonl").read_text(encoding="utf-8").splitlines())}
+    destination = Path(os.environ.get("EVALUATION_DIR", "artifacts/evaluation"))
+    rows = [json.loads(line) for line in (destination / "qa.jsonl").read_text(encoding="utf-8").splitlines()]
     def audit(row):
         if not row["gold_answerable"]:
             return {"id": row["id"], "correct_abstention": row["correct_abstention"]}
@@ -57,7 +59,7 @@ def main():
         "citation_coverage_among_answers": sum(r["judgment"]["all_factual_claims_have_citations"] for r in answered) / len(answered),
         "unanswerable_abstention_accuracy": sum(r.get("correct_abstention", False) for r in results if "correct_abstention" in r) / 5,
         "rows": results}
-    Path("artifacts/evaluation/qa-audit.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    (destination / "qa-audit.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(json.dumps({key: value for key, value in summary.items() if key != "rows"}, indent=2))
 
 

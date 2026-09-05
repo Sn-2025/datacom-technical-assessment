@@ -15,7 +15,7 @@ uv run uvicorn assessment.api:create_app --factory --host 127.0.0.1 --port 8000
 uv run streamlit run app.py
 ```
 
-Open http://127.0.0.1:8501 and API documentation at http://127.0.0.1:8000/docs. On the prepared workstation, dependencies and the corpus already exist. The local `.env` selects official `text-embedding-3-small` embeddings; `.env.example` defaults to optional offline BGE embeddings. Do not overwrite the prepared `.env` unless intentionally resetting settings.
+Open http://127.0.0.1:8501 and API documentation at http://127.0.0.1:8000/docs. On the prepared workstation, dependencies and the corpus already exist. Defaults use the assessment generation gateway (`PROFILE=assessment`) and official `text-embedding-3-small` embeddings. Copy `.env.example` to `.env` and set the supplied `OPENAI_API_KEY` plus a separate official `EMBEDDING_API_KEY`. Do not overwrite a working `.env` unless intentionally resetting settings.
 
 ### Vector database: installation and startup
 
@@ -28,9 +28,9 @@ The vector database is **ChromaDB** (`chromadb`, pinned to 1.5.9 in the lockfile
 
 SQLite is supplied by Python's standard library; no separate SQLite server installation is required. OpenAI embeddings generate vectors, while Chroma stores and searches them—using the OpenAI API does not mean the vector database is hosted by OpenAI.
 
-`OPENAI_API_KEY` or `OPENAI_API_KEY_FILE` configures the backend credential. For local development only, the existing `OPENAI API KEY.txt` is read automatically **only for the official OpenAI URL**. The Connections page accepts a masked session override and an editable base URL/model ID. A key stays bound to its endpoint; applying another URL cannot reuse it. Clear removes the session override; a separately configured backend credential remains available. Never commit keys or the confidential assessment PDF.
+`OPENAI_API_KEY` or `OPENAI_API_KEY_FILE` configures the **generation** credential for `OPENAI_BASE_URL`. The default base URL is the assessment unifier; `MODEL_NAME=gpt-5.4-nano`. The existing `OPENAI API KEY.txt` is read automatically **only for the official OpenAI URL**, never for the assessment gateway. Official embeddings use `EMBEDDING_API_KEY` against `https://api.openai.com/v1` and do not reuse the assessment key. The Connections page accepts a masked session override and an editable base URL/model ID. A key stays bound to its endpoint; applying another URL cannot reuse it. Never commit keys or the confidential assessment PDF.
 
-Generation profiles are environment configurations: `PROFILE=official_test` with `OPENAI_BASE_URL=https://api.openai.com/v1`; `PROFILE=assessment` with the separately supplied assessment gateway and its own key. `MODEL_NAME=gpt-5.4-nano` is the supplied default. The report identifies which provider was actually tested. Pricing for other providers/models is unknown unless supplied in `Connection.pricing`; unknown is never shown as zero.
+Optional local debugging can set `PROFILE=official_test` and `OPENAI_BASE_URL=https://api.openai.com/v1`. Submitted evidence is from the assessment gateway. Pricing for that gateway is unknown unless supplied in `Connection.pricing`; unknown is never shown as zero.
 
 ## Chat
 
@@ -41,6 +41,29 @@ uv run python chat.py
 Type `Hello`, `/clear`, or `/quit`. The client streams text, keeps the last **10 user/assistant messages** plus a fixed system instruction, and reports prompt/completion tokens, cached input, estimated USD, first-token latency and complete round-trip latency. Interrupted requests retain unknown usage when the provider did not report it. Every request gets a configuration snapshot and a run ID.
 
 ## Knowledge base and evaluation
+
+### Reproduce the submitted results from a fresh clone
+
+The Git repository contains code, the dependency lockfile, the fixed 55-question dataset, source licenses, a corpus checksum, and measured result artifacts. It **does not contain the downloaded corpus, vector index, model weights or API keys**. Full reproduction requires internet access to the pinned public sources, the assessment generation credential, and a separate official OpenAI embedding credential. No offline corpus bundle is currently supplied.
+
+After cloning and running `uv sync --frozen --extra dev`, set the assessment `OPENAI_API_KEY` and a separate official `EMBEDDING_API_KEY` in your shell or ignored `.env`, then run:
+
+```powershell
+# Inspect the plan; performs no downloads or API requests:
+uv run python scripts/reproduce.py --dry-run
+
+# Download the pinned documents, verify the exact prepared corpus, build vectors and evaluate retrieval:
+uv run python scripts/reproduce.py
+
+# Also regenerate answers and run the model-judge audit (additional billable API requests):
+uv run python scripts/reproduce.py --with-qa
+```
+
+This entry point applies the report's exact embedding/chunk settings from `configs/reproduction.json`, regardless of the offline BGE default in `.env.example`. It uses an isolated `data/reproduction/runtime/` index and a **new** `artifacts/reproduction/<run-id>/` result directory on every invocation, so committed results cannot be mistaken for newly executed tests. It reuses completed embedding work when resuming the same reproduction index. Add `--skip-fetch` to reuse existing raw downloads. It never regenerates the fixed question set.
+
+Before embedding, the complete prepared corpus must match its committed canonical SHA-256, 8,183 documents and 53,486,002 text bytes. A mismatch stops the run. `uv run python scripts/verify_corpus.py` performs this check separately. Compare new `retrieval.json` with `artifacts/evaluation/retrieval.json`; model judgments, network latency and approximate-neighbor ordering need not be bit-for-bit identical across machines or provider updates.
+
+`uv run pytest -q` is a different verification layer: it uses small deterministic fixtures and does not require this corpus or a provider key. GitHub CI also runs the isolated Docker integration tests. Full-corpus RAG evaluation is the explicit reproduction command above, not a claim that CI re-embeds 50 MiB on every push.
 
 The prepared corpus contains over 50 MiB of globally deduplicated English Microsoft SQL documentation, pinned to a Git commit. Sources retain URL, version, license, headings and line/page/element locations. Corpus bytes are measured **after parsing and before chunk overlap**, not archive size. See `docs/sources.md` and `artifacts/verification/corpus-manifest.json`.
 

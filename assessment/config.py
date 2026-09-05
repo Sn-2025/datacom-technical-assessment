@@ -8,10 +8,11 @@ from typing import Literal
 from urllib.parse import urlsplit
 
 from pydantic import BaseModel, Field, SecretStr, field_validator, model_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, PydanticBaseSettingsSource, SettingsConfigDict
 
 ROOT = Path(__file__).resolve().parents[1]
 OFFICIAL_URL = "https://api.openai.com/v1"
+ASSESSMENT_URL = "https://aiunifier.lemonforest-8302e80c.australiaeast.azurecontainerapps.io"
 
 
 class Pricing(BaseModel):
@@ -23,8 +24,8 @@ class Pricing(BaseModel):
 
 
 class Connection(BaseModel):
-    profile: str = "official_test"
-    base_url: str = OFFICIAL_URL
+    profile: str = "assessment"
+    base_url: str = ASSESSMENT_URL
     model: str = "gpt-5.4-nano"
     api_key: SecretStr = Field(default_factory=lambda: SecretStr(""), exclude=True)
     timeout_s: float = Field(default=60, gt=0, le=300)
@@ -56,11 +57,11 @@ class Connection(BaseModel):
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore", case_sensitive=False)
-    openai_base_url: str = OFFICIAL_URL
+    openai_base_url: str = ASSESSMENT_URL
     openai_api_key: SecretStr = SecretStr("")
     openai_api_key_file: Path | None = None
     model_name: str = "gpt-5.4-nano"
-    profile: str = "official_test"
+    profile: str = "assessment"
     runtime_dir: Path = ROOT / "data" / "runtime"
     model_cache_dir: Path = ROOT / "data" / "model_cache"
     chroma_host: str | None = None
@@ -78,6 +79,18 @@ class Settings(BaseSettings):
     sandbox_runner_url: str | None = None
     app_access_token: SecretStr = SecretStr("")
     tools_base_url: str = "http://127.0.0.1:8001"
+
+    @classmethod
+    def settings_customise_sources(
+        cls,
+        settings_cls: type[BaseSettings],
+        init_settings: PydanticBaseSettingsSource,
+        env_settings: PydanticBaseSettingsSource,
+        dotenv_settings: PydanticBaseSettingsSource,
+        file_secret_settings: PydanticBaseSettingsSource,
+    ) -> tuple[PydanticBaseSettingsSource, ...]:
+        # The checked-in project .env is the runtime contract for this assessment workspace.
+        return init_settings, dotenv_settings, env_settings, file_secret_settings
 
     def connection(self) -> Connection:
         key = self.openai_api_key

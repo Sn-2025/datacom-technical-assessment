@@ -1,5 +1,6 @@
 """Actual cited answers and explicitly labeled model-judge scores on held-out questions."""
 import json
+import os
 import uuid
 from pathlib import Path
 
@@ -24,7 +25,7 @@ def main():
     llm = LLM(runtime.settings.connection(), runtime.telemetry)
     questions = [json.loads(line) for line in Path("evals/questions.jsonl").read_text(encoding="utf-8").splitlines()
                  if json.loads(line)["split"] == "heldout"]
-    destination = Path("artifacts/evaluation/qa.jsonl")
+    destination = Path(os.environ.get("EVALUATION_DIR", "artifacts/evaluation")) / "qa.jsonl"
     destination.parent.mkdir(parents=True, exist_ok=True)
     existing = [json.loads(line) for line in destination.read_text(encoding="utf-8").splitlines()] if destination.exists() else []
     completed = {row["id"] for row in existing}

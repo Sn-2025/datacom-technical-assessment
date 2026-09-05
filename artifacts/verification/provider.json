@@ -1,17 +1,11 @@
 {
   "config": {
-    "profile": "official_test",
-    "base_url": "https://api.openai.com/v1",
+    "profile": "assessment",
+    "base_url": "https://aiunifier.lemonforest-8302e80c.australiaeast.azurecontainerapps.io",
     "model": "gpt-5.4-nano",
     "timeout_s": 60.0,
     "max_output_tokens": 256,
-    "pricing": {
-      "input_per_million": 0.2,
-      "cached_input_per_million": 0.02,
-      "output_per_million": 1.25,
-      "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
-      "estimated": true
-    }
+    "pricing": null
   },
   "checks": {
     "streaming": {
@@ -19,33 +13,27 @@
       "usage_present": true,
       "telemetry": {
         "type": "stats",
-        "id": "b7d658f1abc141e7a9d1c8e473c382a9",
-        "timestamp": "2026-09-05T01:21:09.367461+00:00",
-        "run_id": "2a747902e42b4d198deabdc269d71d04",
+        "id": "42f12a70bfc04b3d982c63f6cdaceb77",
+        "timestamp": "2026-09-05T08:25:30.676329+00:00",
+        "run_id": "15c6e082900d4b8395767f269bb6a617",
         "kind": "llm_request",
         "status": "success",
         "prompt_tokens": 12,
-        "completion_tokens": 5,
+        "completion_tokens": 6,
         "cached_tokens": 0,
-        "cost_usd": 8.65e-06,
+        "cost_usd": null,
         "cost_estimated": true,
-        "latency_ms": 4316.504999999779,
-        "ttft_ms": 4251.428399999895,
-        "returned_model": "gpt-5.4-nano-2026-03-17",
-        "request_id": "req_84b03ef66fa14b1d947ca25fecec2a4c",
+        "latency_ms": 2453.770299998723,
+        "ttft_ms": 2339.454000000842,
+        "returned_model": "gpt-5.4-nano",
+        "request_id": null,
         "config": {
-          "profile": "official_test",
-          "base_url": "https://api.openai.com/v1",
+          "profile": "assessment",
+          "base_url": "https://aiunifier.lemonforest-8302e80c.australiaeast.azurecontainerapps.io",
           "model": "gpt-5.4-nano",
           "timeout_s": 60.0,
           "max_output_tokens": 256,
-          "pricing": {
-            "input_per_million": 0.2,
-            "cached_input_per_million": 0.02,
-            "output_per_million": 1.25,
-            "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
-            "estimated": true
-          }
+          "pricing": null
         }
       }
     },
@@ -53,7 +41,8 @@
       "passed": true
     },
     "structured_output": {
-      "passed": true
+      "passed": false,
+      "error_type": "APITimeoutError"
     }
   }
 }

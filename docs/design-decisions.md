@@ -1,6 +1,6 @@
 # Implementation decisions
 
-Status: agreed design and research preparation; the application is not implemented yet.
+Status: implemented workspace. This document records the design decisions and the main implementation-stage updates.
 
 ## Product scope
 
@@ -31,7 +31,7 @@ Status: agreed design and research preparation; the application is not implement
 ## Provider and model configuration
 
 - Configure provider, base URL, model identifier, request timeout, output limits and pricing metadata. Keep the API adapter replaceable and validate provider capabilities rather than assuming every OpenAI-compatible endpoint behaves identically.
-- Define an `assessment` profile preserving the supplied endpoint/model requirements and an `official_test` profile for development. Do not substitute one provider's evidence for a final assessment-gateway run.
+- Default generation to the `assessment` profile and supplied unifier. Keep `official_test` only as an optional local override. Do not substitute official-OpenAI generation evidence for the assessment-gateway run. Official embeddings may remain on `api.openai.com`.
 - The user confirmed that `OPENAI API KEY.txt` is for the official OpenAI API. Bind that credential only to `https://api.openai.com/v1`.
 - Default generation model: the assessment-specified `gpt-5.4-nano`. Allow optional per-module model overrides for experiments. Record the requested and returned model identifiers on each run; keep official evaluation runs on the required profile/model.
 - Keep embedding configuration separate from generation configuration. The embedding model/revision, dimension, normalization and chunking configuration belong to the index identity. An incompatible change requires a rebuilt/versioned index, not mixed vectors.
@@ -48,11 +48,11 @@ Status: agreed design and research preparation; the application is not implement
 - Model HTTP requests originate on the backend. Local development may use loopback transport; shared/remote deployment requires authenticated access and HTTPS.
 - CLI and CI remain fully usable through environment configuration without a browser session.
 
-## Read-only connection check
+## Connection verification
 
-On 2026-09-05 (workspace local date), the supplied local credential successfully authenticated an official OpenAI `GET /v1/models` request (HTTP 200). The returned model list contained `gpt-5.4-nano`. No model-generation request was sent. This confirms authentication and model-list visibility only; generation access, usage reporting, streaming, tool calling and structured-output behavior still need their implementation-stage probes.
+On 2026-09-05 (workspace local date), the assessment gateway configuration was verified with real provider probes. Streaming generation and tool calling succeeded against the assessment unifier with `gpt-5.4-nano`, and the latest verification artifact is `artifacts/verification/provider.json`.
 
-The local credential file and common secret locations are ignored by Git. No secret value is included in this document.
+Official OpenAI remains the embedding endpoint only when `EMBEDDING_BACKEND=openai`. The local credential file and common secret locations are ignored by Git. No secret value is included in this document.
 
 ## Official references
 
