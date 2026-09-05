@@ -44,6 +44,7 @@ uv run assessment stats
 uv run assessment search "How does READ COMMITTED prevent dirty reads?" --mode hybrid
 uv run python scripts/evaluate_retrieval.py
 uv run python scripts/evaluate_qa.py
+uv run python -m scripts.audit_qa_scores --judge-model gpt-5.4
 ```
 
 `fetch_embedding.py` installs a checksum-verified BGE model and tokenizer. Local embeddings use the weights; official embeddings reuse the tokenizer for conservative, structure-aware chunking. Set `EMBEDDING_BACKEND=openai`, `EMBEDDING_MODEL=text-embedding-3-small`, and `EMBEDDING_DIMENSIONS=384` for the tested API path. A separate `EMBEDDING_API_KEY` is required when generation uses another provider. Changing embedding/chunk configuration creates a different index. Model assets are fingerprinted to prevent silently mixing incompatible vectors.
@@ -53,6 +54,8 @@ Loaders support TXT, Markdown, HTML, PDF and DOCX. Scanned PDFs return an explic
 Retrieval compares dense HNSW, SQLite FTS5/BM25, and reciprocal-rank fusion. Optional cross-encoder reranking downloads its own model on first use and is **not included in the default benchmark**. Answers contain atomic claims with citation IDs and expandable evidence; missing or invalid citations produce abstention. Citation ID validation cannot prove semantic entailment: the separate QA evaluation checks that with an explicitly labeled model judge.
 
 `evals/questions.jsonl` contains 50 evidence-backed questions (10 development, 40 held-out) and five unanswerable controls. Questions were AI-authored and their gold evidence verified against the source; they are reviewable, not represented as independently human-graded. Metrics distinguish source Hit@5 from stricter evidence-span Hit@5. First-query latency clears the query-vector cache; repeat-query latency uses the bounded 256-entry cache. Both include the whole retrieval pipeline; neither includes answer generation. The benchmark saves raw per-question measurements as well as medians/p95s. Do not compare repeat-cache numbers with another system's uncached numbers.
+
+`qa.jsonl` preserves the generated answers and original nano judgments. `qa-audit.json` re-scores those unchanged answers with GPT-5.4 after finding rubric errors in the original judge. The audited answer correctness is 34/40; 36/37 affirmative answers have fully supported citations. All five negative controls abstain. This is a post-hoc automated audit, not an independent human score or a fresh held-out run. Judge-model pricing is left unknown unless explicitly configured.
 
 ## Travel agent
 

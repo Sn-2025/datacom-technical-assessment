@@ -1,0 +1,29 @@
+[
+  {
+    "id": "e3e2b4bc028b495a9ee3bb17f1f987aa",
+    "timestamp": "2026-09-05T01:51:50.377451+00:00",
+    "run_id": "295e8af10cb642c19274e3d9e37a48fd",
+    "kind": "code_progress",
+    "attempt": 1,
+    "stage": "generating",
+    "test_source": "built_in"
+  },
+  {
+    "id": "e89f4201bac94095a31d6ae695f976a0",
+    "timestamp": "2026-09-05T01:51:52.793924+00:00",
+    "run_id": "295e8af10cb642c19274e3d9e37a48fd",
+    "kind": "code_progress",
+    "attempt": 1,
+    "stage": "running_tests"
+  },
+  {
+    "id": "2d985fcde1804caa954408de28bc578a",
+    "timestamp": "2026-09-05T01:51:52.819833+00:00",
+    "run_id": "295e8af10cb642c19274e3d9e37a48fd",
+    "kind": "code_result",
+    "status": "sandbox_unavailable",
+    "attempt": 1,
+    "artifact_dir": "artifacts\\runs\\295e8af10cb642c19274e3d9e37a48fd",
+    "message": "Start Docker and build the sandbox image; generated code was not run on the host."
+  }
+]

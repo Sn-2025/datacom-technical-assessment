@@ -14,13 +14,15 @@ On the 40 held-out questions, hybrid **source Hit@5 is 97.5% (39/40)**; strict e
 
 These are single-workstation, sequential measurements, not a load-test guarantee. A separate cold API smoke request took 1.19 seconds for retrieval, illustrating startup/network effects.
 
+A post-hoc GPT-5.4 audit of unchanged nano-generated answers scored **34/40 correct (85%)**, **36/37 produced answers fully citation-supported**, and **5/5 negative controls correctly refused**. The original nano judge scored 77.5% correctness but conflated supported extra detail with error; both judgments are retained. This rubric audit is not new unseen testing or human certification.
+
 ## Workflows and verification
 
 Official OpenAI streaming, usage, tool calling and strict JSON probes passed. The actual `chat.py` Hello run reported 20 input tokens, 12 output tokens and 1,345 ms. History is capped at ten messages; endpoint-bound credentials and unknown-cost handling are tested.
 
 The live planner called Open-Meteo and MediaWiki and produced a validated two-day itinerary at **NZ$436**, including food, transport and accommodation allowances. Prices and venue windows are explicitly estimates. Invalid attraction IDs, dates, travel gaps and excess budgets are rejected.
 
-The code assistant freezes acceptance tests and permits three total attempts. Local generation succeeded; execution correctly reported unavailable because this workstation has no Docker engine. The restricted Linux runner passed actual container tests in initial CI (29/29). Current local tests pass **30/30**, with two Docker integrations explicitly skipped. Six UI pages and the real QA HTTP endpoint passed smoke checks.
+The code assistant freezes acceptance tests and permits three total attempts. Local generation succeeded; execution correctly reported unavailable because this workstation has no Docker engine. Linux CI passed **32/32**, including actual restricted-container tests (run 33937883023, core revision 9a0d55c). Local tests pass **30/30**, with two Docker integrations explicitly skipped. Six UI pages and the real QA HTTP endpoint passed smoke checks.
 
 ## Limits
 

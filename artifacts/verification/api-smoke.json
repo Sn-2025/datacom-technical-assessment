@@ -1,0 +1,17 @@
+{
+  "health_status": 200,
+  "qa_status": 200,
+  "answerable": true,
+  "answer": "When a cast conversion fails (for a conversion attempt that triggers an error during the cast), TRY_CONVERT returns NULL. [2]\n\nIf an error occurs during the TRY_CONVERT cast, NULL is returned. [2]\n\nIf you request a conversion that is explicitly not permitted, TRY_CONVERT fails with an error (instead of returning NULL). [2]",
+  "sources": 5,
+  "retrieval": {
+    "latency_ms": 1192.1798000003037,
+    "timings": {
+      "query_embedding_cache_hit": false,
+      "query_embedding_ms": 871.1026000000857,
+      "vector_search_ms": 256.44439999996393,
+      "lexical_search_ms": 56.398199999421195
+    },
+    "mode": "hybrid"
+  }
+}

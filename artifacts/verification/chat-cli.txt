@@ -1,0 +1,6 @@
+Technical assistant. Enter /quit to exit; /clear to clear the last 10 messages.
+
+You: Assistant: Hello! How can I help you today?
+[stats] prompt=20 completion=12 cost=$0.00001900 (estimate) latency=1345 ms
+
+You: 

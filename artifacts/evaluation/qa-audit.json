@@ -1,0 +1,399 @@
+{
+  "judge": {
+    "profile": "evaluation_judge",
+    "base_url": "https://api.openai.com/v1",
+    "model": "gpt-5.4",
+    "timeout_s": 60.0,
+    "max_output_tokens": 4096,
+    "pricing": null
+  },
+  "protocol": "Post-hoc rubric audit of unchanged answers; original nano judgments retained in qa.jsonl. AI audit, not independent human validation or a new unseen evaluation.",
+  "answerable_questions": 40,
+  "answers_produced": 37,
+  "answer_correct": 0.85,
+  "fully_supported_among_answers": 0.972972972972973,
+  "citation_coverage_among_answers": 1.0,
+  "unanswerable_abstention_accuracy": 1.0,
+  "rows": [
+    {
+      "id": "sql-001",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: when the target binary/varbinary type is too small, SQL Server silently truncates the leading digits/bytes, leaving only the portion that fits. Citation [1] explicitly states that int/smallint/tinyint can be converted to binary/varbinary, that 123456 is stored as 0x0001e240 in BINARY(4), and that when the binary target is too small, the leading digits are silently truncated so the value is stored as 0xe240. Both affirmative factual claims are covered by citation [1], and both claims include citations."
+      }
+    },
+    {
+      "id": "sql-002",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer directly matches the question: it says the converted value gets the collation of the input value. This is explicitly supported by source [4]: \"When a character expression is converted to a character expression of a different data type or size ... the collation of the input value is assigned to the converted value.\" The answer contains one affirmative factual claim, it has citation [4], and that citation supports it."
+      }
+    },
+    {
+      "id": "sql-003",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer directly matches the question and the reference: it says converting DATE to TIME(n) fails and raises error 206, with the cited message. Citation [1] explicitly states, \u201cWhen the conversion is to time(n), the conversion fails, and error message 206 is raised: Operand type clash: date is incompatible with time.\u201d The single factual claim is supported by its citation, and it has a citation."
+      }
+    },
+    {
+      "id": "sql-004",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer directly matches the question and the reference: it says that converting time(n) to datetime2 copies the time and sets the date to 1900-01-01, which is exactly supported by source [5]. The second sentence about the example result (1900-01-01 12:10:16.1234567 preserving the original time) is also explicitly shown in [5]. All affirmative factual claims are cited, and the cited passage entails them."
+      }
+    },
+    {
+      "id": "sql-006",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer directly matches the question and the reference: it says 'TRUE' converts to 1 and 'FALSE' converts to 0 for SQL Server bit conversion. Both affirmative claims are explicitly supported by citation [1], which states: 'The string values TRUE and FALSE can be converted to bit values: TRUE is converted to 1, and FALSE is converted to 0.' Both factual claims in the answer include citations."
+      }
+    },
+    {
+      "id": "sql-007",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": false,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: yes, an `nchar(10)` column can hold 10 BMP characters but fewer than 10 supplementary characters, matching source [2]. All factual answer claims do have citations. However, not all claims are fully supported by their cited passages. In particular, claim 1 says `nchar(n)` has storage size `two times n bytes plus 2 bytes`, but citation [3] is about **nvarchar** (`Variable-size string data ... The ISO synonyms for nvarchar...`) rather than `nchar`, so the citation does not directly support that claim about `nchar(n)`. The other main claims about supplementary characters using two byte-pairs and `nchar(10)` storing fewer than 10 such characters are supported by [2] and [3]."
+      }
+    },
+    {
+      "id": "sql-008",
+      "judgment": {
+        "answer_correct": false,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer does not correctly answer the question as asked. The question asks which operations are allowed directly on a uniqueidentifier column or variable; the expected answer is limited to comparisons (=, <>, <, >, <=, >=) and NULL checks (IS NULL / IS NOT NULL). While the answer includes that correct statement from source [3], it also adds unrelated material about initialization, conversion from strings, and INSERT usage, which does not answer the asked operation question and makes the response not directly correct to the actual question. All affirmative factual claims are supported by their cited passages: initialization and string conversion are supported by [2], INSERT usage by [1], and the operation limits by [3]. All factual claims also have citations."
+      }
+    },
+    {
+      "id": "sql-009",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly states that executing an UPDATE against a row with a rowversion column causes the rowversion to change/increment even when the data values remain the same, which matches the reference. All affirmative claims are supported by the cited passages: source [1] explicitly says rowversion is incremented with any update statement, even if no row values are changed, and source [2] says if an update statement is run against the row, the rowversion value is updated. Every factual claim in the answer includes citations."
+      }
+    },
+    {
+      "id": "sql-011",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it states that COALESCE checks arguments in order and, when the first is NULL and the second is non-NULL, returns the second argument\u2019s value. Citation [1] explicitly says COALESCE 'evaluates the arguments in order and returns the current value of the first expression that initially doesn't evaluate to NULL,' which directly supports both the general rule and the specific first-NULL/second-non-NULL case. All affirmative factual claims are cited, and the cited passage supports them."
+      }
+    },
+    {
+      "id": "sql-012",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly states that ISNULL(check_expression, replacement_value) returns the replacement value when the checked expression is NULL, which directly answers the question; for ISNULL(some_expression, 0), that means it returns 0. Citation [2] explicitly says: \"Replaces NULL with the specified replacement value\" and \"The expression to be returned if check_expression is NULL... Otherwise, replacement_value is returned.\" The single factual claim is cited, and the cited passage supports it."
+      }
+    },
+    {
+      "id": "sql-013",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly states that `NULLIF(4,4)` returns `NULL` and `NULLIF(5,7)` returns `5`, matching the question and reference. Both factual claims are explicitly supported by citation [1], which says the example `SELECT NULLIF(4,4) AS Same, NULLIF(5,7) AS Different;` returns `NULL` for the first column because the inputs are the same, and returns the first value (`5`) for the second column because the inputs are different. All affirmative factual claims in the answer include a citation."
+      }
+    },
+    {
+      "id": "sql-014",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses both parts of the question: omitting PARTITION BY makes ROW_NUMBER() treat the entire result set as a single group, and it uses sequential numbering starting at 1. Claim 1 is directly supported by source [1]: \"If `PARTITION BY` is not specified, the function treats all rows of the query result set as a single group.\" Claim 2 is also directly supported by source [1]: \"returns the sequential number of a row within a partition of a result set, starting at 1 for the first row in each partition.\" All affirmative factual claims in the answer include citation [1]."
+      }
+    },
+    {
+      "id": "sql-016",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it says rows in the same partition with the same ORDER BY value receive the same DENSE_RANK, which matches source [1] ('each of those rows gets the same rank'). The additional claims are also supported by [1]: it states the rank is 'one plus the number of distinct rank values that come before' the row, and that DENSE_RANK has 'no gaps' and 'always [has] consecutive rank values,' which supports the statement about the next distinct value receiving the next consecutive rank. Every affirmative factual claim in the answer has citation [1]."
+      }
+    },
+    {
+      "id": "sql-017",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly states the distribution for NTILE(5) over 53 rows: the first three groups have 11 rows each and the remaining two groups have 10 rows each, matching the reference. Each affirmative claim is cited, and citation [2] explicitly supports them: it says that when rows aren't divisible by the number of groups, group sizes differ by one, larger groups come first, and specifically for 53 rows and 5 groups, the first three groups have 11 rows and the two remaining groups have 10 rows each."
+      }
+    },
+    {
+      "id": "sql-018",
+      "judgment": {
+        "answer_correct": false,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer is incorrect because the question explicitly asks what happens when no explicit DEFAULT is provided; the correct behavior is that LAG returns NULL for the first row. Instead, the answer says it returns the value specified by the default argument (for example 0), which does not answer the asked condition. However, that claim is supported by citations [1] and [3], which both describe examples where an explicit default of 0 was supplied and therefore 0 was returned for the first row. The only affirmative factual claim in the answer has citations, so citation coverage is complete."
+      }
+    },
+    {
+      "id": "sql-019",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: with LEAD(expr, 1, 0) and no following row within the partition, the specified default 0 is returned. Citation [2] explicitly states that LEAD is applied separately to each partition and that when there is no lead value for the last row of each partition, the default zero is returned. Citation [1] also supports the same default-zero behavior for the last row. All affirmative factual claims are cited, and those claims are entailed by the provided cited passages."
+      }
+    },
+    {
+      "id": "sql-021",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly explains to use `STRING_SPLIT` on the comma-separated string and filter out empty tokens with a `WHERE` clause, which matches the question and reference. Each factual claim is supported by the cited passages: citation [1] shows `FROM STRING_SPLIT(@tags, ',')` and `WHERE RTRIM(value) <> ''`, and explains that empty strings are returned when nothing is between separators; citation [2] states that empty zero-length substrings occur with consecutive delimiters and can be filtered with `WHERE value <> ''`. All affirmative factual claims in the answer include citations."
+      }
+    },
+    {
+      "id": "sql-022",
+      "judgment": {
+        "answer_correct": false,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer does not cleanly answer the question as asked. The question asks whether a non-existent path causes NULL or an error; the reference says JSON_VALUE errors if the path isn't found and invalid JSON is encountered anywhere while scanning the text. The response includes that, but then adds that a comparison table shows a missing path can return \"NULL or an error,\" which makes the overall answer ambiguous/inconsistent rather than giving the expected conclusion. \n\nAll affirmative factual claims are supported by their cited passages: claim 1 and claim 2 are directly stated in source [1]; claim 3 is supported by the table in [2], which literally says some paths return \"NULL or error\"; claim 4 is supported by [5] about long-text overflow behavior. All factual claims in the answer have citations."
+      }
+    },
+    {
+      "id": "sql-023",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it says that omitting the path causes JSON_QUERY to return the input expression, which matches the reference. Its extra statement that the default path is `$` and that an invalid path returns an error is also supported by citation [1], which explicitly states both: 'The default value for path is `$`... if you don't provide a value for path, JSON_QUERY returns the input expression' and 'If the format of path isn't valid, JSON_QUERY returns an error.' All affirmative factual claims in the answer are cited, and the cited passage supports them."
+      }
+    },
+    {
+      "id": "sql-024",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly states that ISJSON returns 0 for 'not json', matching the reference. Its extra claim about returning 1 for valid JSON and NULL for NULL input is directly supported by citation [1], which says: 'Returns 1 if the string contains valid JSON; otherwise, returns 0. Returns NULL if expression is null.' The conclusion that 'not json' is not valid JSON and therefore returns 0 is supported by the cited rule in [1]. All affirmative factual claims are cited."
+      }
+    },
+    {
+      "id": "sql-026",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it says DATEADD\u2019s datepart cannot be supplied via a user-defined variable, which is directly supported by source [2]: \u201cDATEADD doesn't accept user-defined variable equivalents for the datepart arguments.\u201d The extra statement about the number argument is not required but is supported by [1] and [3], both of which state that DATEADD accepts user-defined variable values for number. Both affirmative factual claims have citations, and the cited passages entail them."
+      }
+    },
+    {
+      "id": "sql-027",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it says `DATEDIFF` returns `0` for `week` when the dates have different year values but the same calendar week, which matches the reference. Its only affirmative factual claim is cited, and citation [1] explicitly states: \"If startdate and enddate have different year values, but they have the same calendar week values, `DATEDIFF` returns `0` for datepart `week`.\" Therefore the claim is supported and all factual claims have citations."
+      }
+    },
+    {
+      "id": "sql-028",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: for `DATETRUNC('millisecond', someDate)` with a datetime type whose fractional scale is less than 3, SQL Server can throw an error because the datepart requires higher fractional precision than the type supports. Claim 1 is directly supported by citation [1], which states truncating to `millisecond` requires fractional time scale at least 3. Claim 2 is supported by citation [4], which states that when the datepart requires a higher fractional time scale precision than the data type supports, an error is thrown; applying that to `millisecond` with scale < 3 is consistent with [1] and [4]. All affirmative factual claims are cited."
+      }
+    },
+    {
+      "id": "sql-029",
+      "judgment": {
+        "answer_correct": false,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer is not correct because the question is answerable from the cited EOMONTH definition: citation 2 states that EOMONTH adds the specified number of months to the start_date and returns the last day of that resulting month. From that rule, EOMONTH('2024-01-15', 2) yields 2024-03-31, so refusing to compute it is an incorrect abstention. The answer\u2019s factual claims are supported by citation 2: it does say EOMONTH returns the last day of the month containing a specified date with an optional offset, and that it adds the specified months before returning the last day of the resulting month. There are no uncited factual claims; the response is effectively an abstention and includes no affirmative answer claim requiring additional citation."
+      }
+    },
+    {
+      "id": "sql-031",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it says TRY_CONVERT returns NULL when the conversion fails, which matches the reference. The sole factual claim is cited, and both cited sources support it: source 2 states that TRY_CONVERT returns the cast value if successful and otherwise returns NULL, and source 1 explicitly says TRY_CONVERT returns NULL when the cast fails. No uncited factual claims are present."
+      }
+    },
+    {
+      "id": "sql-032",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it says that when STUFF's start argument is zero or negative, it returns a null string/null value, which matches the reference. The single factual claim has citations [1][5]. Citation [1] directly states, 'If start is negative or zero, a null string is returned.' Citation [5] also supports that zero or negative start yields a null string/null value. Thus the answer is correct, supported by its citations, and all factual claims are cited."
+      }
+    },
+    {
+      "id": "sql-033",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer directly matches the question and the reference: it says REPLACE returns string_expression unchanged when string_pattern is ''. This is explicitly supported by source [1]: \"If string_pattern is an empty string (''), string_expression is returned unchanged.\" The only factual claim is cited, so all claims are supported and all factual claims have citations."
+      }
+    },
+    {
+      "id": "sql-034",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer directly matches the expected answer: it says omitting `length` returns all characters from the `start` position to the end of `expression`. Citation [1] explicitly states, \"If length is omitted, all characters from the start position to the end of the expression is returned.\" The only factual claim in the answer has a citation, and that citation supports it."
+      }
+    },
+    {
+      "id": "sql-036",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer directly matches the expected behavior: if no error occurs in the TRY block, after the last statement in TRY finishes, control passes to the statement immediately after the associated END CATCH statement. This is explicitly stated in source [1]. The only factual claim in the answer is cited, and the citation fully supports it."
+      }
+    },
+    {
+      "id": "sql-037",
+      "judgment": {
+        "answer_correct": false,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer is not correct because the question is answerable from the source and asks for the rule: THROW without parameters must be used only inside a CATCH block; outside CATCH, using THROW without parameters is not allowed. The response instead abstains. Its few factual characterizations of the provided evidence are supported by the cited passages: source 1 gives the THROW syntax and says that if TRY...CATCH isn't available, the batch is terminated, but none of the provided citations include the key quoted rule about parameterless THROW being required to appear inside CATCH. The answer contains no uncited affirmative factual answer claims, so citation coverage is vacuously satisfied."
+      }
+    },
+    {
+      "id": "sql-038",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer directly matches the question and the reference: it says that a RAISERROR of severity 11 or higher inside a TRY block transfers control to the associated CATCH block. This is explicitly supported by citation [1] ('When RAISERROR is run with a severity of 11 or higher in a TRY block, it transfers control to the associated CATCH block.') and also by [4] for severities 11 to 19 in a TRY block. The single factual claim has citations, and those citations support it."
+      }
+    },
+    {
+      "id": "sql-039",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: in a TRY...CATCH handler, use XACT_STATE() to determine whether the current session has an active user transaction and whether it is committable. The extra details about return values and CATCH-block handling are consistent with the cited passages. Each affirmative factual claim is cited, and the citations support them: sources 1 and 2 say XACT_STATE is used in TRY...CATCH to decide commit vs rollback; source 5 states that XACT_STATE returns -1 for an uncommittable transaction and that such a transaction can only read or roll back, not write or commit; source 3 explicitly shows 0 means no transaction, -1 leads to rollback, and 1 means committable and can be committed."
+      }
+    },
+    {
+      "id": "sql-041",
+      "judgment": {
+        "answer_correct": false,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer is incorrect because the question is answerable and the expected answer is 32 characters, but the response abstains, saying the maximum cannot be determined. The cited passages provided in the frozen answer only say that the maximum allowed length is \"%d characters\" and do not supply a concrete number, so the response's factual statements about what the provided evidence says are supported by its citations. The answer contains no uncited affirmative factual claims beyond that, and the listed claim set is empty, so citation coverage is vacuously satisfied."
+      }
+    },
+    {
+      "id": "sql-042",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly states that an extra COMMIT TRANSACTION after @@TRANCOUNT has reached 0 causes an error due to no corresponding BEGIN TRANSACTION, which matches source [2] exactly. Its supporting setup claim that COMMIT decrements @@TRANCOUNT by 1 is directly supported by [1] and [4]. The final synthesized claim is also entailed by combining [1] and [2]. All affirmative factual claims in the answer include citations."
+      }
+    },
+    {
+      "id": "sql-043",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer matches the question and expected answer: it says the trigger continues executing remaining statements after ROLLBACK, and that the rollback undoes all data modifications up to that point in the current transaction, including those made by the trigger. It also adds two accurate, relevant details supported by the cited text: later trigger statements that modify data are not rolled back, and subsequent statements in the firing batch are not executed. Each affirmative factual claim has citations, and each cited passage directly supports the corresponding claim. Citation [1] explicitly states both rollback of prior modifications and continued trigger execution, including that later modifications are not rolled back; citation [2] explicitly states that the firing batch is terminated and later batch statements are not executed."
+      }
+    },
+    {
+      "id": "sql-044",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly identifies using the READ COMMITTED isolation level together with the READ_COMMITTED_SNAPSHOT database option set to ON, which matches the cited passage and the expected answer\u2019s substance. The cited source explicitly states: \"The `READ COMMITTED` isolation level with the `READ_COMMITTED_SNAPSHOT` database option set to `ON`\" as a way to avoid dirty reads while minimizing locking contention. Both factual claims are covered by citation [1], and there are no uncited factual claims."
+      }
+    },
+    {
+      "id": "sql-046",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it says CTE results are not materialized and that each outer reference causes the defining query to be re-executed, which matches the reference. Both factual claims are explicitly supported by source [1], which states: \"Query results from common table expressions aren't materialized\" and \"Each outer reference to the named result set requires the defined query to be re-executed.\" All affirmative factual claims in the answer have citations."
+      }
+    },
+    {
+      "id": "sql-047",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly addresses the question: it says UNION ALL keeps duplicates and UNION removes duplicates, which matches the reference and source 2. All affirmative factual claims are supported by the cited passages: source 2 explicitly says UNION ALL includes duplicates, UNION excludes duplicates, and UNION concatenates results into a single result set; source 1 states the example with UNION ALL returns each row three times and the example with UNION removes duplicate rows and returns only unduplicated rows. Every factual claim in the answer has at least one citation."
+      }
+    },
+    {
+      "id": "sql-048",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly states the key point the question asks: for `NOT EXISTS`, the outer `WHERE` condition is satisfied when the subquery returns no rows. This is directly supported by sources [1] and [3], especially [3]: \"The `WHERE` clause in `NOT EXISTS` is satisfied if no rows are returned by the subquery.\" The additional explanation about `EXISTS`/`NOT EXISTS` being an existence test is supported by [2], which says the subquery functions as an existence test and returns `TRUE`/`FALSE` rather than producing data. All affirmative factual claims in the answer include citations, and those citations support the claims."
+      }
+    },
+    {
+      "id": "sql-049",
+      "judgment": {
+        "answer_correct": true,
+        "all_claims_supported_by_their_citations": true,
+        "all_factual_claims_have_citations": true,
+        "explanation": "The answer correctly says that `LastName LIKE 'abc '` does not return a row whose value is exactly `abc`, which matches the reference. Its cited claims are supported by source [4]: it explicitly states that all characters in the pattern, including leading/trailing spaces, are significant; that `LIKE 'abc '` does not return a row with `abc`; and that `LIKE 'abc'` returns rows that start with `abc` and have zero or more trailing blanks. All affirmative factual claims in the answer have citation [4]."
+      }
+    },
+    {
+      "id": "unanswerable-01",
+      "correct_abstention": true
+    },
+    {
+      "id": "unanswerable-02",
+      "correct_abstention": true
+    },
+    {
+      "id": "unanswerable-03",
+      "correct_abstention": true
+    },
+    {
+      "id": "unanswerable-04",
+      "correct_abstention": true
+    },
+    {
+      "id": "unanswerable-05",
+      "correct_abstention": true
+    }
+  ]
+}

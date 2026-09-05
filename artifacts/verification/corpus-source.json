@@ -1,0 +1,11 @@
+{
+  "project": "Microsoft SQL documentation",
+  "repository": "MicrosoftDocs/sql-docs",
+  "commit": "4f78fa5f8e9f4272c016d2c0f95eca31de866c8b",
+  "license": "CC-BY-4.0 for documentation; MIT for code samples",
+  "source_url": "https://github.com/MicrosoftDocs/sql-docs/tree/4f78fa5f8e9f4272c016d2c0f95eca31de866c8b",
+  "downloaded_files": 11186,
+  "raw_bytes": 80666006,
+  "failures": [],
+  "measurement_status": "raw Markdown only; parsed/deduplicated text must be measured separately"
+}

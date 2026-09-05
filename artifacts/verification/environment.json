@@ -1,0 +1,7 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "cpu": "Intel Core i5-9300H @ 2.40 GHz",
+  "logical_processors": 8,
+  "benchmark": "sequential local Windows run; official API over existing internet connection"
+}

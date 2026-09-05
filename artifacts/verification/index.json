@@ -1,0 +1,15 @@
+{
+  "index_id": "ac33852da0d355e0",
+  "config": {
+    "embedding_model": "text-embedding-3-small",
+    "embedding_backend": "openai",
+    "embedding_dimensions": 384,
+    "chunk_tokens": 320,
+    "chunk_overlap": 40,
+    "parser_version": "1",
+    "chunker_version": "1"
+  },
+  "documents": 8183,
+  "chunks": 57720,
+  "unique_text_bytes": 53486002
+}
