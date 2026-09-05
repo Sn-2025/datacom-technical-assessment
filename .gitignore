@@ -23,5 +23,6 @@ data/model_cache/
 artifacts/runs/
 artifacts/sandbox/
 artifacts/verification/*.log
+artifacts/verification/local-tests.xml
 .coverage
 htmlcov/
