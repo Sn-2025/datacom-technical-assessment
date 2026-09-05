@@ -141,25 +141,28 @@ After the stack is up, use the `api` container for ingestion, search, evaluation
 ls -lh data/corpus
 head -5 data/corpus/documents.jsonl
 
+# Fetch the pinned tokenizer/model assets used for chunking and local compatibility checks:
+docker compose exec api /app/.venv/bin/python scripts/fetch_embedding.py
+
 # Build the runtime index inside the running stack:
-docker compose exec api python -m assessment.cli ingest data/corpus/documents.jsonl
+docker compose exec api /app/.venv/bin/python -m assessment.cli ingest data/corpus/documents.jsonl
 
 # Inspect the resulting index:
-docker compose exec api python -m assessment.cli stats
-docker compose exec api python -m assessment.cli search "How does READ COMMITTED prevent dirty reads?" --mode hybrid
+docker compose exec api /app/.venv/bin/python -m assessment.cli stats
+docker compose exec api /app/.venv/bin/python -m assessment.cli search "How does READ COMMITTED prevent dirty reads?" --mode hybrid
 ```
 
 For the reproduction and evaluation scripts, stay in the `api` container as well:
 
 ```bash
 # Retrieval-only reproduction:
-docker compose exec api python scripts/reproduce.py --dry-run
-docker compose exec api python scripts/reproduce.py
+docker compose exec api /app/.venv/bin/python scripts/reproduce.py --dry-run
+docker compose exec api /app/.venv/bin/python scripts/reproduce.py
 
 # Full QA rerun and audit; billable provider calls:
-docker compose exec api python scripts/reproduce.py --with-qa
-docker compose exec api python scripts/evaluate_qa.py
-docker compose exec api python -m scripts.audit_qa_scores --judge-model gpt-5.4
+docker compose exec api /app/.venv/bin/python scripts/reproduce.py --with-qa
+docker compose exec api /app/.venv/bin/python scripts/evaluate_qa.py
+docker compose exec api /app/.venv/bin/python -m scripts.audit_qa_scores --judge-model gpt-5.4
 ```
 
 The production image is intentionally built with `uv sync --no-dev`, so `pytest` and `ruff` are not installed in the long-running `api` container by default. For validation commands that need dev dependencies, run an ephemeral one-off container from the same Compose service:
@@ -180,7 +183,8 @@ If you rebuild after changing code or environment wiring, restart the stack and 
 docker compose down
 docker compose build --no-cache
 docker compose up -d chroma tools runner api ui
-docker compose exec api python -m assessment.cli ingest data/corpus/documents.jsonl
+docker compose exec api /app/.venv/bin/python scripts/fetch_embedding.py
+docker compose exec api /app/.venv/bin/python -m assessment.cli ingest data/corpus/documents.jsonl
 ```
 
 ## Validation and layout
