@@ -1,0 +1,9 @@
+{
+  "documents": 8183,
+  "unique_text_bytes": 53486002,
+  "minimum_50_MiB_met": true,
+  "deduplication": "Global whitespace-normalized exact element hashes; code retained",
+  "source": "MicrosoftDocs/sql-docs",
+  "license": "CC-BY-4.0; code MIT",
+  "failures": []
+}

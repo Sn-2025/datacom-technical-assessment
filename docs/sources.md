@@ -11,7 +11,7 @@ The evaluated corpus is an English technical knowledge base about SQL Server, Az
 
 The preparation script sorts T-SQL documentation first, then other engineering documentation, and stops after reaching 51 MiB of parsed, deduplicated text. Same-content elements across files contribute bytes only once. This conservative deduplication can remove a repeated heading from a later document; existing element locators still retain their original section path. Microsoft Docs include directives that depend on its publishing system remain source syntax rather than fabricated expanded content.
 
-`data/corpus_research/mssql/files.jsonl` records per-file SHA-256, immutable URL and Git blob identity. The reproducible downloader validates the pinned Git blob before saving. `data/corpus/manifest.json` records the measured text size and parsing failures; the delivered copy is `artifacts/verification/corpus-manifest.json`. Raw downloads, indexes and model caches are intentionally excluded from Git.
+`data/corpus_research/mssql/files.jsonl` records per-file SHA-256, immutable URL and Git blob identity. The reproducible downloader validates the pinned Git blob before saving. `data/corpus/manifest.json` records the measured text size and parsing failures; the delivered copy is `artifacts/verification/corpus-manifest.json`. The repository commits the canonical prepared corpus, while exploratory research downloads, runtime indexes, and model caches remain excluded from Git.
 
 Earlier exploration also downloaded Python, pandas, NumPy, PostgreSQL, DuckDB, Kubernetes, Spark, Airflow and Flink documentation. These remain local research assets and are **not counted** toward the evaluated corpus. No additional corpus expansion is required.
 

@@ -18,7 +18,6 @@ __pycache__/
 data/runtime/
 data/reproduction/
 artifacts/reproduction/
-data/corpus/
 data/model_cache/
 artifacts/runs/
 artifacts/sandbox/
@@ -26,3 +25,8 @@ artifacts/verification/*.log
 artifacts/verification/local-tests.xml
 .coverage
 htmlcov/
+
+# Commit the canonical prepared corpus only.
+data/*
+!data/corpus/
+!data/corpus/**
