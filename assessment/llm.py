@@ -47,10 +47,12 @@ class LLM:
             stream = self.client.chat.completions.create(model=self.connection.model, messages=messages,
                 stream=True, stream_options={"include_usage": True},
                 max_completion_tokens=self.connection.max_output_tokens)
+            response = getattr(stream, "response", None)
+            if response is not None:
+                request_id = response.headers.get("x-request-id")
             for chunk in stream:
                 usage = chunk.usage or usage
                 model = chunk.model or model
-                request_id = getattr(chunk, "id", request_id)
                 for choice in chunk.choices:
                     if choice.delta.content:
                         if ttft is None:

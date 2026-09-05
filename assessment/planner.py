@@ -39,6 +39,25 @@ class DraftItinerary(BaseModel):
     decision_summary: str
 
 
+class TripResult(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    kind: Literal["result"] = "result"
+    run_id: str
+    status: Literal["success", "needs_information", "failed_validation", "failed"]
+    currency: Literal["NZD"]
+    timezone: Literal["Pacific/Auckland"]
+    request: TripRequest
+    data_mode: Literal["live", "mock"]
+    assumptions: list[str]
+    days: list[Day]
+    cost_breakdown: list[dict]
+    total_cost_cents: int | None
+    decision_summary: str | None = None
+    tool_sources: dict | None = None
+    message: str | None = None
+    validation_errors: list[str] = Field(default_factory=list)
+
+
 class TravelTools:
     def __init__(self, base_url: str):
         self.base_url = base_url.rstrip("/")
@@ -122,14 +141,17 @@ def plan_trip(request: TripRequest, llm, tools, telemetry):
     run_id = uuid.uuid4().hex
     def event(kind, **payload):
         return telemetry.record(run_id, kind, **payload)
+    def final_result(**payload):
+        event("planning_result", status=payload["status"], total_cost_cents=payload.get("total_cost_cents"))
+        return TripResult.model_validate({"kind": "result", **base, **payload}).model_dump(mode="json")
     base = {"run_id": run_id, "currency": "NZD", "timezone": "Pacific/Auckland",
             "request": request.model_dump(mode="json"), "data_mode": request.mode,
             "assumptions": ["Adults already in Auckland; international travel excluded.",
                 "Budget includes meals, local transport and one night per gap between trip dates.",
                 "Prices are planning estimates and venue windows require verification."]}
     if request.start_date is None:
-        yield {"kind": "result", **base, "status": "needs_information", "message": "Please provide the start date.",
-               "days": [], "cost_breakdown": [], "total_cost_cents": None}
+        yield final_result(status="needs_information", message="Please provide the start date.",
+                     days=[], cost_breakdown=[], total_cost_cents=None)
         return
     messages = [{"role": "system", "content": (
         "Plan the supplied Auckland trip. You must call BOTH get_weather and get_attractions before planning. "
@@ -164,22 +186,27 @@ def plan_trip(request: TripRequest, llm, tools, telemetry):
         if not set(data) >= {"get_weather", "get_attractions"}:
             raise ValueError("Both required tools must succeed")
         errors = []
+        catalog = data["get_attractions"]["catalog"]
+        allowed_ids = [item["id"] for item in catalog]
         for attempt in range(3):
             yield event("planning_progress", stage="draft_and_validate", attempt=attempt+1)
-            draft = llm.structured(messages+[{"role": "user", "content": "Return the itinerary schema using attraction IDs from the tool."}],
+            draft = llm.structured(messages+[{"role": "user", "content": (
+                "Return the itinerary schema. The ONLY permitted attraction IDs are: " + json.dumps(allowed_ids)
+                + ". Nearby encyclopedia results are background evidence, NOT permitted attraction IDs. "
+                "Leave at least 60 minutes between visits. Prefer two well-spaced visits per day. "
+                "Use the exact allowed IDs; never invent or rename them.")}],
                                    DraftItinerary, run_id=run_id)
             errors, costs, total = validate_itinerary(draft, request, data)
             yield event("constraint_check", attempt=attempt+1, errors=errors, total_cost_cents=total)
             if not errors:
-                yield {"kind": "result", **base, "status": "success", **draft.model_dump(),
-                       "cost_breakdown": costs, "total_cost_cents": total,
-                       "tool_sources": {name: output["source"] for name, output in data.items()}}
+                yield final_result(status="success", **draft.model_dump(), cost_breakdown=costs, total_cost_cents=total,
+                             tool_sources={name: output["source"] for name, output in data.items()})
                 return
             messages.extend([{"role": "assistant", "content": draft.model_dump_json()},
                              {"role": "user", "content": "Correct these validation errors: "+json.dumps(errors)}])
-        yield {"kind": "result", **base, "status": "infeasible", "days": [], "cost_breakdown": [],
-               "total_cost_cents": None, "message": "No validated plan found within the attempt limit.", "validation_errors": errors}
+        yield final_result(status="failed_validation", days=[], cost_breakdown=[], total_cost_cents=None,
+                     message="No validated plan found within the attempt limit.", validation_errors=errors)
     except Exception as exc:
         yield event("planning_error", error_type=type(exc).__name__)
-        yield {"kind": "result", **base, "status": "failed", "days": [], "cost_breakdown": [],
-               "total_cost_cents": None, "message": "Planning failed; inspect the recorded tool and validation events."}
+        yield final_result(status="failed", days=[], cost_breakdown=[], total_cost_cents=None,
+                     message="Planning failed; inspect the recorded tool and validation events.")

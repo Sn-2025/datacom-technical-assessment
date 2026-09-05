@@ -18,8 +18,9 @@ class Runtime:
     def index(self):
         with self._lock:
             if self._index is None:
-                from .embedding import Embedder
+                from .embedding import Embedder, OpenAIEmbedder
                 from .retrieval import KnowledgeIndex
 
-                self._index = KnowledgeIndex(self.settings, Embedder(self.settings))
+                embedder = OpenAIEmbedder if self.settings.embedding_backend == "openai" else Embedder
+                self._index = KnowledgeIndex(self.settings, embedder(self.settings))
             return self._index

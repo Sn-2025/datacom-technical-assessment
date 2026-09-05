@@ -7,6 +7,7 @@ import sqlite3
 import threading
 import time
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 
@@ -59,9 +60,11 @@ class KnowledgeIndex:
     def ingest(self, document: Document) -> dict:
         with self.lock:
             with self.connect() as db:
-                previous = db.execute("SELECT content_hash,raw_hash FROM documents WHERE source_id=?",
+                previous = db.execute("SELECT content_hash,raw_hash,payload FROM documents WHERE source_id=?",
                                       (document.source_id,)).fetchone()
-                if previous and previous[0] == document.content_hash and previous[1] == document.raw_hash:
+                if (previous and previous[0] == document.content_hash and previous[1] == document.raw_hash
+                        and json.loads(previous[2])["version"] == document.version
+                        and json.loads(previous[2])["license"] == document.license):
                     return {"status": "unchanged", "source_id": document.source_id, "chunks": 0}
                 old_ids = [row[0] for row in db.execute("SELECT id FROM chunks WHERE source_id=?", (document.source_id,))]
             chunks = chunk_document(document, self.embedder, self.settings)
@@ -112,6 +115,63 @@ class KnowledgeIndex:
             return {"status": "indexed", "source_id": document.source_id, "chunks": len(chunks),
                     "text_bytes": document.text_bytes}
 
+    def ingest_many(self, documents):
+        """Bulk initial import; bounded batches, durable embedding cache and resumable documents."""
+        pending = []
+        for document in documents:
+            previous = self.document(document.source_id)
+            if previous and previous.model_dump() == document.model_dump():
+                continue
+            if previous:
+                yield self.ingest(document)
+                continue
+            pending.append(document)
+            if len(pending) >= 100:
+                yield self._import_batch(pending)
+                pending = []
+        if pending:
+            yield self._import_batch(pending)
+
+    def _import_batch(self, documents):
+        with self.lock:
+            chunks = [chunk for document in documents for chunk in chunk_document(document, self.embedder, self.settings)]
+            vectors, missing = {}, {}
+            with self.connect() as db:
+                for chunk in chunks:
+                    key = digest(chunk.text)
+                    cached = db.execute("SELECT vector FROM embedding_cache WHERE text_hash=?", (key,)).fetchone()
+                    if cached:
+                        vectors[key] = np.frombuffer(cached[0], dtype=np.float32).tolist()
+                    else:
+                        missing[key] = chunk.text
+            entries = list(missing.items())
+            batches = [entries[start:start+128] for start in range(0, len(entries), 128)]
+            def embed_batch(batch):
+                generated = self.embedder.embed([text for _, text in batch])
+                with self.connect() as db:
+                    for (key, _), vector in zip(batch, generated, strict=True):
+                        db.execute("INSERT OR IGNORE INTO embedding_cache VALUES (?,?)",
+                                   (key, np.asarray(vector, dtype=np.float32).tobytes()))
+                return [(key, vector.tolist()) for (key, _), vector in zip(batch, generated, strict=True)]
+            workers = 4 if self.settings.embedding_backend == "openai" else 1
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for batch in pool.map(embed_batch, batches):
+                    vectors.update(batch)
+            # An interrupted upsert leaves only invisible vectors. Re-running uses stable IDs and cached embeddings.
+            for start in range(0, len(chunks), 2000):
+                batch = chunks[start:start+2000]
+                self.collection.upsert(ids=[c.id for c in batch], embeddings=[vectors[digest(c.text)] for c in batch],
+                                       metadatas=[{"source_id": c.source_id} for c in batch])
+            with self.connect() as db:
+                for chunk in chunks:
+                    db.execute("INSERT INTO chunks VALUES (?,?,?,?)", (chunk.id, chunk.source_id,
+                               digest(chunk.text), chunk.model_dump_json()))
+                    db.execute("INSERT INTO chunk_fts VALUES (?,?,?)", (chunk.id, chunk.text, chunk.title))
+                for document in documents:
+                    db.execute("INSERT INTO documents VALUES (?,?,?,?,?)", (document.source_id, document.content_hash,
+                               document.raw_hash, document.text_bytes, document.model_dump_json()))
+            return {"status": "indexed", "documents": len(documents), "chunks": len(chunks)}
+
     def delete(self, source_id: str):
         with self.lock, self.connect() as db:
             ids = [r[0] for r in db.execute("SELECT id FROM chunks WHERE source_id=?", (source_id,))]
@@ -152,6 +212,7 @@ class KnowledgeIndex:
             if mode != "lexical":
                 at = time.perf_counter()
                 vector = self.embedder.query(query)
+                timings["query_embedding_cache_hit"] = getattr(self.embedder, "last_query_cache_hit", False)
                 timings["query_embedding_ms"] = (time.perf_counter()-at)*1000
                 at = time.perf_counter()
                 result = self.collection.query(query_embeddings=[vector], n_results=limit, include=["distances"])

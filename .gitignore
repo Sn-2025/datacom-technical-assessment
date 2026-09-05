@@ -20,5 +20,6 @@ data/corpus/
 data/model_cache/
 artifacts/runs/
 artifacts/sandbox/
+artifacts/verification/*.log
 .coverage
 htmlcov/

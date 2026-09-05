@@ -56,6 +56,15 @@ The local credential file and common secret locations are ignored by Git. No sec
 
 ## Official references
 
+### Implementation-stage updates (2026-09-05)
+
+- The user requested stopping corpus expansion and leaving Docker deployment as local files for their later GitHub Actions / Cloud Run work. No cloud deployment is in scope.
+- The evaluated corpus is the bounded Microsoft SQL documentation subset described in `sources.md`; other downloaded documentation is excluded from the measured corpus.
+- Official streaming, usage, tool calling and structured output probes have now passed. `artifacts/verification/provider.json` supersedes the earlier read-only connection check above.
+- Local BGE remains supported. The prepared run uses official `text-embedding-3-small` at 384 dimensions because local CPU bulk embedding was too slow. Query-vector caching is bounded and explicitly measured separately from first-query latency; there is no complete-answer or retrieval-result cache. This supersedes the original local-only embedding preference.
+- Live Auckland planning passed both external tools and deterministic validators at NZ$436. Prices remain planning estimates.
+- Profile names are environment/configuration labels, and model IDs are editable manual fields. Per-module model experimentation uses separate `Connection` objects rather than a separate UI selector for each module.
+
 - [OpenAI authentication and server-side key handling](https://developers.openai.com/api/reference/overview)
 - [OpenAI model listing](https://developers.openai.com/api/reference/resources/models/methods/list)
 - [GPT-5.4 nano capabilities](https://developers.openai.com/api/docs/models/gpt-5.4-nano)

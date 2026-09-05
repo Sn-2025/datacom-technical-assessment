@@ -1,0 +1,239 @@
+{
+  "$defs": {
+    "Day": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "title": "Date",
+          "type": "string"
+        },
+        "visits": {
+          "items": {
+            "$ref": "#/$defs/Visit"
+          },
+          "title": "Visits",
+          "type": "array"
+        }
+      },
+      "required": [
+        "date",
+        "visits"
+      ],
+      "title": "Day",
+      "type": "object"
+    },
+    "TripRequest": {
+      "properties": {
+        "prompt": {
+          "default": "Plan a two-day Auckland trip",
+          "maxLength": 4000,
+          "title": "Prompt",
+          "type": "string"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Date"
+        },
+        "days": {
+          "default": 2,
+          "maximum": 7,
+          "minimum": 1,
+          "title": "Days",
+          "type": "integer"
+        },
+        "budget_cents": {
+          "default": 50000,
+          "minimum": 1,
+          "title": "Budget Cents",
+          "type": "integer"
+        },
+        "adults": {
+          "default": 1,
+          "maximum": 8,
+          "minimum": 1,
+          "title": "Adults",
+          "type": "integer"
+        },
+        "mode": {
+          "default": "live",
+          "enum": [
+            "live",
+            "mock"
+          ],
+          "title": "Mode",
+          "type": "string"
+        }
+      },
+      "title": "TripRequest",
+      "type": "object"
+    },
+    "Visit": {
+      "additionalProperties": false,
+      "properties": {
+        "attraction_id": {
+          "title": "Attraction Id",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "type": "string"
+        },
+        "end": {
+          "title": "End",
+          "type": "string"
+        }
+      },
+      "required": [
+        "attraction_id",
+        "start",
+        "end"
+      ],
+      "title": "Visit",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "result",
+      "default": "result",
+      "title": "Kind",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "success",
+        "needs_information",
+        "failed_validation",
+        "failed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "currency": {
+      "const": "NZD",
+      "title": "Currency",
+      "type": "string"
+    },
+    "timezone": {
+      "const": "Pacific/Auckland",
+      "title": "Timezone",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/TripRequest"
+    },
+    "data_mode": {
+      "enum": [
+        "live",
+        "mock"
+      ],
+      "title": "Data Mode",
+      "type": "string"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "days": {
+      "items": {
+        "$ref": "#/$defs/Day"
+      },
+      "title": "Days",
+      "type": "array"
+    },
+    "cost_breakdown": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Cost Breakdown",
+      "type": "array"
+    },
+    "total_cost_cents": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Total Cost Cents"
+    },
+    "decision_summary": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Decision Summary"
+    },
+    "tool_sources": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tool Sources"
+    },
+    "message": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Message"
+    },
+    "validation_errors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Validation Errors",
+      "type": "array"
+    }
+  },
+  "required": [
+    "run_id",
+    "status",
+    "currency",
+    "timezone",
+    "request",
+    "data_mode",
+    "assumptions",
+    "days",
+    "cost_breakdown",
+    "total_cost_cents"
+  ],
+  "title": "TripResult",
+  "type": "object"
+}

@@ -48,6 +48,32 @@ def test_duplicate_documents_do_not_inflate_size(index, tmp_path):
     assert index.stats()["unique_documents"] == 1
 
 
+def test_bulk_import_is_resumable_and_failed_publish_preserves_cache(index, tmp_path, monkeypatch):
+    documents = [make_document(tmp_path, f"# Topic {i}\n\nReliable evidence for bulk database import number {i}.",
+                               f"bulk-{i}.md") for i in range(3)]
+    original = index.collection.upsert
+    def fail(**kwargs):
+        raise RuntimeError("simulated vector service failure")
+    monkeypatch.setattr(index.collection, "upsert", fail)
+    with pytest.raises(RuntimeError):
+        list(index.ingest_many(documents))
+    assert index.stats()["documents"] == 0
+    with index.connect() as db:
+        assert db.execute("SELECT count(*) FROM embedding_cache").fetchone()[0] > 0
+    monkeypatch.setattr(index.collection, "upsert", original)
+    assert list(index.ingest_many(documents))[0]["documents"] == 3
+    assert list(index.ingest_many(documents)) == []
+    assert index.stats()["documents"] == 3
+
+
+def test_same_text_new_source_version_updates_citation(index, tmp_path):
+    document = make_document(tmp_path, "# Versions\n\nEvidence must retain the correct source version.")
+    index.ingest(document)
+    document.version = "new-release"
+    assert index.ingest(document)["status"] == "indexed"
+    assert index.search("source version", mode="lexical")["hits"][0]["chunk"]["version"] == "new-release"
+
+
 def test_unknown_citation_is_rejected(index, tmp_path):
     index.ingest(make_document(tmp_path, "# Python\n\nPython dictionaries preserve insertion order."))
     class Model:

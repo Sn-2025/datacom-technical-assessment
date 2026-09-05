@@ -114,9 +114,13 @@ elif page == "Overview":
     latencies = [e["latency_ms"] for e in requests]
     cols = st.columns(4)
     cols[0].metric("Model requests", len(requests))
-    cols[1].metric("Estimated cost", f"${sum(known_cost):.5f}" if known_cost else "—")
-    cols[2].metric("Median completion latency", f"{statistics.median(latencies):.0f} ms" if latencies else "—")
+    cols[1].metric("Generation cost", f"${sum(known_cost):.5f}" if known_cost else "—")
+    cols[2].metric("Median latency", f"{statistics.median(latencies):.0f} ms" if latencies else "—")
     cols[3].metric("Unknown usage", sum(e.get("prompt_tokens") is None for e in requests))
+    embedding_events = [event for event in events if event["kind"] == "embedding_request"]
+    if embedding_events:
+        embedding_cost = sum(event.get("cost_usd") or 0 for event in embedding_events)
+        st.caption(f"Embedding requests in recent log: {len(embedding_events)} · known estimated cost ${embedding_cost:.5f}")
     if requests:
         chart = pd.DataFrame(requests)
         chart["timestamp"] = pd.to_datetime(chart["timestamp"])
@@ -128,7 +132,11 @@ elif page == "Overview":
     evaluation = ROOT / "artifacts/evaluation/retrieval.json"
     if evaluation.exists():
         st.subheader("Retrieval quality and latency")
-        st.json(json.loads(evaluation.read_text(encoding="utf-8")))
+        report = json.loads(evaluation.read_text(encoding="utf-8"))
+        st.dataframe(pd.DataFrame(report["summary"]), hide_index=True, use_container_width=True)
+        st.caption(report["protocol"])
+        with st.expander("Full retrieval evaluation"):
+            st.json(report)
     outcomes = [e for e in events if e["kind"] in {"code_result", "planning_result"}]
     if outcomes:
         st.subheader("Workflow outcomes")
@@ -180,7 +188,7 @@ elif page == "Knowledge base":
                         st.success(f"{upload.name}: {result['status']}")
                     except Exception as exc:
                         st.error(f"{upload.name}: {type(exc).__name__}: {exc}")
-    question = st.text_input("Question", placeholder="How does PostgreSQL transaction isolation handle concurrent updates?")
+    question = st.text_input("Question", placeholder="How does SQL Server READ COMMITTED isolation prevent dirty reads?")
     mode = st.selectbox("Retrieval mode", ["hybrid", "dense", "lexical", "rerank"])
     if st.button("Ask the knowledge base", type="primary", disabled=not question):
         try:

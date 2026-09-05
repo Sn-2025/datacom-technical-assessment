@@ -17,6 +17,16 @@ def redact(text: str) -> str:
     return re.sub(r"(?i)(Bearer\s+)\S+", r"\1[REDACTED]", text)
 
 
+def sanitize(value):
+    if isinstance(value, str):
+        return redact(value)
+    if isinstance(value, dict):
+        return {key: sanitize(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [sanitize(item) for item in value]
+    return value
+
+
 def cost_usd(prompt: int | None, completion: int | None, cached: int, pricing: Pricing | None) -> float | None:
     if prompt is None or completion is None or pricing is None:
         return None
@@ -44,7 +54,7 @@ class Telemetry:
     def record(self, run_id: str, kind: str, **payload) -> dict:
         event = {"id": uuid.uuid4().hex, "timestamp": datetime.now(timezone.utc).isoformat(),
                  "run_id": run_id, "kind": kind, **payload}
-        safe = json.loads(redact(json.dumps(event, default=str)))
+        safe = json.loads(json.dumps(sanitize(event), default=str))
         with self.lock, self.connect() as db:
             db.execute("INSERT INTO events VALUES (?, ?, ?, ?, ?)",
                        (safe["id"], safe["timestamp"], run_id, kind, json.dumps(safe)))

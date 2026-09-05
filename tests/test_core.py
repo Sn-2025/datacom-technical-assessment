@@ -70,3 +70,9 @@ def test_history_is_ten_messages_not_ten_turns():
 def test_redaction():
     assert "sk-secret" not in redact("failed key sk-secret and Bearer sensitive")
     assert "sensitive" not in redact("Bearer sensitive")
+
+
+def test_nested_bearer_redaction_preserves_valid_log_json(tmp_path):
+    telemetry = Telemetry(tmp_path / "events.sqlite")
+    telemetry.record("run", "test", nested={"authorization": "Bearer sensitive"})
+    assert telemetry.recent()[0]["nested"]["authorization"] == "Bearer [REDACTED]"

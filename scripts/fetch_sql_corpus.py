@@ -49,7 +49,7 @@ def main():
     if lock.exists():
         metadata = json.loads(lock.read_text())
     else:
-        commit = json.loads(fetch("https://api.github.com/repos/MicrosoftDocs/sql-docs/commits/live"))["sha"]
+        commit = "4f78fa5f8e9f4272c016d2c0f95eca31de866c8b"
         tree = json.loads(fetch(f"https://api.github.com/repos/MicrosoftDocs/sql-docs/git/trees/{commit}?recursive=1"))
         if tree.get("truncated"):
             raise RuntimeError("Refuse an incomplete Git tree")

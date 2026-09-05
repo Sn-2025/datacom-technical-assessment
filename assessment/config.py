@@ -66,6 +66,9 @@ class Settings(BaseSettings):
     chroma_host: str | None = None
     chroma_port: int = 8000
     embedding_model: str = "BAAI/bge-small-en-v1.5"
+    embedding_backend: Literal["local", "openai"] = "local"
+    embedding_dimensions: int = Field(default=384, ge=64, le=1536)
+    embedding_api_key: SecretStr = SecretStr("")
     embedding_threads: int = 2
     chunk_tokens: int = Field(default=320, ge=64, le=420)
     chunk_overlap: int = Field(default=40, ge=0, le=100)
@@ -87,7 +90,8 @@ class Settings(BaseSettings):
         return Connection(profile=self.profile, base_url=self.openai_base_url, model=self.model_name, api_key=key)
 
     def index_config(self) -> dict:
-        return {"embedding_model": self.embedding_model, "chunk_tokens": self.chunk_tokens,
+        return {"embedding_model": self.embedding_model, "embedding_backend": self.embedding_backend,
+                "embedding_dimensions": self.embedding_dimensions, "chunk_tokens": self.chunk_tokens,
                 "chunk_overlap": self.chunk_overlap, "parser_version": "1", "chunker_version": "1"}
 
     def index_id(self) -> str:
