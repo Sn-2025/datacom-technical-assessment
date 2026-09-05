@@ -1,0 +1,24 @@
+# Local credentials
+OPENAI API KEY.txt
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.secrets/
+
+# Downloaded research material and temporary files
+data/corpus_research/
+tmp/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+data/runtime/
+data/corpus/
+data/model_cache/
+artifacts/runs/
+artifacts/sandbox/
+.coverage
+htmlcov/

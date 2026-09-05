@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "datacom-assessment"
+version = "0.1.0"
+description = "Observable, evaluated Python AI workflows"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "openai>=2,<3", "httpx>=0.28,<1", "fastapi>=0.115,<1", "uvicorn>=0.34,<1",
+  "pydantic>=2.10,<3", "pydantic-settings>=2.8,<3", "streamlit>=1.45,<2",
+  "chromadb>=1.0,<2", "fastembed>=0.7,<1", "numpy>=2,<3",
+  "beautifulsoup4>=4.13,<5", "lxml>=5,<7", "markdown-it-py>=3,<5",
+  "pypdf>=5,<7", "python-docx>=1.1,<2", "pypdfium2>=4,<6", "pytesseract>=0.3.13,<0.4",
+  "Pillow>=11,<13", "python-multipart>=0.0.20,<1", "rich>=13,<15", "tokenizers>=0.21,<1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "respx>=0.22,<1", "ruff>=0.11,<1"]
+
+[project.scripts]
+assessment = "assessment.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["assessment"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+  "docker: requires a running Docker engine and the sandbox image",
+  "live: explicitly enabled external provider checks",
+  "model: requires the downloaded embedding model"
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["data", "artifacts", "tmp"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

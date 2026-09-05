@@ -1,0 +1,13 @@
+.git
+.venv
+OPENAI API KEY.txt
+.env
+.env.*
+.secrets
+.streamlit/secrets.toml
+data
+tmp
+artifacts/runs
+__pycache__
+.pytest_cache
+*.egg-info
